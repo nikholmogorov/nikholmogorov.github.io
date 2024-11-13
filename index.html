@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="portfolio.js" defer></script>
+    <link rel="stylesheet" href="portfolio.css">
+    <title>Портфолио | Fronted</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: sticky; top: 0px; z-index: 1;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#my_experience">Мой опыт</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#my_stack">Мой стек</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#instruments">Инструменты</a>
+              </li>
+              <li class="nav-item right-nav-item">
+                <a class="nav-link" href="#projects">Проекты</a>
+              </li>
+              <li class="nav-item" style="margin-left: 10vw;">
+                <a class="nav-link" target="_blank" href="https://github.com/nikholmogorov"><span>GitHub</span></a>
+              </li>
+              <li class="nav-item right-nav-item">
+                <a class="nav-link" target="_blank" href="mailto:nik.holmogorov@yandex.ru">Почта</a>
+              </li>
+              <li class="nav-item right-nav-item" style="margin-left: 30vw;">
+                <button type="button btn btn-secondary" class="nav-link" id="change_theme" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="В разработке!">Сменить тему</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="progress-bar" id="progressBar"></div>
+  </nav>
+  <div class="main">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6" style="background-color: #00000000;">
+                <div class="main-text">
+                  <h1>Привет, я Роман!</h1>
+                  <p>Frontend-разработчик</p>
+                </div>
+              </div>
+              <div class="col-lg-6" style="background-color: #00000000;"><img src="./img/my_foto.jpg" alt="Моё фото" style="width: 100%;"></div>
+          </div>
+        </div>
+  </div>
+  <div class="container-fluid">
+    <h2><a></a>Обо мне</h2>
+    <div class="row about_me">
+        <div class="col-lg-4 border-end border-3 border-black" style="background-color: #00000000;"><p style="text-align: justify;">Я frontend-разработчик из Челябинска, ищущий интересной работы и развития.</p></div>
+        <div class="col-lg-4 border-end border-3 border-black" style="background-color: #00000000;"><p style="text-align: justify;">Начал осваивать fronted-разработку в качестве первого этапа изучения сферы разработки.</p></div>
+        <div class="col-lg-4" style="background-color: #00000000;"><p style="text-align: justify;">Обучаюсь веб-разработке в Синергии, изучаю профильные материалы на различных ресурсах, да и просто интересуюсь сферой цифровых технологий.</p></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h2><a name="my_experience"></a>Мой опыт</h2>
+    <div class="row">
+        <div class="col-lg-2 col-2 gy-5">
+          <img src="img/umh_logo.png" alt="Логотип ООО ПП «УралМетХолдинг»" class="img-fluid" style="margin: 0 10%; height: auto; width: 80%;">
+          <p style="margin-left: 25%;">Октябрь 2022 —<br>
+            Февраль 2024<br>
+            <span style="color: gray;">1 год 5 месяцев</span></p>
+        </div>
+        <div class="col-lg-10 col-10 gy-5">
+          <h5>ООО ПП «УралМетХолдинг»</h5>
+          <p>Челябинск,  <a href="https://www.uralmetallholding.ru/" target="_blank" style="color: #000;">www.uralmetallholding.ru</a> <br>
+            Промышленное оборудование, техника, станки и комплектующие <br>
+            — Оборудование и станки для добывающей, энергетической, нефтегазовой и химической отрасли (производство)</p>
+            <h5>Инженер-конструктор</h5>
+            <p>
+              – сбор исходных данных для проектирования <br>
+              – разработка чертежей металлоконструкций, оборудования по техническому заданию <br>
+              – разработка нестандартного оборудования <br>
+              – обеспечение соответствия разрабатываемых проектов стандартам, техническим условиям и другим нормативным документам <br>
+              – согласование вопросов, консультирование по техническим особенностям <br>
+        </div>
+      <div class="col-lg-2 col-2 gy-5">
+        <img src="img/rkk_logo.png" alt="Логотип ПАО «РКК «Энергия» имени С.П. Королёва»" class="img-fluid" style="margin: 0 10%; height: auto; width: 80%;">
+        <p style="margin-left: 25%;">Март 2020 —<br>
+          Март 2022<br>
+          <span style="color: gray;">2 года 1 месяц</span></p>
+      </div>
+      <div class="col-lg-10 col-10 gy-5">
+        <h5>ПАО «РКК «Энергия» имени С.П. Королёва»</h5>
+        <p>Королев (Московская область), <a href="https://www.energia.ru" target="_blank" style="color: #000;">www.energia.ru</a> <br>
+          Тяжелое машиностроение <br>
+          — Авиационная, вертолетная, аэрокосмическая промышленность</p>
+          <h5>Инженер-конструктор 3 категории</h5>
+          <p>
+          – проведение прочностных расчётов проектируемых конструкций <br>
+          – выработка рекомендаций по выбору конструктивно-силовых схем и материалов <br>
+          – оформление и выпуск документации по прочности конструкций <br>
+          – участие в подготовке и проведении прочностных испытаний <br>
+          – оформление и выпуск отчётной документации по проведённым прочностным испытаниям</p>
+      </div>
+      <div class="col-lg-2 col-2 gy-5">
+        <img src="img/spec_logo.png" alt="Логотип ООО ЗСМ «СпецМаш»" class="img-fluid" style="margin: 0 10%; height: auto; width: 80%;">
+        <p style="margin-left: 25%;">Июль 2017 —<br>
+          Март 2020<br>
+          <span style="color: gray;">2 года 9 месяцев</span></p>
+      </div>
+      <div class="col-lg-10 col-10 gy-5">
+        <h5>ООО ЗСМ «СпецМаш»</h5>
+        <p>Челябинск<br>
+          Тяжелое машиностроение <br>
+          — Авиационная, вертолетная, аэрокосмическая промышленность</p>
+          <h5>Контролер ОТК</h5>
+          <p>
+            – сверка реальных параметров выпускаемой продукции с эталонными
+            показателями, указанными в технической документации <br>
+            – определение возможности исправления брака, если таковой имеется <br>
+            – оформление сопроводительной документации — сертификатов качества <br>
+            – ведение учёта средств измерения и составление плана поверочных
+            мероприятий <br>
+            – составление технической документации в системах КОМПАС-3D и
+            SolidWorks <br>
+            – операционный контроль при изготовлении деталей <br>
+            – работа на токарном станке с ЧПУ</p>
+      </div>
+    </div>
+  </div>
+    <div class="container-fluid">
+        <h2 style="margin-bottom: 2%;"><a name="my_stack"></a>Мой стек</h2>
+        <div class="row">
+            <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+                <img width="48" height="48" src="img/html.svg" alt="HTML5">
+                <p style="font-size: 18px;">HTML5</p>
+            </div>
+            <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+              <img width="48" height="48" src="img/css.svg" alt="CSS3">
+              <p style="font-size: 18px;">CSS3</p>
+            </div>
+            <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+              <img width="48" height="48" src="img/js.svg" alt="JavaScript">
+              <p style="font-size: 18px;">JavaScript</p>
+            </div>
+            <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+              <img width="54" height="48" src="img/bootstrap.svg" alt="HTML5">
+              <p style="font-size: 18px;">Bootstrap</p>
+            </div>
+            <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+              <img width="48" height="48" src="img/vue.svg" alt="HTML5">
+              <p style="font-size: 18px;">Vue.js</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <h2 style="margin-bottom: 2%;"><a name="instruments"></a>Инструменты</h2>
+      <div class="row">
+          <div class="col-lg-3 col-6 col-md on_center" style="background-color: #00000000;">
+              <img width="48" height="48" src="img/vscode.svg" alt="HTML5">
+              <p style="font-size: 18px;">VS Code</p>
+          </div>
+          <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+            <img width="48" height="48" src="img/git.svg" alt="Git">
+            <p style="font-size: 18px;">Git</p>
+          </div>
+          <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+            <img width="48" height="48" src="img/ps.svg" alt="Adobe Photoshop">
+            <p style="font-size: 18px;">Adobe Photoshop</p>
+          </div>
+          <div class="col-lg-3 col-6 on_center" style="background-color: #00000000;">
+            <img width="48" height="48" src="img/ai.svg" alt="Adobe Illustrator">
+            <p style="font-size: 18px;">Adobe Illustrator</p>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <h2 style="margin-bottom: 2%;"><a name="projects"></a>Проекты</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-5 border-white" style="width: 95%;">
+          <div class="card-body">
+            <div id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            data-bs-interval="2000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/sst1.png" class="d-block w-100" alt="Simple Starter Template">
+              </div>
+              <div class="carousel-item">
+                <img src="img/sst2.png"
+                  class="d-block w-100" alt="Simple Starter Template">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+              data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+              <span class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            <h5 class="card-title" style="margin-top: 14px;">Эскиз сайта</h5>
+            <p class="card-text">Удобный двухстраничный сайт с активными элементами на HTML и CSS.</p>
+            <a href="sst/home.html" target="_blank"  class="btn btn-primary btn_restyling">Перейти</a>
+          </div>
+        </div></div>
+        <div class="col-lg-6"><div class="card mb-5 border-white" style="width: 95%;">
+              <img src="img/tm.png" class="card-img-top" alt="Task Manager" style="object-fit: cover; width: 100%; height: 100%;">
+              <div class="card-body">
+                <h5 class="card-title">Эскиз менеджера задач</h5>
+                <p class="card-text">Удобный менеджер задач с сортировкой и удалением элементов на Vue.js.</p>
+                <a href="http://localhost:5173" target="_blank" class="btn button btn-primary btn_restyling" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Требует выполнения комманд cd vue-project и npm run dev!">Перейти</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6"><div class="card mb-5 h-100 border-white" style="width: 95%;">
+          <img src="img/calc.png" class="card-img-top" alt="Calculator" style="object-fit: cover; width: 100%; height: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">Калькулятор</h5>
+            <p class="card-text">Удобный калькулятор с основным функционалом и утончённым дизайном на HTML, CSS и JS.</p>
+            <a href="calc/calc.html" target="_blank"  class="btn btn-primary btn_restyling">Перейти</a>
+          </div>
+        </div></div>
+        <div class="col-lg-6"><div class="card mb-5 h-100 border-white" style="width: 95%;">
+          <img src="img/calc_2.png" class="card-img-top" alt="Calculator 2: Return" style="object-fit: cover; width: 100%; height: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">Калькулятор 2: Возвращение</h5>
+            <p class="card-text">Такой же удобный калькулятор с основным функционалом, другой логикой и утончённым дизайном на HTML, CSS и JS.</p>
+            <a href="calc 2/calc2.html" target="_blank"  class="btn btn-primary btn_restyling">Перейти</a> 
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="on_center">
+    <button type="button" class="btn btn-primary btn-lg button_to_top" onclick='toTop()'>Наверх</button>
+  </div> 
+</body>
+</html>
