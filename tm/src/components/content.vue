@@ -5,7 +5,7 @@
           task:'',
           listTask:[' say  hello', ' bye milk', ' take bag'],
           pick:'',
-          theme: 'light', // значение этой переменной...
+          theme: 'light', // значение этой переменной...1
         }
       },
       methods:{
@@ -20,14 +20,20 @@
           delete this.listTask[this.pick];
         },
         changeTheme(){
-          alert('this is ' + this.theme + ' theme');
-          this.theme = this.theme === 'light' ? 'dark' : 'light'; // ...крутится этим, ...
+          alert('В разработке!');
+        if (document.documentElement.hasAttribute('theme')) { // не работает
+            this.document.documentElement.removeAttribute('theme'); // не работает
+        } else {
+            this.document.documentElement.setAttribute('theme', 'dark'); // не работает
+        }        
+          // alert('this is ' + this.theme + ' theme');
+          // this.theme = this.theme === 'light' ? 'dark' : 'light'; // 2...крутится этим, ...2
 
-          if (this.theme === 'light') {
-           alert('theme changed to light');
-          } else {
-           alert('theme changed to dark');
-          }
+          // if (this.theme === 'light') {
+          //  alert('theme changed to light');
+          // } else {
+          //  alert('theme changed to dark');
+          // }
         },
       }
   }
@@ -50,6 +56,28 @@
     </div>
 </template>
 <style scoped>
+
+:root {
+    --background-color: #fff;
+    --element-color: #000;
+    --element-color-transparent: #00000080;
+}
+
+:root[theme='dark'] {
+    --background-color: #000;
+    --element-color: #fff;
+    --element-color-transparent: #ffffff80;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--element-color);
+}
+
+/* ::placeholder {
+    color: var(--element-color-tranparent);
+} */
+
 .container{
   width: 80%;
   background-color: #fff;
@@ -129,12 +157,12 @@ input[type="radio"] {
   background-color: #000;
   color: #fff;
 }
- container.light {  /* ...но темы не переключаются */
+ /* container.light {   3...но темы не переключаются 
   background-color: white;
   color: black;
 }
 container.dark {
   background-color: black;
   color: white;
-}
+} */
 </style>

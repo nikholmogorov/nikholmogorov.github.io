@@ -1,7 +1,26 @@
+:root {
+    --background-color: #fff;
+    --element-color: #000;
+}
+
+:root[theme='dark'] {
+    --background-color: #000;
+    --element-color: #fff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--element-color);
+}
+
+::placeholder {
+    color: var(--element-color);
+}
+
 .calc {
     width: 400px;
     border: solid 1px;
-    margin: 150px auto 5px  auto;
+    margin: 150px auto 5px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -9,22 +28,16 @@
 }
 
 .calc input {
-    width: 290px;
-    height: 35px;
+    width: 291px;
+    height: 38px;
     margin-top: 5px;
+    border-top: 1px solid var(--element-color);
+    border-right: 1px solid var(--element-color);
+    border-bottom: 1px solid var(--element-color);
+    border-left: 1px solid var(--element-color);
+    background-color: var(--background-color);
+    color: var(--element-color);
 }
-
-/* .calc_result {
-    width: 295px;      
-    height: 30px;
-    margin-top: 5px;
-    border: solid 1px;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    text-align: left;
-    font-weight: 400;
-    padding-top: 10px;
-} */
 
 .btn {
     width: 90px;
@@ -56,13 +69,3 @@
     cursor: pointer;
     padding-top: 2px;
 }
-
-/* body.light-theme {
-    background-color: #fff;
-    color: #000;
-}
-
-body.dark-theme {
-    background-color: #000;
-    color: #fff;
-} */
