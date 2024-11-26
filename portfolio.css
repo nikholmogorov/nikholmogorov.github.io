@@ -16,9 +16,31 @@
     font-family: sans-serif;
 }
 
+::selection {
+    background-color: var(--element-color);
+    color: var(--background-color);
+}
+
 body {
     background-color: var(--background-color);
     color: var(--element-color);
+    cursor: url('img/cursor.png') 14 14, auto;
+}
+
+a:hover {
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
+}
+
+button:hover {
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
+}
+
+.carousel-control-prev:hover {
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
+}
+
+.carousel-control-next:hover {
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
 }
 
 .navbar {
@@ -62,11 +84,13 @@ body {
     background-color: var(--background-color);
     color: var(--element-color);
     padding: 0px 0px;
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
 }
 
 .nav-link:focus,
 .nav-link:hover {
     color: var(--element-color);
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
 }
 
 .nav-item:active {
@@ -196,6 +220,7 @@ h2 {
     background-color: var(--background-color);
     color: var(--element-color);
     padding: 4px 10px;
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
 }
 
 .btn_restyling:active {
@@ -225,6 +250,7 @@ h2 {
     background-color: var(--background-color);
     color: var(--element-color);
     padding: 4px 10px;
+    cursor: url('img/cursor_interactive.png') 14 14, auto;
 }
 
 .button_to_top:active {
