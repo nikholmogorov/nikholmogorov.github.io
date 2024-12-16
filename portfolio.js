@@ -42,7 +42,13 @@ function progressBar() {
 window.addEventListener('scroll', progressBar);
 
 setInterval(function () {
-  let carousel = document.querySelector('#carouselExampleControls');
+  let carousel = document.querySelector('#carouselExampleControls_sst');
+  let carouselInstance = bootstrap.Carousel.getInstance(carousel);
+  carouselInstance.next();
+}, 2000);
+
+setInterval(function () {
+  let carousel = document.querySelector('#carouselExampleControls_kropp');
   let carouselInstance = bootstrap.Carousel.getInstance(carousel);
   carouselInstance.next();
 }, 2000);
