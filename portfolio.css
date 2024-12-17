@@ -207,6 +207,14 @@ h2 {
     text-align: center;
 }
 
+.projects {
+    row-gap: 50px;
+}
+
+.projectCard {
+    margin-bottom: 0px !important;
+}
+
 .card {
     border-radius: 0;
     border: solid 1px;

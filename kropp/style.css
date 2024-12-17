@@ -1058,7 +1058,7 @@ input[type=number] {
     }
 
     .motivation-card-img {
-        width: 60%;
+        width: 100%;
         height: auto;
         padding-bottom: 40px;
     }
@@ -1152,5 +1152,10 @@ input[type=number] {
 
     .footer-subscribe:not(:last-child) {
         margin-bottom: 40px;
+    }
+
+    .footer-subscribe-button {
+        height: 54px;
+        width: 54px;
     }
 }
