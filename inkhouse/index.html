@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icons/favicon.png">
+    <link rel="preload" as="image" href="./images/germany-01.jpg" />
+    <link rel="preload" as="image" href="./images/germany-02.jpg" />
+    <link rel="preload" as="image" href="./images/germany-03.jpg" />
+    <link rel="preload" as="image" href="./images/germany-04.jpg" />
+    <link rel="preload" as="image" href="./images/germany-05.jpg" />
+    <link rel="preload" as="image" href="./images/germany-06.jpg" />
+    <link rel="preload" as="image" href="./images/england-01.jpg" />
+    <link rel="preload" as="image" href="./images/england-02.jpg" />
+    <link rel="preload" as="image" href="./images/england-03.jpg" />
+    <link rel="preload" as="image" href="./images/england-04.jpg" />
+    <link rel="preload" as="image" href="./images/england-05.jpg" />
+    <link rel="preload" as="image" href="./images/england-06.jpg" />
+    <title>Ink. House</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="header-logo" href="/">
+            <img class="header-logo-image" src="./icons/inkhouse-logo.svg" alt="Ink. House Logo" width="35" height="35"
+                loading="lazy">
+            <p class="header-logo-text">Ink. House</p>
+        </a>
+        <input class="header-menu-btn" type="checkbox" id="menu-btn" />
+        <label class="header-menu-icon" for="menu-btn"><span class="header-navicon"></span></label>
+        <ul class="header-menu-list">
+            <li class="header-menu-item">
+                <a class="header-menu-link" href="#reproductions">Репродукции</a>
+            </li>
+            <li class="header-menu-item">
+                <a class="header-menu-link" href="#new-items">Новинки</a>
+            </li>
+            <li class="header-menu-item">
+                <a class="header-menu-link" href="#about-team">О нас</a>
+            </li>
+        </ul>
+        <a class="header-basket" href="/">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
+                    fill="#2c2d35" />
+            </svg>
+        </a>
+    </header>
+    <main class="content">
+        <h1 class="visually-hidden">Реплики Картин от Ink. House</h1>
+        <section class="banner">
+            <h2 class="visually-hidden">Стартовый Баннер Ink. House</h2>
+            <img class="banner-image" src="./images/starting_bird.png" alt="A Beautiful Bird Sits On A Branch"
+                width="540" height="620" loading="lazy">
+            <div class="banner-body">
+                <h3 class="banner-body-title">Реплики картин<br> от <span class="banner-body-title-accent">Ink.
+                        House</span></h3>
+                <p class="banner-body-text">Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие
+                    произведения, доступные цены.</p>
+                <a class="banner-body-button" href="/">Продукция</a>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="reproductions"></div>
+        </div>
+        <section class="reproductions">
+            <h2 class="visually-hidden">Каталог Репродукций Ink. House</h2>
+            <h3 class="reproductions-title">Репродукции</h3>
+            <div class="reproductions-tabs">
+                <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+                <label class="reproductions-tabs-country reproductions-tabs-country-crutch"
+                    for="tab-btn-1">Франция</label>
+                <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+                <label class="reproductions-tabs-country" for="tab-btn-2">Германия</label>
+                <input id="tab-btn-3" name="tab-btn" type="radio" value="">
+                <label class="reproductions-tabs-country" for="tab-btn-3">Англия</label>
+                <div class="reproductions-tabs-content" id="content-1">
+                    <div class="reproductions-tabs-content-france">
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-01.jpg"
+                                alt="Марсель Руссо «Охота Амура»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Марсель Руссо</p>
+                            <h4 class="reproductions-tabs-content-card-title">Охота Амура</h4>
+                            <p class="reproductions-tabs-content-card-materials">Холст, масло (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">14 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-02.jpg"
+                                alt="Анри Селин «Дама с собачкой»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Анри Селин</p>
+                            <h4 class="reproductions-tabs-content-card-title">Дама с собачкой</h4>
+                            <p class="reproductions-tabs-content-card-materials">Акрил, бумага (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">16 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-03.jpg"
+                                alt="Франсуа Дюпон «Процедура»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Франсуа Дюпон</p>
+                            <h4 class="reproductions-tabs-content-card-title">Процедура</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">20 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-04.jpg"
+                                alt="Луи Детуш «Роза»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Луи Детуш</p>
+                            <h4 class="reproductions-tabs-content-card-title">Роза</h4>
+                            <p class="reproductions-tabs-content-card-materials">Бумага, акрил (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">12 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-05.jpg"
+                                alt="Франсуа Дюпон «Птичья трапеза»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Франсуа Дюпон</p>
+                            <h4 class="reproductions-tabs-content-card-title">Птичья трапеза</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">22 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/france-06.jpg"
+                                alt="Пьер Моранж «Пейзаж с рыбой»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Пьер Моранж</p>
+                            <h4 class="reproductions-tabs-content-card-title">Пейзаж с рыбой</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">20 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reproductions-tabs-content" id="content-2">
+                    <div class="reproductions-tabs-content-germany">
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-01.jpg"
+                                alt="Курт Вернер «Над городом»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Курт Вернер</p>
+                            <h4 class="reproductions-tabs-content-card-title">Над городом</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">16 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-02.jpg"
+                                alt="Макс Рихтер «Птенцы»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Макс Рихтер</p>
+                            <h4 class="reproductions-tabs-content-card-title">Птенцы</h4>
+                            <p class="reproductions-tabs-content-card-materials">Холст, масло (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">14 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-03.jpg"
+                                alt="Мартин Майер «Среди листьев»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Мартин Майер</p>
+                            <h4 class="reproductions-tabs-content-card-title">Среди листьев</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">20 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-04.jpg"
+                                alt="Герман Беккер «Яркая птица»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Герман Беккер</p>
+                            <h4 class="reproductions-tabs-content-card-title">Яркая птица</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">13 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-05.jpg"
+                                alt="Вульф Бауэр «Дятлы»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Вульф Бауэр</p>
+                            <h4 class="reproductions-tabs-content-card-title">Дятлы</h4>
+                            <p class="reproductions-tabs-content-card-materials">Бумага, акрил (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">20 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/germany-06.jpg"
+                                alt="Вальтер Хартманн «Большие воды»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Вальтер Хартманн</p>
+                            <h4 class="reproductions-tabs-content-card-title">Большие воды</h4>
+                            <p class="reproductions-tabs-content-card-materials">Бумага, акрил (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">23 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reproductions-tabs-content" id="content-3">
+                    <div class="reproductions-tabs-content-england">
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-01.jpg"
+                                alt="Пол Смит «Дикий зверь»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Пол Смит</p>
+                            <h4 class="reproductions-tabs-content-card-title">Дикий зверь</h4>
+                            <p class="reproductions-tabs-content-card-materials">Акварель, бумага (50х80)</p>
+                            <p class="reproductions-tabs-content-card-price">19 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-02.jpg"
+                                alt="Джон Уайт «Скалистый берег»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Джон Уайт</p>
+                            <h4 class="reproductions-tabs-content-card-title">Скалистый берег</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60)</p>
+                            <p class="reproductions-tabs-content-card-price">17 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-03.jpg"
+                                alt="Джим Уотсон «Река и горы»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Джим Уотсон</p>
+                            <h4 class="reproductions-tabs-content-card-title">Река и горы</h4>
+                            <p class="reproductions-tabs-content-card-materials">Акварель, бумага (50х80) </p>
+                            <p class="reproductions-tabs-content-card-price">20 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-04.jpg"
+                                alt="Юджин Зиллион «Белый попугай»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Юджин Зиллион</p>
+                            <h4 class="reproductions-tabs-content-card-title">Белый попугай</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60) </p>
+                            <p class="reproductions-tabs-content-card-price">15 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-05.jpg"
+                                alt="Эрик Гиллман «Ночная рыба»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Эрик Гиллман</p>
+                            <h4 class="reproductions-tabs-content-card-title">Ночная рыба</h4>
+                            <p class="reproductions-tabs-content-card-materials">Бумага, акрил (50х80) </p>
+                            <p class="reproductions-tabs-content-card-price">12 500 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                        <div class="reproductions-tabs-content-card">
+                            <img class="reproductions-tabs-content-card-image" src="./images/england-06.jpg"
+                                alt="Альфред Барр «Рыжий кот»" width="310" height="422" loading="lazy">
+                            <p class="reproductions-tabs-content-card-author">Альфред Барр</p>
+                            <h4 class="reproductions-tabs-content-card-title">Рыжий кот</h4>
+                            <p class="reproductions-tabs-content-card-materials">Цветная литография (40х60) </p>
+                            <p class="reproductions-tabs-content-card-price">21 000 руб.</p>
+                            <button class="reproductions-tabs-content-card-button">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="new-items"></div>
+        </div>
+        <section class="new-items">
+            <h2 class="visually-hidden">Новинки Ink. House</h2>
+            <div class="new-items-body">
+                <h3 class="new-items-body-title">Новая коллекция французских авторов</h3>
+                <p class="new-items-body-text">Сложно сказать, почему акционеры крупнейших компаний призывают нас к
+                    новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных
+                    рациональных ограничений.</p>
+                <p class="new-items-body-text">Принимая во внимание показатели успешности, граница обучения кадров
+                    предопределяет высокую
+                    востребованность направлений прогрессивного развития.</p>
+                <a class="new-items-body-button" href="/">Ознакомиться</a>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="about-team"></div>
+        </div>
+        <section class="about-team">
+            <h2 class="visually-hidden">Команда Ink. House</h2>
+            <img class="about-team-image-decore" src="./images/frame.png" alt="Frame With Hand And Brushes" width="445"
+                height="440" loading="lazy">
+            <div class="about-team-body">
+                <h3 class="about-team-body-title">Наша команда</h3>
+                <p class="about-team-body-text">Значимость этих проблем настолько очевидна, что базовый вектор развития
+                    позволяет оценить значение экспериментов, поражающих по своей масштабности и грандиозности. Мы
+                    вынуждены отталкиваться от того, что консультация с широким активом.</p>
+                <img class="about-team-body-image-members" src="./images/foto-members.png"
+                    alt="Фотографии Членов Ink. House" width="300" height="80" loading="lazy">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-left">
+            <div class="test">
+                <a class="footer-left-logo" href="/">
+                    <img class="footer-left-logo-image" src="./icons/inkhouse-logo.svg" alt="Ink. House Logo" width="35"
+                        height="35" loading="lazy">
+                    <p class="footer-left-logo-text">Ink. House</p>
+                </a>
+            </div>
+            <a class="footer-left-tel" href="tel:+79995435454">+7 (999) 543-54-54</a>
+            <p class="footer-left-text">Мастерская</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-right-links">
+                <div class="footer-right-links-reproductions">
+                    <h3 class="footer-right-links-title">Репродукции</h3>
+                    <ul class="footer-right-links-list">
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">Франция</a>
+                        </li>
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">Германия</a>
+                        </li>
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">Англия</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right-links-new-items">
+                    <h3 class="footer-right-links-title">Новинки</h3>
+                    <ul class="footer-right-links-list">
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">2021</a>
+                        </li>
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">2020</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right-links-about-team">
+                    <h3 class="footer-right-links-title">О нас</h3>
+                    <ul class="footer-right-links-list">
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">Художники</a>
+                        </li>
+                        <li class="footer-right-links-list-item">
+                            <a href="" class="footer-right-links-list-item-link">Менеджеры</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-right-social">
+                <div class="footer-right-social-links">
+                    <img class="footer-right-social-links-image" src="./icons/facebook-logo.png" alt="Facebook Logo">
+                    <img class="footer-right-social-links-image" src="./icons/instagram-logo.png" alt="Instagram Logo">
+                    <img class="footer-right-social-links-image" src="./icons/youtube-logo.png" alt="Youtube Logo">
+                </div>
+                <p class="footer-right-social-copyrights">Ink. House ®<br>All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

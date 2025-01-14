@@ -53,6 +53,18 @@ setInterval(function () {
   carouselInstance.next();
 }, 2000);
 
+setInterval(function () {
+  let carousel = document.querySelector('#carouselExampleControls_alivio');
+  let carouselInstance = bootstrap.Carousel.getInstance(carousel);
+  carouselInstance.next();
+}, 2000);
+
+setInterval(function () {
+  let carousel = document.querySelector('#carouselExampleControls_ink-house');
+  let carouselInstance = bootstrap.Carousel.getInstance(carousel);
+  carouselInstance.next();
+}, 2000);
+
 document.querySelectorAll('[data-bs-toggle="tooltip"]')
   .forEach(tooltip => {
     new bootstrap.Tooltip(tooltip)
