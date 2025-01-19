@@ -71,6 +71,12 @@ setInterval(function () {
   carouselInstance.next();
 }, 2000);
 
+setInterval(function () {
+  let carousel = document.querySelector('#carouselExampleControls_himo');
+  let carouselInstance = bootstrap.Carousel.getInstance(carousel);
+  carouselInstance.next();
+}, 2000);
+
 document.querySelectorAll('[data-bs-toggle="tooltip"]')
   .forEach(tooltip => {
     new bootstrap.Tooltip(tooltip)
