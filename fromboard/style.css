@@ -935,7 +935,7 @@ body .pswp .pswp__container {
     }
 
     .request-inner {
-        padding: 20px;
+        padding: 20px 35px 20px;
     }
 
     .request-title {
@@ -1131,11 +1131,11 @@ body .pswp .pswp__container {
     }
 
     .request-form-input {
-        width: 80%;
+        width: 100%;
     }
 
     .request-form-submit {
-        width: 80%;
+        width: 100%;
     }
 }
 
