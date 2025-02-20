@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./photoswipe.css">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src='https://www.google.com/recaptcha/api.js'></script>
+    <script defer src="./scripts.js" type="module"></script>
+    <title>FromBoard Delivery</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-top">
+                    <a class="header-top-logo" href="#">
+                        <img class="header-top-logo-image" src="./images/header-top-logo-image.svg"
+                            alt="FromBoard Delivery Logo" width="305" height="74" loading="lazy">
+                    </a>
+                    <div class="header-top-right">
+                        <div class="header-top-right-info">
+                            <p class="header-top-right-info-text">Доставляем товары из-за границы в Россию</p>
+                            <p class="header-top-right-info-text">Стоимость от 550 рублей за заказ</p>
+                            <p class="header-top-right-info-text">1$ = 93₽ | 1€ = 99₽ | 1¥ = 13₽</p>
+                        </div>
+                        <div class="header-top-right-telephone">
+                            <a class="header-top-right-telephone-link" href="tel:+78005553535">+7 (800) 555 35-35</a>
+                            <p class="header-top-right-telephone-text">Звонок по России бесплатный</p>
+                        </div>
+                        <button class="header-top-right-burger"></button>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-bottom-menu">
+                        <ul class="header-bottom-menu-list">
+                            <li class="header-bottom-menu-item">
+                                <a class="header-bottom-menu-link" href="#calc">Калькулятор</a>
+                            </li>
+                            <li class="header-bottom-menu-item">
+                                <a class="header-bottom-menu-link" href="#advantages">О Нас</a>
+                            </li>
+                            <li class="header-bottom-menu-item">
+                                <a class="header-bottom-menu-link" href="#guarantees">Гарантии</a>
+                            </li>
+                            <li class="header-bottom-menu-item">
+                                <a class="header-bottom-menu-link" href="#reviews">Отзывы</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="header-bottom-link" href="#request">Оставить Заявку</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="block">
+        <div class="anchor-crutch" id="calc"></div>
+    </div>
+    <main class="content">
+        <h1 class="visually-hidden">FromBoard Delivery – Доставляем товары из-за границы в Россию</h1>
+        <section class="banner">
+            <h2 class="visually-hidden">FromBoard Delivery Стартовый Баннер с Калькулятором Доставки</h2>
+            <div class="container">
+                <div class="banner-inner">
+                    <div class="banner-info">
+                        <h3 class="banner-info-title">Беспроблемная доставка покупок из США, Европы и Азии</h3>
+                        <p class="banner-info-text">Сэкономьте на покупках и наслаждайтесь мировыми брендами — наш
+                            сервис позволяет вам легко и удобно заказывать товары со всего мира и получать их в России.
+                        </p>
+                        <img class="banner-info-image" src="./images/banner-info-image.png"
+                            alt="Фото в Офисе FromBoard Delivery" width="756" height="352" loading="lazy">
+                    </div>
+                    <div class="banner-calc">
+                        <h3 class="banner-calc-title">Калькулятор Доставки</h3>
+                        <p class="banner-calc-text">Посчитайте, сколько будет стоить перевозка покупки из-за рубежа</p>
+                        <form class="banner-calc-form uniForm uniFormJS1" action="#" method="GET">
+                            <label class="banner-calc-form-label visually-hidden" for="name">Имя</label><input
+                                class="banner-calc-form-input banner-calc-form-input-name" id="name" name="Имя"
+                                type="text" placeholder="Имя" required>
+                            <label class="banner-calc-form-label visually-hidden" for="email">Почта</label><input
+                                class="banner-calc-form-input" id="email" name="Почта" type="email" placeholder="Почта"
+                                inputmode="email" required>
+                            <label class="banner-calc-form-label visually-hidden" for="telephone">Телефон</label><input
+                                class="banner-calc-form-input telephone" id="telephone" name="Телефон" type="tel"
+                                placeholder="Телефон" inputmode="tel" required>
+                            <label class="banner-calc-form-label visually-hidden" for="volume">Общий Объём,
+                                м<sup>3</sup></label><input class="banner-calc-form-input" id="volume"
+                                name="Общий&nbsp;Объём,&nbsp;м3" type="number" placeholder="Общий Объём, м&sup3"
+                                inputmode="decimal" required>
+                            <label class="banner-calc-form-label visually-hidden" for="weight">Вес, кг</label><input
+                                class="banner-calc-form-input" id="weight" name="Вес,&nbsp;кг" type="number"
+                                placeholder="Вес, кг" inputmode="decimal" required>
+                            <label class="banner-calc-form-label visually-hidden" for="from-country">Страна
+                                Покупки</label><input class="banner-calc-form-input" id="from-country"
+                                name="Страна&nbsp;Покупки" type="text" placeholder="Страна Покупки" spellcheck="true"
+                                required>
+                            <label class="banner-calc-form-label visually-hidden" for="from-city">Город
+                                Покупки</label><input class="banner-calc-form-input" id="from-city"
+                                name="Город&nbsp;Покупки" type="text" placeholder="Город Покупки" spellcheck="true"
+                                required>
+                            <label class="banner-calc-form-label visually-hidden" for="to-area">Область
+                                Доставки</label><input class="banner-calc-form-input" id="to-area"
+                                name="Область&nbsp;Доставки" type="text" placeholder="Область Доставки"
+                                spellcheck="true" required>
+                            <label class="banner-calc-form-label visually-hidden" for="to-city">Город
+                                Доставки</label><input class="banner-calc-form-input" id="to-city"
+                                name="Город&nbsp;Доставки" type="text" placeholder="Город Доставки" spellcheck="true"
+                                required>
+                            <button class="banner-calc-form-submit submit-button" type="submit">Заказать Расчёт</button>
+                            <input type="hidden" name="project_name" value="Сообщение FromBoard Delivery">
+                            <input type="hidden" name="admin_email" value="nik.holmogorov@yandex.ru">
+                            <input type="hidden" name="form_subject" value="Заявка на Расчёт Доставки">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="advantages"></div>
+        </div>
+        <section class="advantages">
+            <h2 class="visually-hidden">Приемущества FromBoard Delivery</h2>
+            <div class="container">
+                <h3 class="advantages-title">Наши Преимущества</h3>
+                <div class="advantages-inner">
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image1.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Растаможка Груза</h4>
+                            <p class="advantages-card-info-text">Мы берём на себя все формальности и бумажную волокиту,
+                                связанную с растаможкой груза</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image2.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Надёжная Упаковка</h4>
+                            <p class="advantages-card-info-text">Все товары упаковываются нашими специалистами с особым
+                                вниманием к деталям, гарантируя, что они дойдут в безопасности и в отличном состоянии
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image3.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Быстро и Выгодно</h4>
+                            <p class="advantages-card-info-text">Мы предлагаем быструю и выгодную доставку, чтобы вы
+                                могли насладиться покупками как можно скорее</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image4.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Удобный Сервис</h4>
+                            <p class="advantages-card-info-text">Стремимся сделать процесс доставки максимально удобным
+                                для вас, чтобы опыт остался приятным и беззаботным</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image5.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Прозрачность Работы</h4>
+                            <p class="advantages-card-info-text">Мы предоставляем полный контроль над каждым этапом
+                                доставки, от момента заказа до момента прибытия заказа</p>
+                        </div>
+                    </div>
+                    <div class="advantages-card">
+                        <img class="advantages-card-image" src="./images/advantages-card-image6.svg"
+                            alt="Картинка Оформления Преимущества" width="136" height="136" loading="lazy">
+                        <div class="advantages-card-info">
+                            <h4 class="advantages-card-info-title">Страхование Груза</h4>
+                            <p class="advantages-card-info-text">Наше страхование обеспечивает полную защиту и покрытие
+                                почти все неприятные и неожиданные ситуации</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="guarantees"></div>
+        </div>
+        <section class="guarantees">
+            <h2 class="visually-hidden">Гарантии Качества FromBoard Delivery</h2>
+            <div class="container">
+                <h3 class="guarantees-title">Гарантии Качества</h3>
+                <p class="guarantees-text">Наши гарантии качества включают в себя полный спектр документов, необходимых
+                    для ввоза и вывоза товаров, а также для успешного бизнеса на мировом рынке.
+                    Мы предоставляем вам надёжность и уверенность.</p>
+                <div class="guarantees-inner">
+                    <div class="guarantees-card">
+                        <a class="guarantees-card-link" data-pswp-width="300" data-pswp-height="375"
+                            href="./images/guarantees-card-image1.jpg">
+                            <img class="guarantees-card-image" src="./images/guarantees-card-image1.jpg"
+                                alt="Свидетельство Регистрации в РФ" width="300" height="375" loading="lazy">
+                        </a>
+                        <h4 class="guarantees-card-text">Свидетельство о Регистрации в РФ</h4>
+                    </div>
+                    <div class="guarantees-card">
+                        <a class="guarantees-card-link" data-pswp-width="300" data-pswp-height="375"
+                            data-pswp-width="300" data-pswp-height="375" href="./images/guarantees-card-image2.jpg">
+                            <img class="guarantees-card-image" src="./images/guarantees-card-image2.jpg"
+                                alt="Свидетельство Регистрации в США" width="300" height="375" loading="lazy"> </a>
+                        <h4 class="guarantees-card-text">Свидетельство о Регистрации в США</h4>
+                    </div>
+                    <div class="guarantees-card">
+                        <a class="guarantees-card-link" data-pswp-width="300" data-pswp-height="375"
+                            href="./images/guarantees-card-image3.jpg">
+                            <img class="guarantees-card-image" src="./images/guarantees-card-image3.jpg"
+                                alt="Свидетельство Регистрации в Китае" width="300" height="375" loading="lazy">
+                        </a>
+                        <h4 class="guarantees-card-text">Свидетельство о Регистрации в Китае</h4>
+                    </div>
+                    <div class="guarantees-card">
+                        <a class="guarantees-card-link" data-pswp-width="300" data-pswp-height="375"
+                            href="./images/guarantees-card-image4.jpg">
+                            <img class="guarantees-card-image" src="./images/guarantees-card-image4.jpg"
+                                alt="Свидетельство Регистрации в Великобритании" width="300" height="375"
+                                loading="lazy"></a>
+                        <h4 class="guarantees-card-text">Свидетельство о Регистрации в Великобритании</h4>
+                    </div>
+                </div>
+                <a class="guarantees-link" href="https://gosuslugi.ru" target="_blank">Показать Больше Документов</a>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="reviews"></div>
+        </div>
+        <section class="reviews">
+            <h2 class="visually-hidden">Отзывы о FromBoard Delivery</h2>
+            <div class="container">
+                <h3 class="reviews-title">Отзывы</h3>
+                <div class="reviews-inner">
+                    <div class="reviews-swiper-button-prev">
+                        <svg class="reviews-swiper-button-prev-svg" width="60" height="60" viewBox="0 0 60 60"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M41.13 27.87C41.4031 28.1553 41.6172 28.4917 41.76 28.86C42.0601 29.5904 42.0601 30.4096 41.76 31.14C41.6172 31.5082 41.4031 31.8447 41.13 32.13L32.13 41.13C31.5651 41.6949 30.7989 42.0123 30 42.0123C29.2011 42.0123 28.4349 41.6949 27.87 41.13C27.3051 40.5651 26.9877 39.7989 26.9877 39C26.9877 38.2011 27.3051 37.4349 27.87 36.87L31.77 33H21C20.2044 33 19.4413 32.6839 18.8787 32.1213C18.3161 31.5587 18 30.7956 18 30C18 29.2043 18.3161 28.4413 18.8787 27.8787C19.4413 27.3161 20.2044 27 21 27H31.77L27.87 23.13C27.5888 22.8511 27.3656 22.5193 27.2133 22.1537C27.061 21.7881 26.9826 21.396 26.9826 21C26.9826 20.604 27.061 20.2118 27.2133 19.8463C27.3656 19.4807 27.5888 19.1489 27.87 18.87C28.1489 18.5888 28.4807 18.3656 28.8463 18.2133C29.2119 18.061 29.604 17.9826 30 17.9826C30.396 17.9826 30.7882 18.061 31.1537 18.2133C31.5193 18.3656 31.8511 18.5888 32.13 18.87L41.13 27.87ZM60 30C60 35.9334 58.2405 41.7336 54.9441 46.6671C51.6476 51.6006 46.9623 55.4457 41.4805 57.7164C35.9987 59.987 29.9667 60.5811 24.1473 59.4235C18.3279 58.266 12.9824 55.4088 8.78681 51.2132C4.59124 47.0176 1.73401 41.6721 0.576458 35.8527C-0.581097 30.0333 0.0130005 24.0013 2.28363 18.5195C4.55426 13.0377 8.39944 8.35235 13.3329 5.05591C18.2664 1.75947 24.0666 0 30 0C33.9397 0 37.8407 0.775973 41.4805 2.28361C45.1203 3.79125 48.4274 6.00104 51.2132 8.78679C56.8393 14.4129 60 22.0435 60 30ZM6.00002 30C6.00002 34.7467 7.40759 39.3869 10.0447 43.3337C12.6819 47.2804 16.4302 50.3566 20.8156 52.1731C25.201 53.9896 30.0266 54.4649 34.6822 53.5388C39.3377 52.6128 43.6141 50.327 46.9706 46.9706C50.327 43.6141 52.6128 39.3377 53.5388 34.6822C54.4649 30.0266 53.9896 25.201 52.1731 20.8156C50.3566 16.4302 47.2805 12.6819 43.3337 10.0447C39.3869 7.40757 34.7468 6 30 6C23.6348 6 17.5303 8.52856 13.0294 13.0294C8.52858 17.5303 6.00002 23.6348 6.00002 30Z"
+                                fill="#8B5CF6" />
+                        </svg>
+                    </div>
+                    <div class="reviews-swiper-button-next">
+                        <svg class="reviews-swiper-button-next-svg" width="60" height="60" viewBox="0 0 60 60"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M41.13 27.87C41.4031 28.1553 41.6172 28.4917 41.76 28.86C42.0601 29.5904 42.0601 30.4096 41.76 31.14C41.6172 31.5082 41.4031 31.8447 41.13 32.13L32.13 41.13C31.5651 41.6949 30.7989 42.0123 30 42.0123C29.2011 42.0123 28.4349 41.6949 27.87 41.13C27.3051 40.5651 26.9877 39.7989 26.9877 39C26.9877 38.2011 27.3051 37.4349 27.87 36.87L31.77 33H21C20.2044 33 19.4413 32.6839 18.8787 32.1213C18.3161 31.5587 18 30.7956 18 30C18 29.2043 18.3161 28.4413 18.8787 27.8787C19.4413 27.3161 20.2044 27 21 27H31.77L27.87 23.13C27.5888 22.8511 27.3656 22.5193 27.2133 22.1537C27.061 21.7881 26.9826 21.396 26.9826 21C26.9826 20.604 27.061 20.2118 27.2133 19.8463C27.3656 19.4807 27.5888 19.1489 27.87 18.87C28.1489 18.5888 28.4807 18.3656 28.8463 18.2133C29.2119 18.061 29.604 17.9826 30 17.9826C30.396 17.9826 30.7882 18.061 31.1537 18.2133C31.5193 18.3656 31.8511 18.5888 32.13 18.87L41.13 27.87ZM60 30C60 35.9334 58.2405 41.7336 54.9441 46.6671C51.6476 51.6006 46.9623 55.4457 41.4805 57.7164C35.9987 59.987 29.9667 60.5811 24.1473 59.4235C18.3279 58.266 12.9824 55.4088 8.78681 51.2132C4.59124 47.0176 1.73401 41.6721 0.576458 35.8527C-0.581097 30.0333 0.0130005 24.0013 2.28363 18.5195C4.55426 13.0377 8.39944 8.35235 13.3329 5.05591C18.2664 1.75947 24.0666 0 30 0C33.9397 0 37.8407 0.775973 41.4805 2.28361C45.1203 3.79125 48.4274 6.00104 51.2132 8.78679C56.8393 14.4129 60 22.0435 60 30ZM6.00002 30C6.00002 34.7467 7.40759 39.3869 10.0447 43.3337C12.6819 47.2804 16.4302 50.3566 20.8156 52.1731C25.201 53.9896 30.0266 54.4649 34.6822 53.5388C39.3377 52.6128 43.6141 50.327 46.9706 46.9706C50.327 43.6141 52.6128 39.3377 53.5388 34.6822C54.4649 30.0266 53.9896 25.201 52.1731 20.8156C50.3566 16.4302 47.2805 12.6819 43.3337 10.0447C39.3869 7.40757 34.7468 6 30 6C23.6348 6 17.5303 8.52856 13.0294 13.0294C8.52858 17.5303 6.00002 23.6348 6.00002 30Z"
+                                fill="#8B5CF6" />
+                        </svg>
+                    </div>
+                    <div class="reviews-swiper swiper">
+                        <div class="reviews-swiper-wrapper swiper-wrapper">
+                            <div class="reviews-swiper-slide swiper-slide">
+                                <p class="reviews-swiper-slide-text">Я уже несколько лет заказываю дизайнерскую одежду
+                                    из Франции через ваш сервис, и он никогда меня не подводил. Важно иметь надежную
+                                    компанию, которая позаботится о вашем заказе и предоставит все необходимые документы
+                                    для ввоза в Россию.</p>
+                                <p class="reviews-swiper-slide-subtext">Ольга</p>
+                            </div>
+                            <div class="reviews-swiper-slide swiper-slide">
+                                <p class="reviews-swiper-slide-text">Я заказал редкий антикварный предмет из Японии
+                                    через ваш сервис, и остался впечатлен. Все пришло в отличном состоянии, и ваша
+                                    гарантия качества действительно работает. Спасибо за ваше профессиональное
+                                    обслуживание.</p>
+                                <p class="reviews-swiper-slide-subtext">Дмитрий</p>
+                            </div>
+                            <div class="reviews-swiper-slide swiper-slide">
+                                <p class="reviews-swiper-slide-text">Заказал шикарные часы из Швейцарии, и доставка была
+                                    невероятно быстрой. Ваш сервис делает интернет-шоппинг более доступным и удобным.
+                                </p>
+                                <p class="reviews-swiper-slide-subtext">Игорь</p>
+                            </div>
+                            <div class="reviews-swiper-slide swiper-slide">
+                                <p class="reviews-swiper-slide-text">Я заказала последний iPhone из США через ваш
+                                    сервис, и доставка прошла быстро и без каких‑либо проблем. Гарантии качества и
+                                    надёжная упаковка сделали мой опыт покупки невероятно позитивным.</p>
+                                <p class="reviews-swiper-slide-subtext">Анна</p>
+                            </div>
+                            <div class="reviews-swiper-slide swiper-slide">
+                                <p class="reviews-swiper-slide-text">Ваш сервис действительно изменил мой способ
+                                    покупок. Я больше не переживаю о таможенных вопросах и документах - все у вас в
+                                    порядке. Спасибо за ваше качество и надежность.</p>
+                                <p class="reviews-swiper-slide-subtext">Екатерина</p>
+                            </div>
+                        </div>
+                        <div class="reviews-swiper-pagination swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor-crutch-second" id="request"></div>
+        </div>
+        <section class="request">
+            <h2 class="visually-hidden">Оставьте Заявку в FromBoard Delivery</h2>
+            <div class="container">
+                <div class="request-inner">
+                    <h3 class="request-title">Остались Вопросы?</h3>
+                    <form class="request-form uniForm uniFormJS2" action="#" method="GET">
+                        <label class="request-form-label visually-hidden" for="name">Имя</label><input
+                            class="request-form-input" id="name" name="Имя" type="text" placeholder="Имя" required>
+                        <label class="request-form-label visually-hidden" for="email">Почта</label><input
+                            class="request-form-input" id="email" name="Почта" type="email" placeholder="Почта"
+                            inputmode="email" required>
+                        <label class="request-form-label visually-hidden" for="telephone">Телефон</label><input
+                            class="request-form-input telephone" id="telephone" name="Телефон" type="tel"
+                            placeholder="Телефон" inputmode="tel" required>
+                        <label class="request-form-label visually-hidden" for="topic">Тема Вопроса</label><input
+                            class="request-form-input" id="topic" name="Тема&nbsp;Вопроса" type="text"
+                            placeholder="Тема Вопроса" required>
+                        <label class="request-form-label visually-hidden" for="message">Сообщение</label>
+                        <textarea class="request-form-input request-form-input-message" id="message" name="Сообщение"
+                            rows="5" cols="55" placeholder="Сообщение..." spellcheck="true" required></textarea>
+                        <button class="request-form-submit submit-button" type="submit">Оставить Заявку</button>
+                        <input type="hidden" name="project_name" value="Сообщение FromBoard Delivery">
+                        <input type="hidden" name="admin_email" value="nik.holmogorov@yandex.ru">
+                        <input type="hidden" name="form_subject" value="Сообщение с Вопросом о Доставке">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <a class="footer-left-logo" href="#">
+                        <img class="footer-left-logo-image" src="./images/footer-left-logo-image.svg"
+                            alt="FromBoard Delivery Logo" width="305" height="74" loading="lazy">
+                    </a>
+                    <p class="footer-left-copyrights">© 202S FromBoard Delivery</p>
+                </div>
+                <div class="footer-center">
+                    <ul class="footer-center-list">
+                        <li class="footer-center-link">
+                            <a class="footer-center-link" href="#calc">Калькулятор</a>
+                        </li>
+                        <li class="footer-center-link">
+                            <a class="footer-center-link" href="#advantages">О Нас</a>
+                        </li>
+                        <li class="footer-center-link">
+                            <a class="footer-center-link" href="#guarantees">Гарантии</a>
+                        </li>
+                        <li class="footer-center-link">
+                            <a class="footer-center-link" href="#reviews">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-right-telephone">
+                        <a class="footer-right-telephone-link" href="tel:+78005553535">+7 (800) 555 35-35</a>
+                        <p class="footer-right-telephone-text">Звонок по России бесплатный</p>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-alert">НЕ ЯВЛЯЕТСЯ ПУБЛИЧНОЙ ОФЕРТОЙ. Просим обратить внимание на то, что цены носят
+                информационный и ознакомительный характер, а значит ни в какой мере не являются публичной офертой,
+                которая определена в ст. 437 ГК РФ. Вся информация на сайте может содержать неточности, орфографические
+                и иные ошибки, она не является полной, окончательно и исчерпывающей</p>
+        </div>
+    </footer>
+</body>
+
+</html>
