@@ -94,47 +94,47 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const submitButton1 = document.querySelector('.banner-calc-form-submit');
-const submitButton2 = document.querySelector('.request-form-submit');
-const mailPath = './mail.php'
-document.querySelectorAll('.uniForm').forEach((e) => {
-    e.addEventListener('submit', function (e) {
-        let th = this,
-            params = new FormData(this),
-            request = new XMLHttpRequest()
-        request.open('POST', mailPath, true)
-        request.send(params)
-        request.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                setTimeout(function () { th.reset() }, 1000)
-                submitButton1.textContent = 'Расчёт Успешно Отправлен!';
-                submitButton2.textContent = 'Заявка Успешно Отправлена!';
-                document.querySelector('.banner-calc-form-submit').classList.add('sended');
-                document.querySelector('.request-form-submit').classList.add('sended');
-                setTimeout(function () {
-                    location.reload();
-                }, 3000);
-            }
-        }
-        e.preventDefault()
-    })
-})
-
 // const submitButton1 = document.querySelector('.banner-calc-form-submit');
 // const submitButton2 = document.querySelector('.request-form-submit');
-// document.querySelector('.uniFormJS1').addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     submitButton1.textContent = 'Расчёт Успешно Отправлен!';
-//     document.querySelector('.banner-calc-form-submit').classList.add('sended');
-//     setTimeout(function () {
-//         location.reload();
-//     }, 3000);
-// });
-// document.querySelector('.uniFormJS2').addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     submitButton2.textContent = 'Заявка Успешно Отправлена!';
-//     document.querySelector('.request-form-submit').classList.add('sended');
-//     setTimeout(function () {
-//         location.reload();
-//     }, 3000);
-// });
+// const mailPath = './mail.php'
+// document.querySelectorAll('.uniForm').forEach((e) => {
+//     e.addEventListener('submit', function (e) {
+//         let th = this,
+//             params = new FormData(this),
+//             request = new XMLHttpRequest()
+//         request.open('POST', mailPath, true)
+//         request.send(params)
+//         request.onreadystatechange = function () {
+//             if (this.readyState == 4 && this.status == 200) {
+//                 setTimeout(function () { th.reset() }, 1000)
+//                 submitButton1.textContent = 'Расчёт Успешно Отправлен!';
+//                 submitButton2.textContent = 'Заявка Успешно Отправлена!';
+//                 document.querySelector('.banner-calc-form-submit').classList.add('sended');
+//                 document.querySelector('.request-form-submit').classList.add('sended');
+//                 setTimeout(function () {
+//                     location.reload();
+//                 }, 3000);
+//             }
+//         }
+//         e.preventDefault()
+//     })
+// })
+
+const submitButton1 = document.querySelector('.banner-calc-form-submit');
+const submitButton2 = document.querySelector('.request-form-submit');
+document.querySelector('.uniFormJS1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitButton1.textContent = 'Расчёт Успешно Отправлен!';
+    document.querySelector('.banner-calc-form-submit').classList.add('sended');
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
+});
+document.querySelector('.uniFormJS2').addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitButton2.textContent = 'Заявка Успешно Отправлена!';
+    document.querySelector('.request-form-submit').classList.add('sended');
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
+});
