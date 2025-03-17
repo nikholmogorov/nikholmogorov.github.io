@@ -170,6 +170,10 @@ body {
     aspect-ratio: 258 / 50;
 }
 
+.hero-top-logo-image {
+    color: var(--color-secondary-alternate);
+}
+
 .hero-top-menu-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -587,8 +591,8 @@ body {
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
     max-width: fit-content;
-    -webkit-animation: rotating 10s linear infinite;
-    animation: rotating 10s linear infinite;
+    -webkit-animation: rotating 20s linear infinite;
+    animation: rotating 20s linear infinite;
 }
 
 .services-info {
@@ -815,6 +819,10 @@ body {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     aspect-ratio: 258 / 50;
+}
+
+.footer-logo-image {
+    color: var(--color-light);
 }
 
 .footer-menu-list {
@@ -1341,7 +1349,7 @@ body {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        row-gap: 80px;
+        row-gap: 100px;
     }
 
     .principles-block {
@@ -1365,17 +1373,17 @@ body {
     }
 
     .principles-block-parallax-figure-1 {
-        top: 0;
+        top: -40px;
         left: -100%;
     }
 
     .principles-block-parallax-figure-2 {
-        top: -90%;
-        left: 65%;
+        top: -120px;
+        left: 80%;
     }
 
     .principles-block-parallax-figure-3 {
-        top: 0;
+        top: -40px;
         left: -150%;
     }
 
@@ -1415,15 +1423,8 @@ body {
 
 @media (max-width: 479px) {
     .hero-top {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
         flex-direction: column;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
         justify-content: start;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
         align-items: start;
         row-gap: 10px;
     }
@@ -1480,8 +1481,8 @@ body {
     }
 
     .principles-block-parallax-figure-2 {
-        top: -100%;
-        left: 40%;
+        top: -120px;
+        left: 80%;
     }
 
     .principles-block-parallax-figure-3 {
@@ -1525,13 +1526,6 @@ body {
         -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
-    }
-}
-
-@media (max-width: 417px) {
-    .principles-block-parallax-figure-2 {
-        top: -80%;
-        left: 28%;
     }
 }
 
