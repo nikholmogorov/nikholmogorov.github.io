@@ -48,6 +48,12 @@ setInterval(function () {
 }, 2000);
 
 setInterval(function () {
+  let carousel = document.querySelector('#carouselExampleControls_oxygen');
+  let carouselInstance = bootstrap.Carousel.getInstance(carousel);
+  carouselInstance.next();
+}, 2000);
+
+setInterval(function () {
   let carousel = document.querySelector('#carouselExampleControls_kropp');
   let carouselInstance = bootstrap.Carousel.getInstance(carousel);
   carouselInstance.next();
@@ -120,7 +126,7 @@ setInterval(function () {
 }, 2000);
 
 setInterval(function () {
-  let carousel = document.querySelector('#carouselExampleControls_oxygen');
+  let carousel = document.querySelector('#carouselExampleControls_positivus');
   let carouselInstance = bootstrap.Carousel.getInstance(carousel);
   carouselInstance.next();
 }, 2000);
