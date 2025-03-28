@@ -56,7 +56,7 @@ function init() {
         },
         {
             iconLayout: 'default#image',
-            iconImageHref: '../images/location-pin.svg',
+            iconImageHref: './images/location-pin.svg',
             iconImageSize: [40, 40],
             iconImageOffset: [-20, -40],
         }
