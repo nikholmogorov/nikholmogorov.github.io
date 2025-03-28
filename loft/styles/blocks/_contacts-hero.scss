@@ -1,0 +1,25 @@
+.contacts-hero {
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+
+    @include mobile-l {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    &__link {
+        display: flex;
+        column-gap: 5px;
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    &__svg {
+        margin-top: 4px;
+    }
+
+    &__text {
+        font-size: 18px;
+    }
+}

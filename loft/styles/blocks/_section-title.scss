@@ -1,0 +1,30 @@
+.section-title {
+    font-family: $second-family;
+    font-size: 36px;
+    font-weight: 400;
+    color: $color-accent;
+
+    @include tablet {
+        text-align: center;
+    }
+
+    @include mobile-l {
+        font-size: 32px;
+    }
+
+    @include mobile-m {
+        font-size: 26px;
+    }
+
+    @include mobile-s {
+        font-size: 24px;
+    }
+
+    &::-moz-selection {
+        background-color: $color-text;
+    }
+
+    &::selection {
+        background-color: $color-text;
+    }
+}

@@ -1,0 +1,99 @@
+.video {
+    overflow: hidden;
+    padding-bottom: 120px;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+            content: 'IV';
+            position: absolute;
+            top: 0px;
+            left: 95%;
+            opacity: 0.02;
+            z-index: -10;
+            font-size: 400px;
+            font-family: $fourth-family;
+
+            @include desktop-m {
+                left: 80%;
+            }
+
+            @include desktop-s {
+                top: -50px;
+                left: 75%;
+            }
+
+            @include tablet {
+                top: 120px;
+                left: 50%;
+            }
+
+            @include mobile-l {
+                top: -150px;
+                left: 0%;
+            }
+
+            @include mobile-s {
+                left: -10%;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        aspect-ratio: 720 / 650;
+        width: fit-content;
+        height: fit-content;
+
+        @include desktop-s {
+            width: 550px;
+        }
+
+        @include tablet {
+            width: 550px;
+        }
+
+        @include mobile-l {
+            width: 255px;
+        }
+
+        &:hover {
+            transform: scale(1.025);
+        }
+
+        &:hover .video__icon {
+            transform: scale(0.85);
+            transition: $transition-duration ease-out;
+            box-shadow: 0px 0px 50px 5px $color-accent;
+            background-color: #d4c17fb0;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+        transition: $transition-duration ease-out;
+
+        @include mobile-l {
+            aspect-ratio: 1;
+            width: 75px;
+        }
+    }
+}
+
+.tippy-box[data-theme~='golden'] {
+    background-color: $color-main-alternate;
+    color: $color-accent;
+    border: 1px solid $color-accent;
+}
+
+.tippy-box[data-theme~='golden'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: $color-accent;
+}
