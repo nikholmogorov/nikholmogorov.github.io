@@ -615,6 +615,23 @@ a:hover {
 /*  */
 /*  */
 
+@media (min-width: 1500px) {
+    .story-body {
+        justify-content: space-between;
+    }
+
+    .capabilities-top {
+        justify-content: space-between;
+    }
+
+    .subscribe,
+    .footer,
+    .copyrights {
+        width: 1440px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 1300px) {
     .footer-left-center {
         margin-left: 20px;
@@ -690,7 +707,7 @@ a:hover {
         margin-left: 0;
     }
 
-    .footer{
+    .footer {
         padding-inline: 8vw;
     }
 }

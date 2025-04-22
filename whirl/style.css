@@ -841,6 +841,27 @@ a:hover {
 /*  */
 /*  */
 
+@media (min-width: 1400px) {
+
+    .footer-body-right-subscribe-form-button::after {
+        right: 150px;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .footer-body-right-subscribe-form-button::after {
+        right: 190px;
+    }
+}
+
+@media (min-width: 1900px) {
+
+    .footer-body-right-subscribe-form-button::after {
+        right: 380px;
+    }
+}
+
 @media (max-width: 1200px) {
     .options-card:nth-child(2) {
         margin-right: clamp(20px, 3vw, 40px);

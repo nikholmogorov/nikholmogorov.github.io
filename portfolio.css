@@ -291,6 +291,17 @@ h2 {
     padding: 6px 12px !important;
 }
 
+@media screen and (min-width: 1900px) {
+
+    .github_button {
+        margin-left: 22vw;
+    }
+
+    .change_theme_button {
+        margin-left: 38vw;
+    }
+}
+
 @media screen and (max-width: 1270px) {
 
     .change_theme_button {

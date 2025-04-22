@@ -328,6 +328,7 @@
 
 .portfolio__content {
     display: flex;
+    justify-content: center;
     column-gap: 20px;
     padding-bottom: 70px;
 }
@@ -383,12 +384,18 @@
     color: var(--cite-color);
 }
 
+.video__inner {
+    display: flex;
+    justify-content: center;
+}
+
 .video__file {
     cursor: pointer;
 }
 
 .facts__inner {
     display: flex;
+    justify-content: center;
     column-gap: 190px;
     padding: 160px 220px;
 }
@@ -486,6 +493,7 @@
 
 .our-team__row {
     display: flex;
+    justify-content: center;
     column-gap: 30px;
     padding-top: 100px;
 }

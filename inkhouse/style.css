@@ -519,6 +519,7 @@ a:hover {
 .about-team {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .about-team-image-decore {
@@ -649,6 +650,20 @@ a:hover {
 /*  */
 /*  */
 /*  */
+
+@media (min-width: 1500px) {
+    .reproductions-tabs-content {
+        margin-left: 140px;
+    }
+
+    .new-items {
+        margin-left: 220px;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+}
 
 @media (max-width: 1300px) {
     .reproductions-title {
