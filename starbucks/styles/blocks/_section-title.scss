@@ -1,0 +1,33 @@
+.section-title {
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 1;
+    color: $color-text;
+
+    @include mobile-l {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    &__accent {
+        position: relative;
+        background: linear-gradient(223deg, $color-accent-second 0%, $color-accent-first 100%);
+        color: transparent;
+        background-clip: text;
+
+        &::after {
+            content: url('../images/glow.png');
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            z-index: -10;
+            aspect-ratio: 1;
+            width: 300px;
+
+            @include mobile-l {
+                top: -250%;
+                left: -30%;
+            }
+        }
+    }
+}

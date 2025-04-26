@@ -1,0 +1,52 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: $color-main;
+
+    &__inner {
+        @include flex(row, start, center, 90px);
+
+        @include tablet {
+            @include flex(row, space-between, center, 10px);
+        }
+
+        @include mobile-s {
+            @include flex(row, space-between, center, 0px);
+        }
+    }
+
+    &__logo {}
+
+    &__menu {}
+
+    &__menu-list {
+        @include flex(row, start, center, 70px);
+
+        @include mobile-l {
+            @include flex(row, start, center, 5px);
+        }
+
+        @include mobile-s {
+            @include flex(row, start, center, 0px);
+        }
+    }
+
+    &__menu-item {}
+
+    &__menu-link {
+        padding: 10px;
+        color: $color-text-alternate;
+        text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        &:hover {
+            color: $color-accent-second;
+            transition: all 0.2s ease-out;
+        }
+
+        @include mobile-l {
+            padding-inline: 8px;
+            font-size: 14px;
+        }
+    }
+}

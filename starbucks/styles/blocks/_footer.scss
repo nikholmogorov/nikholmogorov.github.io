@@ -1,0 +1,104 @@
+.footer {
+    padding: 40px 0;
+    background-color: $color-main-alternate;
+
+    @include mobile-l {
+        padding: 30px 0;
+    }
+
+    &__inner {}
+
+    &__top {
+        @include flex(row, space-between, start, 25px);
+
+        @include tablet {
+            @include flex(column, start, start, 30px);
+            position: relative;
+        }
+    }
+
+    &__logo {}
+
+    &__menu {
+        @include flex(row, start, start, 80px);
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 300px;
+            row-gap: 30px;
+            margin-left: 10px;
+        }
+
+        @include mobile-l {
+            column-gap: 100px;
+        }
+    }
+
+    &__menu-list {}
+
+    &__menu-link {
+        margin-top: 5px;
+        color: $color-text-alternate;
+        opacity: 0.5;
+
+        &:hover {
+            color: $color-accent-second;
+            opacity: 1;
+        }
+
+        @include mobile-l {
+            font-size: 16px;
+        }
+    }
+
+    &__menu-link--white {
+        color: $color-text;
+        opacity: 1;
+    }
+
+    &__button-to-top {
+        display: block;
+        aspect-ratio: 1;
+        width: 84px;
+        background-image: url('../images/footer__button-to-top.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+
+        &:hover {
+            box-shadow: 0px 0px 10px 10px rgba(35, 114, 73, 0.5) inset;
+        }
+
+        @include tablet {
+            position: absolute;
+            top: 0;
+            right: 25px;
+        }
+
+        @include mobile-l {
+            border-radius: 18px;
+            width: 54px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 80px;
+
+        @include tablet {
+            margin-top: 40px;
+        }
+    }
+
+    &__telephone {
+        font-weight: 600;
+        font-size: 26px;
+        background: linear-gradient(223deg, $color-accent-second 0%, $color-accent-first 100%);
+        color: transparent;
+        background-clip: text;
+
+        @include mobile-l {
+            font-size: 16px;
+        }
+    }
+}

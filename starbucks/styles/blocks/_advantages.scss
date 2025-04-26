@@ -1,0 +1,109 @@
+.advantages {
+    padding-top: 100px;
+
+    @include mobile-l {
+        padding-top: 80px;
+    }
+
+    &__inner {
+        @include flex(row, start, center, 120px);
+        position: relative;
+        margin: 0 auto;
+        padding: 40px;
+        width: fit-content;
+        border-radius: 45px;
+        background-color: $color-text;
+
+        &:hover::after {
+            transform: scale(1.25);
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+        }
+
+        @include tablet {
+            @include flex(row, start, center, 0px);
+            padding: 30px;
+        }
+
+        @include mobile-l {
+            @include flex(column, start, center, 20px);
+            border-radius: 30px;
+        }
+
+        &::after {
+            content: '';
+            background-image: url('../images/decore__sticker.png');
+            background-size: cover;
+            position: absolute;
+            top: -90px;
+            left: -90px;
+            aspect-ratio: 1;
+            width: 200px;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+
+            @include tablet {
+                top: -60px;
+                left: -60px;
+                aspect-ratio: 1;
+                width: 150px;
+            }
+
+            @include mobile-l {
+                top: -50px;
+                left: -50px;
+                width: 120px;
+            }
+        }
+    }
+
+    &__card {
+        @include flex(column, start, center, 5px);
+        max-width: 230px;
+
+        @include tablet {
+            width: 200px;
+        }
+
+        @include mobile-l {
+            @include flex(column, start, center, 0px);
+            max-width: 150px;
+        }
+    }
+
+    &__card-image {
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        @include tablet {
+            aspect-ratio: 1;
+            width: 150px;
+        }
+
+        @include mobile-l {
+            width: 200px;
+        }
+    }
+
+    &__card-title {
+        font-weight: 600;
+        font-size: 32px;
+        color: $color-main;
+
+        @include mobile-l {
+            font-size: 18px;
+        }
+    }
+
+    &__card-text {
+        text-align: center;
+        color: $color-main;
+        opacity: 0.9;
+        text-wrap: balance;
+
+        @include mobile-l {
+            font-size: 12px;
+        }
+    }
+}

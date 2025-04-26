@@ -1,0 +1,37 @@
+.statistic {
+    @include flex(row, start, center, 50px);
+
+    @include mobile-l {
+        @include flex(row, space-between, center, 30px);
+    }
+
+    &__card {
+        width: 120px;
+
+        @include mobile-l {
+            width: 80px;
+        }
+    }
+
+    &__number {
+        font-size: 60px;
+        line-height: 1;
+        color: $color-text;
+
+        @include mobile-l {
+            font-size: 40px;
+        }
+    }
+
+    &__number-plus {
+        background: linear-gradient(223deg, $color-accent-second 0%, $color-accent-first 100%);
+        color: transparent;
+        background-clip: text;
+    }
+
+    &__category {
+        @include mobile-l {
+            font-size: 12px;
+        }
+    }
+}
