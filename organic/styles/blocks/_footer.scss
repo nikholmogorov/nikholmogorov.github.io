@@ -1,0 +1,104 @@
+.footer {
+    background-color: $color-main;
+    align-self: center;
+
+    &__inner {
+        @include flex(row, space-between, end, 10px);
+        padding: 100px 200px 100px 100px;
+
+        @include desktop-m {
+            padding: 50px 120px 50px 80px;
+        }
+
+        @include desktop-s {
+            padding: 50px 120px 50px 30px;
+        }
+
+        @include mobile-l {
+            @include flex(column, start, center, 50px);
+            padding: 50px;
+        }
+
+         @include mobile-m {
+            padding: 50px 20px 50px;
+        }
+    }
+
+    &__socials-list {
+        @include flex(row, start, center, 10px);
+    }
+
+    &__socials-item {}
+
+    &__socials-link {
+        padding: 6px;
+        border-radius: 50%;
+        border: 2px solid $color-text;
+    }
+
+    &__socials-link:hover {
+        border: 2px solid $color-blue;
+    }
+
+    &__socials-link:active {
+        border: 2px solid $color-blue-alternate;
+    }
+
+    &__socials-link:hover .footer__socials-image path {
+        fill: $color-blue;
+    }
+
+    &__socials-link:active .footer__socials-image path {
+        fill: $color-blue-alternate;
+    }
+
+    &__socials-image {}
+
+    &__socials-image path {
+        fill: $color-text;
+    }
+
+    &__form {}
+
+    &__logo {
+        position: relative;
+
+        &::after {
+            content: '© 202S Organic Juicy Co. All Rights Reserved.';
+            position: absolute;
+            left: -120px;
+            bottom: -70px;
+            width: 300px;
+            font-size: 14px;
+            color: #6a6a6a;
+            cursor: default;
+
+            @include desktop-m {
+                bottom: -50px;
+            }
+
+            @include tablet {
+                left: -350px;
+            }
+
+            @include mobile-l {
+                bottom: -30px;
+                left: -100px;
+            }
+        }
+    }
+
+    &__logo:hover .footer__logo-image path {
+        fill: $color-blue;
+    }
+
+    &__logo:active .footer__logo-image path {
+        fill: $color-blue-alternate;
+    }
+
+    &__logo-image {}
+
+    &__logo-image path {
+        fill: $color-text;
+    }
+}
