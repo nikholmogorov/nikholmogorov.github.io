@@ -1,0 +1,11 @@
+.section-title {
+    font-size: 36px;
+
+    @include tablet {
+        font-size: 30px;
+    }
+
+    @include mobile-s {
+        font-size: 22px;
+    }
+}

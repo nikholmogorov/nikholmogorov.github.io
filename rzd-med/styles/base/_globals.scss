@@ -1,0 +1,110 @@
+::-moz-selection {
+    background-color: $color-accent;
+    color: $color-dark;
+}
+
+::selection {
+    background-color: $color-accent;
+    color: $color-dark;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+}
+
+*:focus-visible {
+    outline: 2px solid $color-dark;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+* {
+    transition: $transition-duration ease-out;
+}
+
+*:hover {
+    transition: $transition-duration ease-out;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    font-size: 24px;
+    color: #ffffff;
+    background: #ffffff;
+    padding: 10px 10px 5px;
+    border: 3px solid $color-accent;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    z-index: 1000;
+
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.back-to-top:hover {
+    opacity: 0.8;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+
+    @include mobile-l {
+        top: -50px;
+    }
+}
+
+.anchor-crutch {
+    position: absolute;
+    visibility: hidden;
+    top: -80px;
+    left: 0;
+
+    @include mobile-l {
+        top: -50px;
+    }
+}
+
+body {
+    font-family: $first-family;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1170px;
+    padding-inline: 10px;
+    margin: 0 auto;
+}

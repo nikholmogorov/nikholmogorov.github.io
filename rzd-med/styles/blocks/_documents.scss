@@ -1,0 +1,95 @@
+.documents {
+    &__inner {
+        position: relative;
+        padding: 40px 0 60px;
+
+        @include tablet {
+            padding: 20px 0 40px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 9px;
+            border: solid $color-accent;
+            border-width: 3px 0;
+        }
+    }
+
+    &__title {}
+
+    &__link {
+        @include flex(row, start, start, 10px);
+        margin-top: 20px;
+
+        &:nth-child(2)>.documents__text::after {
+            content: '18 Кб';
+        }
+
+        &:nth-child(3)>.documents__text::after {
+            content: '20 Кб';
+        }
+
+        &:nth-child(4)>.documents__text::after {
+            content: '17 Кб';
+        }
+
+        &:nth-child(5)>.documents__text::after {
+            content: '74 Кб';
+        }
+
+        &:nth-child(6)>.documents__text::after {
+            content: '41 Кб';
+        }
+
+        &:nth-child(4)>.documents__image {
+            @include mobile-l {
+                margin-top: 10px;
+            }
+        }
+
+        &:nth-child(6)>.documents__image {
+            @include mobile-l {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__link:nth-child(4) {
+        @include mobile-l {
+            margin-top: 10px;
+        }
+    }
+
+    &__link:nth-child(6) {
+        @include mobile-l {
+            margin-top: 10px;
+        }
+    }
+
+    &__image {
+        flex-shrink: 0;
+        aspect-ratio: 35 / 45;
+        width: 35px;
+    }
+
+    &__text {
+        position: relative;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            color: $color-gray-alternate;
+        }
+    }
+}
