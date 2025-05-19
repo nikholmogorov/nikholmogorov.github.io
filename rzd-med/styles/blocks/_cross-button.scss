@@ -7,7 +7,11 @@
     border: none;
 
     &--position {
-        margin: 5px 6px 0 0;
+        margin: 7px 7px 0 0;
+
+        @include mobile-m {
+            margin: 5px 6px 0 0;
+        }
     }
 
     &::before,

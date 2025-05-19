@@ -11,8 +11,10 @@
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Образование «РЖД-Медицина»">
-    <meta property="og:title" content="Сектор дополнительного профессионального образования ЧУЗ «КБ «РЖД-Медицина» г. Нижний Новгород»">
-    <meta property="og:description" content="Дополнительное профессиональное образование в крупнейшем лечебно‑профилактическом учреждении, оказывающем полный комплекс медицинских услуг высочайшего качества.">
+    <meta property="og:title"
+        content="Сектор дополнительного профессионального образования ЧУЗ «КБ «РЖД-Медицина» г. Нижний Новгород»">
+    <meta property="og:description"
+        content="Дополнительное профессиональное образование в крупнейшем лечебно‑профилактическом учреждении, оказывающем полный комплекс медицинских услуг высочайшего качества.">
     <meta property="og:url" content="https://nikholmogorov.github.io/rzd-med">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:image" content="https://nikholmogorov.github.io/rzd-med/images/site-thumbnail.webp">
@@ -21,8 +23,7 @@
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/styles.css">
-    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=3fdf7e9b-458d-4371-884c-90c9c217a5ef&lang=ru_RU"
-        type="text/javascript"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=3fdf7e9b-458d-4371-884c-90c9c217a5ef&lang=ru_RU"></script>
     <script src="./scripts/scripts.js" type="module"></script>
     <title>Образование «РЖД-Медицина»</title>
 </head>
@@ -90,7 +91,7 @@
             Нижний Новгород»</h1>
         <a class="back-to-top" href="#top" id="back-to-top" title="Наверх">
             <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Arrow / Arrow_Up_LG">
+                <g>
                     <path id="Vector" d="M12 3L7 8M12 3L17 8M12 3V21" stroke="#ff4123" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" />
                 </g>
@@ -107,7 +108,7 @@
                             Получите дополнительное профессиональное образование в крупнейшем лечебно‑профилактическом
                             учреждении, оказывающем полный комплекс медицинских услуг высочайшего качества.
                         </p>
-                        <a class="hero__link button button--big" href="#">Посмотреть программы обучения</a>
+                        <a class="hero__link button button--big" href="#education">Посмотреть программы обучения</a>
                     </div>
                     <div class="hero__image-wrapper">
                         <img class="hero__image" src="./images/hero__image.webp"
@@ -239,56 +240,85 @@
                     <p class="education__text">Прейскурант платных образовательных услуг на 2025‑2026 учебный год.</p>
                     <ul class="education__table table-second">
                         <li class="table-second__cell table-second__cell--header">№</li>
-                        <li class="table-second__cell table-second__cell--header">Наименование дополнительной
-                            профессиональной программы врачей</li>
-                        <li class="table-second__cell table-second__cell--header">Объем программы
-                            (ч.)</li>
+                        <li class="table-second__cell table-second__cell--header">Наименование программы</li>
+                        <li class="table-second__cell table-second__cell--header">Объём программы (ч.)</li>
                         <li class="table-second__cell table-second__cell--header">Стоимость
                             программы (вкл.
                             НДС), руб.</li>
+                        <li class="table-second__cell table-second__cell--header">Учебный план</li>
                         <li class="table-second__cell">1</li>
                         <li class="table-second__cell">«Актуальные проблемы урогинекологии:
                             недержание мочи у женщин»</li>
                         <li class="table-second__cell">18</li>
                         <li class="table-second__cell">10 000</li>
+                        <li class="table-second__cell">
+                            <a class="table-second__link" href="./docs/Учебный_план_Недержание_мочи_у_женщин.pdf"
+                                target="_blank">Скачать</a>
+                        </li>
                         <li class="table-second__cell">2</li>
                         <li class="table-second__cell">«Эндоурологические вмешательства на
                             верхних мочевых путях»</li>
                         <li class="table-second__cell">18</li>
                         <li class="table-second__cell">10 000</li>
+                        <li class="table-second__cell">
+                            <a class="table-second__link"
+                                href="./docs/Учебный_план_Эндоурологические_вмешательства_на_верхних_мочевых_путях.pdf"
+                                target="_blank">Скачать</a>
+                        </li>
                         <li class="table-second__cell">3</li>
                         <li class="table-second__cell">«Эндохирургия нижних мочевых путей»</li>
                         <li class="table-second__cell">18</li>
                         <li class="table-second__cell">10 000</li>
+                        <li class="table-second__cell">
+                            <a class="table-second__link"
+                                href="./docs/Учебный_план_Эндохирургия_нижних_мочевых_путей.pdf"
+                                target="_blank">Скачать</a>
+                        </li>
                         <li class="table-second__cell">4</li>
                         <li class="table-second__cell">«Эндоскопические методы лечения при
                             заболеваниях нижних мочевых путей»</li>
                         <li class="table-second__cell">36</li>
                         <li class="table-second__cell">40 000</li>
+                        <li class="table-second__cell">
+                            <a class="table-second__link"
+                                href="./docs/Учебный_план_Эндоскопические_методы_лечения_при_заболеваниях.pdf"
+                                target="_blank">Скачать</a>
+                        </li>
                     </ul>
                     <ul class="education__table-mobile table-second-mobile">
                         <li class="table-second-mobile__cell">
                             <p class="table-second-mobile__text">«Актуальные проблемы урогинекологии: недержание мочи у
                                 женщин»</p>
-                            <p class="table-second-mobile__text">Объем программы – 18 ч.</p>
+                            <p class="table-second-mobile__text">Объём программы – 18 ч.</p>
                             <p class="table-second-mobile__text">Стоимость программы (вкл. НДС) ‑ 10 000₽</p>
+                            <a class="table-second-mobile__link" href="./docs/Учебный_план_Недержание_мочи_у_женщин.pdf"
+                                target="_blank">Скачать учебный план</a>
                         </li>
                         <li class="table-second-mobile__cell">
                             <p class="table-second-mobile__text">«Эндоурологические вмешательства на верхних мочевых
                                 путях»</p>
-                            <p class="table-second-mobile__text">Объем программы – 18 ч.</p>
+                            <p class="table-second-mobile__text">Объём программы – 18 ч.</p>
                             <p class="table-second-mobile__text">Стоимость программы (вкл. НДС) ‑ 10 000₽</p>
+                            <a class="table-second-mobile__link"
+                                href="./docs/Учебный_план_Эндоурологические_вмешательства_на_верхних_мочевых_путях.pdf"
+                                target="_blank">Скачать учебный план</a>
                         </li>
                         <li class="table-second-mobile__cell">
                             <p class="table-second-mobile__text">«Эндохирургия нижних мочевых путей»</p>
-                            <p class="table-second-mobile__text">Объем программы – 18 ч.</p>
+                            <p class="table-second-mobile__text">Объём программы – 18 ч.</p>
                             <p class="table-second-mobile__text">Стоимость программы (вкл. НДС) ‑ 10 000₽</p>
+                            <a class="table-second-mobile__link"
+                                href="./docs/Учебный_план_Эндохирургия_нижних_мочевых_путей.pdf" target="_blank">Скачать
+                                учебный план</a>
                         </li>
                         <li class="table-second-mobile__cell">
                             <p class="table-second-mobile__text">«Эндоскопические методы лечения при заболеваниях нижних
                                 мочевых путей»</p>
-                            <p class="table-second-mobile__text">Объем программы – 36 ч.</p>
+                            <p class="table-second-mobile__text">Объём программы – 36 ч.</p>
                             <p class="table-second-mobile__text">Стоимость программы (вкл. НДС) ‑ 40 000₽</p>
+                            <a class="table-second-mobile__link"
+                                href="./docs/Учебный_план_Эндоскопические_методы_лечения_при_заболеваниях.pdf"
+                                target="_blank">Скачать учебный план</a>
                         </li>
                     </ul>
                 </div>
@@ -302,29 +332,29 @@
             <div class="container">
                 <div class="documents__inner">
                     <h3 class="documents__title section-title">Документы</h3>
-                    <a class="documents__link" href="./docs/Бланк для заполнения СОПД.docx" target="_blank">
+                    <a class="documents__link" href="./docs/Бланк_для_заполнения_СОПД.docx" target="_blank">
                         <img class="documents__image" src="./images/file-icon-docx.svg"
                             alt="Декор раздела с документами" width="35" height="35" loading="lazy">
                         <p class="documents__text">Бланк для заполнения СОПД</p>
                     </a>
-                    <a class="documents__link" href="./docs/Бланк заявления на обучение.docx" target="_blank">
+                    <a class="documents__link" href="./docs/Бланк_заявления_на_обучение.docx" target="_blank">
                         <img class="documents__image" src="./images/file-icon-docx.svg"
                             alt="Декор раздела с документами" width="35" height="35" loading="lazy">
                         <p class="documents__text">Бланк заявления на обучение</p>
                     </a>
-                    <a class="documents__link" href="./docs/Перечень документов для заключения договора.docx"
+                    <a class="documents__link" href="./docs/Перечень_документов_для_заключения_договора.docx"
                         target="_blank">
                         <img class="documents__image" src="./images/file-icon-docx.svg"
                             alt="Декор раздела с документами" width="35" height="35" loading="lazy">
                         <p class="documents__text">Перечень документов для заключения договора</p>
                     </a>
-                    <a class="documents__link" href="./docs/Реестровая выписка.pdf" target="_blank">
+                    <a class="documents__link" href="./docs/Реестровая_выписка.pdf" target="_blank">
                         <img class="documents__image" src="./images/file-icon-pdf.svg" alt="Декор раздела с документами"
                             width="35" height="35" loading="lazy">
                         <p class="documents__text">Реестровая выписка</p>
                     </a>
                     <a class="documents__link"
-                        href="./docs/Шаблон договора с физ. лицом (платные образовательные услуги).docx"
+                        href="./docs/Шаблон_договора_с_физ._лицом_(платные_образовательные_услуги).docx"
                         target="_blank">
                         <img class="documents__image" src="./images/file-icon-docx.svg"
                             alt="Декор раздела с документами" width="35" height="35" loading="lazy">
@@ -496,7 +526,7 @@
                 <div class="footer__top">
                     <a class="footer__logo logo" href="#"><svg class="logo__image" xmlns="http://www.w3.org/2000/svg"
                             fill="none" viewBox="0 0 264 38">
-                            <g clip-path="url(#i586293684__a)">
+                            <g clip-path="url(#i586293685__a)">
                                 <path fill="#ff4123"
                                     d="M15.928.496h-4.711c0 6.173 1.556 10.07 1.96 11.116H0v4.711h15.667a21.6 21.6 0 0 0 2.174 2.686s-1.164 1.182-2.174 2.685H0v4.711h13.172c-.405 1.046-1.961 4.95-1.961 11.128h4.711c0-8.799 3.38-13.367 5.496-15.548a24.6 24.6 0 0 0 5.466 2.662c-3.678 2.53-5.567 7.301-5.567 12.886h4.711c0-6.6 2.466-11.128 11.015-11.128l-.006-4.711c-13.38 0-21.109-7.931-21.109-21.198">
                                 </path>
@@ -508,7 +538,7 @@
                                 </path>
                             </g>
                             <defs>
-                                <clipPath id="i586293684__a">
+                                <clipPath id="i586293685__a">
                                     <path fill="#ffffff" d="M0 .477h264v37.06H0z"></path>
                                 </clipPath>
                             </defs>

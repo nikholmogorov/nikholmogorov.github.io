@@ -19,8 +19,6 @@
         }
     }
 
-    &__title {}
-
     &__link {
         @include flex(row, start, start, 10px);
         margin-top: 20px;

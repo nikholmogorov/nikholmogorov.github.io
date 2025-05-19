@@ -19,10 +19,6 @@
         }
     }
 
-    &__title {}
-
-    &__list {}
-
     &__item {
         margin-top: 20px;
         padding: 30px;
@@ -96,5 +92,9 @@
         padding-top: 20px;
         font-size: 16px;
         border-top: 3px solid $color-accent;
+
+        p {
+            font-size: 16px;
+        }
     }
 }

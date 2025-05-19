@@ -8,6 +8,11 @@
     color: $color-dark;
 }
 
+.scrollbar-moz-fallback {
+    scrollbar-color: $color-dark $color-light;
+    scrollbar-width: auto;
+}
+
 ::-webkit-scrollbar {
     background-color: $color-light;
     width: 8px;
@@ -35,17 +40,42 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    right: 15%;
     display: none;
     font-size: 24px;
-    color: #ffffff;
-    background: #ffffff;
-    padding: 10px 10px 5px;
+    color: transparent;
+    background: transparent;
+    padding: 10px 10px 2px;
     border: 3px solid $color-accent;
     border-radius: $border-radius-small;
     cursor: pointer;
     z-index: 1000;
 
-    @include tablet {
+    @media (max-width: 2560px) {
+        right: 600px;
+    }
+
+    @media (max-width: 1920px) {
+        right: 290px;
+    }
+
+    @media (max-width: 1536px) {
+        right: 100px;
+    }
+
+    @media (max-width: 1440px) {
+        right: 50px;
+    }
+
+    @media (max-width: 1366px) {
+        right: 20px;
+    }
+
+    @media (max-width: 1360px) {
+        right: 3px;
+    }
+
+    @media (max-width: 1280px) {
         display: none !important;
     }
 }

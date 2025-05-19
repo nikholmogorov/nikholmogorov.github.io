@@ -1,5 +1,4 @@
 .header {
-
     &--position {
         position: sticky;
         top: 0;
@@ -22,6 +21,10 @@
     &__top {
         @include flex(row, space-between, center, 10px);
         width: 100%;
+
+        @include mobile-l {
+            @include flex(column, center, start, 0);
+        }
     }
 
     &__logo {
@@ -76,8 +79,6 @@
             justify-items: center;
         }
     }
-
-    &__menu-item {}
 
     &__menu-item:nth-child(4) {
         grid-area: c;

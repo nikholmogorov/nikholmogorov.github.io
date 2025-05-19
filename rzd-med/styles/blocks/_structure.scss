@@ -20,8 +20,6 @@
         }
     }
 
-    &__title {}
-
     &__subtitle {
         margin-top: 20px;
     }
@@ -32,14 +30,13 @@
 
     &__link-mail,
     &__link-telephone {
+        font-size: 16px;
         color: $color-accent;
 
         &:hover {
             opacity: 0.8;
         }
     }
-
-    &__link-telephone {}
 
     &__image-wrapper {
         align-self: center;

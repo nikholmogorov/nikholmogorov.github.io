@@ -15,4 +15,16 @@
     &__text+.table-second-mobile__text {
         border-top: 3px solid $color-accent;
     }
+
+    &__link {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border-top: 3px solid $color-accent;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
 }
