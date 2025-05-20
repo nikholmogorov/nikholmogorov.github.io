@@ -7,6 +7,7 @@ function init() {
 	var myPlacemark = new ymaps.Placemark(
 		[56.292927, 43.935190],
 		{
+			// НЕ СТАВИТЬ *{transition:...} В _globals.scss ВМЕСТЕ С ЯНДЕКС КАРТАМИ
 			balloonContent: `
 				<div class="balloon">
 					<div class="balloon__address">Пр. Ленина, 18</div>

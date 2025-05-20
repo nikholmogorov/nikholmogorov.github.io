@@ -28,11 +28,17 @@
     border-radius: 2px;
 }
 
-* {
+a,
+p,
+li,
+h4 {
     transition: $transition-duration ease-out;
 }
 
-*:hover {
+a,
+p,
+li,
+h4:hover {
     transition: $transition-duration ease-out;
 }
 

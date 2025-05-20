@@ -231,6 +231,7 @@ h2 {
 .card-title,
 .card-text {
     color: var(--element-color);
+    text-wrap: pretty;
 }
 
 .btn_restyling {
