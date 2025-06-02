@@ -105,6 +105,8 @@
     }
 
     &__image {
+        aspect-ratio: 239/97;
+        width: 239px;
         border-radius: $border-radius-medium;
     }
 
@@ -119,6 +121,7 @@
 
         .footer__link {
             position: absolute;
+            top: 4px;
             left: 0;
             font-size: 12px;
             color: $color-dark;

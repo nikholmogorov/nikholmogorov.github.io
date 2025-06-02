@@ -23,6 +23,10 @@
         @include flex(row, start, start, 10px);
         margin-top: 20px;
 
+        @include mobile-l {
+            margin-top: 30px;
+        }
+
         &:nth-child(2)>.documents__text::after {
             content: '18 Кб';
         }
@@ -43,6 +47,22 @@
             content: '41 Кб';
         }
 
+
+        &:nth-child(7)>.documents__text::after {
+            content: '99 Кб';
+        }
+
+
+        &:nth-child(8)>.documents__text::after {
+            content: '212 Кб';
+        }
+
+
+        &:nth-child(9)>.documents__text::after {
+            content: '953 Кб';
+        }
+
+
         &:nth-child(4)>.documents__image {
             @include mobile-l {
                 margin-top: 10px;
@@ -54,17 +74,51 @@
                 margin-top: 10px;
             }
         }
+
+        &:nth-child(7)>.documents__image {
+            @include mobile-l {
+                margin-top: 10px;
+            }
+
+            @include mobile-m {
+                margin-top: 20px;
+            }
+        }
+
+        &:nth-child(8)>.documents__image {
+            @include mobile-l {
+                margin-top: 10px;
+            }
+
+            @include mobile-m {
+                margin-top: 20px;
+            }
+        }
+
+        &:nth-child(9)>.documents__image {
+            @media(max-width: 900px) {
+                margin-top: 10px;
+            }
+
+            @include mobile-l {
+                margin-top: 15px;
+            }
+
+            @include mobile-m {
+                margin-top: 30px;
+            }
+        }
     }
 
     &__link:nth-child(4) {
         @include mobile-l {
-            margin-top: 10px;
+            // margin-top: 10px;
         }
     }
 
     &__link:nth-child(6) {
         @include mobile-l {
-            margin-top: 10px;
+            // margin-top: 10px;
         }
     }
 
