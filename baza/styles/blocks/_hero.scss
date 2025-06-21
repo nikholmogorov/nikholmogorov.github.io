@@ -1,0 +1,221 @@
+.hero {
+    &__inner {
+        position: relative;
+        background-image: url('../images/hero-frame.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 650px;
+        user-select: none;
+
+        @include desktop-s {
+            height: 550px;
+        }
+
+        @include tablet-l {
+            margin-top: 40px;
+            height: 450px;
+        }
+
+        @include mobile-l {
+            margin-top: 20px;
+            height: 300px;
+        }
+
+        @include mobile-m {
+            height: 250px;
+        }
+    }
+
+    &__swiper {
+        position: relative;
+        top: 10%;
+        left: 1%;
+        width: 90%;
+        height: 80%;
+
+        @include desktop-s {
+            width: 80%;
+        }
+
+        @include mobile-l {
+            top: 20%;
+            height: 180px;
+        }
+
+        @include mobile-m {
+            height: 150px;
+        }
+    }
+
+    &__swiper-wrapper {}
+
+    &__swiper-slide {
+        @include flex(row, space-around, center, 10px);
+
+        @include mobile-l {
+            @include flex(row, space-between, center, 10px);
+        }
+    }
+
+    &__info {
+        margin-left: 50px;
+        width: 30%;
+
+        @include mobile-l {
+            margin-left: 0;
+            width: 50%;
+        }
+    }
+
+    &__title {
+        font-family: $second-family;
+        font-size: 66px;
+
+        @include tablet-l {
+            font-size: 42px;
+        }
+
+        @include mobile-l {
+            font-size: 26px;
+        }
+
+        @include mobile-m {
+            margin-left: 15px;
+        }
+    }
+
+    &__text {
+        margin-top: 20px;
+        text-wrap: balance;
+
+        @include mobile-l {
+            margin-top: 0;
+        }
+
+        @include mobile-m {
+            display: none;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 150px;
+        height: 70px;
+        margin-top: 20px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../images/want-see-button.png');
+
+        &:hover {
+            background-image: url('../images/want-see-button-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/want-see-button-active.png');
+        }
+
+        @include mobile-l {
+            aspect-ratio: 150 / 70;
+            height: 40px;
+            margin-top: 0;
+        }
+    }
+
+    &__image {
+        width: 500px;
+        height: 500px;
+
+        @include desktop-s {
+            width: 400px;
+            height: 400px;
+        }
+
+        @include tablet-l {
+            width: 300px;
+            height: 300px;
+        }
+
+        @include mobile-l {
+            width: 150px;
+            height: 150px;
+        }
+
+        @include mobile-s {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    &__swiper-button-prev {
+        width: 50px;
+        height: 50px;
+        background-image: url('../images/arrow-left.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: 10px;
+
+        &:hover {
+            background-image: url('../images/arrow-left-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/arrow-left-active.png');
+        }
+
+        @include tablet-l {
+            left: 40px;
+        }
+
+        @include tablet-s {
+            left: -10px;
+        }
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__swiper-button-prev::after {
+        content: '';
+    }
+
+    &__swiper-button-next {
+        width: 50px;
+        height: 50px;
+        background-image: url('../images/arrow-right.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: 20px;
+
+        &:hover {
+            background-image: url('../images/arrow-right-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/arrow-right-active.png');
+        }
+
+        @include tablet-l {
+            right: 50px;
+        }
+
+        @include tablet-s {
+            right: -10px;
+        }
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__swiper-button-next::after {
+        content: '';
+    }
+
+    &__swiper-scrollbar {}
+}

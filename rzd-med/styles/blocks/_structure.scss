@@ -39,7 +39,7 @@
     }
 
     &__image-wrapper {
-        align-self: start;
+        align-self: center;
         margin-top: 10px;
         padding: 80px;
         width: 60%;
@@ -68,10 +68,10 @@
         }
     }
 
-    &__text:nth-child(7) {
-        align-self: start;
-        text-align: start;
-        width: 100%;
+    &__text:nth-child(9) {
+        align-self: center;
+        text-align: center;
+        width: 80%;
 
         @include mobile-l {
             text-align: start;

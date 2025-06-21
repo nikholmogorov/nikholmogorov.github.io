@@ -1,0 +1,22 @@
+.button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+    color: $color-light;
+    background-color: $color-dark;
+
+    &:hover {
+    }
+
+    &--big {
+        padding: 20px 25px;
+        border-radius: 20px;
+        font-size: 18px;
+
+        @include mobile-s {
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+    }
+}

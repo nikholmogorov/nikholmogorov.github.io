@@ -1,0 +1,173 @@
+.mobile-overlay {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: $color-dark;
+    overflow-y: hidden;
+    // opacity: 0.5;
+
+    &:modal {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    &__close-button-wrapper {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__body {
+        @include flex(column, center, center, 10px);
+    }
+
+    &__controls {}
+
+    &__search {
+        aspect-ratio: 1;
+        height: 80px;
+        background-image: url('../images/search.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/search-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/search-active.png');
+        }
+    }
+
+    &__shopping-bag {
+        aspect-ratio: 1;
+        height: 80px;
+        background-image: url('../images/shopping-bag.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/shopping-bag-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/shopping-bag-active.png');
+        }
+    }
+
+    &__account {
+        aspect-ratio: 1;
+        height: 80px;
+        background-image: url('../images/account.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/account-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/account-active.png');
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 10px;
+        min-height: 80vh;
+    }
+
+    &__item {}
+
+    &__item {
+        .mobile-overlay__link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-position: center center;
+            background-size: contain;
+        }
+    }
+
+    &__item:nth-child(1) {
+        .mobile-overlay__link {
+            background-image: url('../images/paint.png');
+
+            &:hover {
+                background-image: url('../images/paint-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/paint-active.png');
+            }
+        }
+    }
+
+    &__item:nth-child(2) {
+        .mobile-overlay__link {
+            background-image: url('../images/markers.png');
+
+            &:hover {
+                background-image: url('../images/markers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/markers-active.png');
+            }
+        }
+    }
+
+    &__item:nth-child(3) {
+        .mobile-overlay__link {
+            background-image: url('../images/stickers.png');
+
+            &:hover {
+                background-image: url('../images/stickers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/stickers-active.png');
+            }
+        }
+    }
+
+    &__item:nth-child(4) {
+        .mobile-overlay__link {
+            background-image: url('../images/clothes.png');
+
+            &:hover {
+                background-image: url('../images/clothes-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/clothes-active.png');
+            }
+        }
+    }
+
+    &__item:nth-child(5) {
+        .mobile-overlay__link {
+            background-image: url('../images/parties.png');
+
+            &:hover {
+                background-image: url('../images/parties-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/parties-active.png');
+            }
+        }
+    }
+
+    &__link {
+        padding: 15px;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        white-space: nowrap;
+        color: $color-light;
+    }
+}

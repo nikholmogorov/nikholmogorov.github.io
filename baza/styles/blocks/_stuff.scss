@@ -1,0 +1,31 @@
+.stuff {
+    overflow: hidden;
+
+    &__inner {
+        margin: 80px 0 0;
+        @include flex(column, start, center, 20px);
+
+        @include mobile-l {
+            margin: 40px 0 0;
+        }
+    }
+
+    &__title {
+    }
+
+    &__list-wrapper {}
+
+    &__list {
+        @include flex(row, center, center, 0);
+
+        @media (max-width: 900px) {
+            @include flex(row, start, center, 0);
+        }
+
+        @include tablet-l {
+            width: 100vw;
+        }
+    }
+
+    &__card {}
+}
