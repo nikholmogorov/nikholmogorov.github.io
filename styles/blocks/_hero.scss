@@ -1,0 +1,76 @@
+.hero {
+    &__inner {
+        @include flex(row, center, center, 12.5rem);
+        min-height: calc(100vh - 66px);
+
+        @include tablet-l {
+            @include flex(row, center, center, 0);
+        }
+
+        @include tablet-s {
+            @include flex(column-reverse, start, center, 0);
+        }
+    }
+
+    &__info {
+        width: 40%;
+
+        @include tablet-l {
+            width: 55%;
+        }
+
+        @include mobile-l {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 3.75rem;
+        text-wrap: nowrap;
+
+        @include mobile-l {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 2.1875rem;
+
+        @include mobile-l {
+            font-size: 1.5625rem;
+        }
+    }
+
+    &__text {
+        margin: 1.5rem 0 1.5rem;
+        text-wrap: balance;
+
+        @include mobile-l {
+            margin: 1rem 0 1rem;
+        }
+    }
+
+    &__link {}
+
+    &__decore {}
+
+    &__decore-ascii-art {
+        font-size: 0.75rem;
+
+        @include tablet-l {
+            font-size: 0.7rem;
+        }
+
+        @include tablet-s {
+            font-size: 0.75rem;
+        }
+
+        @include mobile-l {
+            font-size: 0.35rem;
+        }
+
+        @include mobile-s {
+            font-size: 0.25rem;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" version="1.0"
+    preserveAspectRatio="xMidYMid meet">
+    <g>
+        <title>Layer 1</title>
+        <path transform="rotate(-67.8064 16.2241 17.1974)" stroke="#000000" fill="none"
+            stroke-linejoin="undefined" stroke-linecap="undefined" opacity="undefined"
+            d="m8.21207,18.05877l16.49285,-1.33333" id="svg_5" stroke-width="2" />
+        <line fill="none" x1="21.65625" y1="12.26907" x2="31.53125" y2="17.625" id="svg_9"
+            stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="2" stroke="#000000" />
+        <line fill="none" stroke-width="2" x1="31.40625" y1="16.9375" x2="21.65625" y2="22.24013"
+            id="svg_10" stroke-linejoin="undefined" stroke-linecap="undefined" stroke="#000000" />
+        <line fill="none" stroke-width="2" x1="10.90625" y1="11.66096" x2="0.40625" y2="17.9375"
+            id="svg_12" stroke-linejoin="undefined" stroke-linecap="undefined" stroke="#000000" />
+        <line fill="none" stroke-width="2" x1="0.71875" y1="17.0625" x2="11.03125" y2="22.52937"
+            id="svg_14" stroke-linejoin="undefined" stroke-linecap="undefined" stroke="#000000" />
+    </g>
+    <style>
+        svg {
+        fill: #000000;
+        }
+        @media (prefers-color-scheme: dark) {
+        svg {
+        fill: #ffffff;
+        }
+        }
+    </style>
+</svg>

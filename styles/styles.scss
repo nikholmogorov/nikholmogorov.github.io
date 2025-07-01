@@ -1,0 +1,30 @@
+@import './base/normalize',
+'./base/fonts',
+'./base/mixins',
+'./base/media',
+'./base/variables',
+'./base/globals';
+
+@import './blocks/header',
+'./blocks/button',
+'./blocks/burger-button',
+'./blocks/mobile-overlay',
+'./blocks/cross-button',
+'./blocks/hero',
+'./blocks/experience',
+'./blocks/job-card',
+'./blocks/stack',
+'./blocks/instruments',
+'./blocks/projects',
+'./blocks/project-card',
+'./blocks/swiper',
+
+
+
+
+'./blocks/section-title',
+'./blocks/section-subtitle',
+
+
+
+'./blocks/footer';

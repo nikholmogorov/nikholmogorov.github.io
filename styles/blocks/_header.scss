@@ -1,0 +1,92 @@
+.header {
+    &--position {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: var(--color-background)
+    }
+
+    &__inner {
+        @include flex(row, space-between, center, 0);
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+
+        @include mobile-l {
+            justify-content: end;
+        }
+    }
+
+    &__menu {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        @include flex(row, start, start, 0);
+    }
+
+    &__menu-item {}
+
+    &__menu-link {}
+
+    &__menu-item:nth-child(1)>.header__menu-link,
+    &__menu-item:nth-child(2)>.header__menu-link,
+    &__menu-item:nth-child(3)>.header__menu-link,
+    &__menu-item:nth-child(4)>.header__menu-link {
+        border-right: none;
+    }
+
+    &__menu-item:nth-child(2)>.header__menu-link,
+    &__menu-item:nth-child(3)>.header__menu-link {
+        padding-inline: 1.25rem;
+    }
+
+    &__link-wrapper {
+        @include flex(row, start, start, 0);
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__link {}
+
+    &__link:nth-child(1) {
+        border-right: none;
+    }
+
+    &__label {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__checkbox-text {}
+
+    &__burger-button {
+        display: none;
+
+        @include mobile-l {
+            display: block;
+        }
+    }
+
+    &__progress-bar {
+        position: fixed;
+        left: 0;
+        top: 65px;
+        height: 1px;
+        width: 0%;
+        background: var(--color-element);
+        z-index: 1;
+
+        @include mobile-l {
+            top: 69px;
+        }
+    }
+}
