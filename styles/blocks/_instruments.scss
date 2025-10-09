@@ -8,7 +8,8 @@
     &__card-wrapper {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
+        column-gap: 1rem;
+        row-gap: 3rem;
 
         @include mobile-l {
             grid-template-columns: repeat(3, 1fr);

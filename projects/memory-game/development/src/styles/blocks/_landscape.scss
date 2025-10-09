@@ -1,0 +1,38 @@
+.landscape {
+    @include flex(row, center, start, 0);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    user-select: none;
+
+    &__image {
+        height: 60%;
+        aspect-ratio: 1;
+
+        &--animated {
+            animation: rotateImage 8s linear infinite;
+        }
+    }
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    25% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+    }
+}

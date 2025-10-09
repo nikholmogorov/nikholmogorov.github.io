@@ -1,0 +1,78 @@
+.content {
+    height: 100vh;
+    background-image: url("../../assets/images/Cool Button.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include mobile-l {
+        background-size: 80%;
+    }
+
+    &__inner {
+        @include flex(row, center, center, 0);
+        height: 100vh;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, $card-size-l);
+        grid-template-rows: repeat(4, $card-size-l);
+        gap: 16px;
+        background-color: $color-light;
+
+        @include desktop-m {
+            grid-template-columns: repeat(4, $card-size-m);
+            grid-template-rows: repeat(4, $card-size-m);
+        }
+
+        @include desktop-s {
+            grid-template-columns: repeat(4, $card-size-s);
+            grid-template-rows: repeat(4, $card-size-s);
+            gap: 12px;
+        }
+
+        @include tablet-l {
+            grid-template-columns: repeat(4, $card-size-l);
+            grid-template-rows: repeat(4, $card-size-l);
+            gap: 16px;
+        }
+
+        @include tablet-s {
+            grid-template-columns: repeat(4, $card-size-m);
+            grid-template-rows: repeat(4, $card-size-m);
+            gap: 12px;
+        }
+
+        @include mobile-l {
+            grid-template-columns: repeat(4, $card-size-xs);
+            grid-template-rows: repeat(4, $card-size-xs);
+            gap: 8px;
+        }
+
+        @include mobile-m {
+            grid-template-columns: repeat(4, $card-size-xxs);
+            grid-template-rows: repeat(4, $card-size-xxs);
+        }
+
+        @include mobile-s {
+            grid-template-columns: repeat(4, $card-size-xxxs);
+            grid-template-rows: repeat(4, $card-size-xxxs);
+        }
+    }
+
+    &.dark {
+        background-color: $color-dark;
+        color: $color-light;
+
+        .content__inner {
+            background-color: $color-dark;
+            color: $color-light;
+
+            .content__cards {
+                background-color: $color-dark;
+                color: $color-light;
+            }
+        }
+
+    }
+}

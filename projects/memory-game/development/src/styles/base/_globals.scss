@@ -1,0 +1,89 @@
+::-moz-selection {
+    background-color: $color-dark;
+    color: $color-light;
+}
+
+::selection {
+    background-color: $color-dark;
+    color: $color-light;
+}
+
+.scrollbar-moz-fallback {
+    scrollbar-color: $color-dark $color-light;
+    scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+}
+
+*:focus-visible {
+    outline: 5px solid $color-accent-light;
+    outline-offset: 5px;
+    border-radius: 5px;
+
+    @include desktop-s {
+        outline: 3px solid $color-accent-light;
+        outline-offset: 3px;
+        border-radius: 3px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    *:focus-visible {
+        outline: 5px solid $color-accent-dark;
+        outline-offset: 5px;
+        border-radius: 5px;
+
+        @include desktop-s {
+            outline: 3px solid $color-accent-dark;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+    }
+}
+
+html {
+    scrollbar-gutter: auto;
+}
+
+body {
+    font-family: $first-family;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $color-light;
+    color: $color-dark;
+    overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: $color-dark;
+        color: $color-light;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.selected {
+    transform: scale(1.05);
+}
