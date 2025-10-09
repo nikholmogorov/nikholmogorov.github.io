@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import OrientationLock from "./components/OrientationLock";
 import Card from "./components/Card";
 
+import checkMark from "./assets/images/Check Mark Button.webp";
 import Pizza from "./assets/images/Pizza.webp";
 import Rocket from "./assets/images/Rocket.webp";
 import Pumpkin from "./assets/images/Jack O Lantern.webp";
@@ -40,6 +41,15 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
+const preloadedImages = [checkMark];
+
+const preloadImages = () => {
+  preloadedImages.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
 const App = () => {
 
   const [cardsData, setCardsData] = useState(shuffleArray(initialCards));
@@ -48,6 +58,10 @@ const App = () => {
   const [isBlocked, setIsBlocked] = useState(false);
   const [isExitBlocked, setIsExitBlocked] = useState(false);
   const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    preloadImages();
+  }, []);
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
