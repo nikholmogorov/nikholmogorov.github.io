@@ -1,4 +1,4 @@
-name: Deploy memory-game to GitHub Pages
+name: Deploy memory-game
 
 on:
   push:
@@ -30,8 +30,10 @@ jobs:
       - name: Build Vite project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (projects/memory-game)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: projects/memory-game/dist
+          clean: false
+          target-folder: projects/memory-game
