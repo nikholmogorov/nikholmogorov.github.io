@@ -1,0 +1,44 @@
+.contacts {
+    &__inner {
+        @include flex(row, space-between, center, 10px);
+        padding: 40px 0 60px;
+
+        @include tablet {
+            @include flex(column, start, center, 40px);
+            padding: 20px 0 30px;
+        }
+    }
+
+    &__info {
+        width: 40%;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin: 10px 0 30px;
+        text-wrap: balance;
+
+        @include tablet {
+            margin: 10px 0 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        margin-top: 10px;
+        text-wrap: nowrap;
+        font-size: 32px;
+        color: $color-accent;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @include tablet {
+            font-size: 28px;
+        }
+    }
+}
