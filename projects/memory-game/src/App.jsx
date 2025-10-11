@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import classNames from 'classnames';
 
 import OrientationLock from "./components/OrientationLock";
 import Card from "./components/Card";
@@ -157,7 +158,7 @@ const App = () => {
   return (
     <>
       <OrientationLock>
-        <main className={`content ${theme === "dark" ? "dark" : ""}`}>
+        <main className={classNames("content", { "dark": theme === "dark" })}>
           {!isHiddenAll && (
             <div className="content__inner">
               <div className="content__cards">
