@@ -1,0 +1,117 @@
+::-moz-selection {
+    background-color: var(--color-element);
+    color: var(--color-background);
+}
+
+::selection {
+    background-color: var(--color-element);
+    color: var(--color-background);
+}
+
+.scrollbar-moz-fallback {
+    scrollbar-color: var(--color-element) var(--color-background);
+    scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--color-background);
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-element);
+}
+
+*:focus-visible {
+    outline: 1px solid var(--color-element);
+    outline-offset: 1px;
+}
+
+a,
+p,
+li,
+h4 {
+    transition: $transition-duration ease-out;
+}
+
+a,
+p,
+li,
+h4:hover {
+    transition: $transition-duration ease-out;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+
+    @include mobile-l {
+        top: -70px;
+    }
+}
+
+.anchor-crutch {
+    position: absolute;
+    visibility: hidden;
+    top: -80px;
+    left: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--color-background);
+    color: var(--color-element);
+    cursor: url('../images/cursor.png') 14 14, auto;
+}
+
+a:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto;
+}
+
+label:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto;
+}
+
+button:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto;
+}
+
+.project-card__swiper-button-prev:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto;
+}
+
+.project-card__swiper-button-next:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto;
+}
+
+.project-card__swiper-wrapper:hover {
+    cursor: url('../images/cursor_interactive.png') 14 14, auto !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 2520px;
+    padding-inline: 20px;
+    margin: 0 auto;
+}

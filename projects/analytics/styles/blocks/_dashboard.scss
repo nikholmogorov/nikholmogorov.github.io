@@ -1,0 +1,61 @@
+.dashboard {
+    padding: 60px 0 60px;
+
+    @include mobile-l {
+        padding: 30px 0 30px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 20px;
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    &__info {}
+
+    &__title {
+        width: 500px;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        @include mobile-l {
+            width: 350px;
+        }
+
+        @include mobile-s {
+            width: 320px;
+        }
+    }
+
+    &__text {
+        margin-top: 30px;
+        text-wrap: balance;
+
+        @include tablet {
+            margin-top: 20px;
+        }
+    }
+
+    &__image {
+        border-radius: 30px;
+        box-shadow: 0 10px 28px -8px rgba(25, 42, 89, 0.2);
+
+        &:hover{
+            transform: scale(1.01);
+        }
+
+        @include tablet {
+            aspect-ratio: 600/410;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

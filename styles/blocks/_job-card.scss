@@ -1,0 +1,66 @@
+.job-card {
+    @include flex(row, start, start, 1.5rem);
+
+    @include mobile-l {
+        @include flex(column, start, start, 1rem);
+    }
+
+    &__left {
+        @include flex(column, start, center, 0);
+        flex-shrink: 0;
+        width: 16%;
+
+        @include mobile-l {
+            @include flex(column, start, start, 0);
+            width: fit-content;
+        }
+    }
+
+    &__image {
+        flex-shrink: 0;
+        width: 15.625rem;
+
+        @include desktop-m {
+            width: 12.5rem;
+        }
+
+        @include desktop-s {
+            width: 9.375rem;
+        }
+    }
+
+    &__date {
+        text-align: center;
+
+        @include mobile-l {
+            @include flex(column, start, start, 0);
+            width: fit-content;
+        }
+    }
+
+    &__time {
+        text-align: center;
+        color: var(--color-gray);
+    }
+
+    &__right {}
+
+    &__title {
+        margin: 0 0 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    &__text {}
+
+    &__link {
+        color: var(--color-element);
+        text-decoration: underline;
+    }
+
+    &__subtitle {
+        margin: 1rem 0 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+}

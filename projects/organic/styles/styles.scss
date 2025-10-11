@@ -1,0 +1,23 @@
+@import './base/normalize',
+'./base/fonts',
+'./base/mixins',
+'./base/media',
+'./base/variables',
+'./base/globals';
+
+@import './blocks/header',
+'./blocks/burger-button',
+'./blocks/mobile-overlay',
+'./blocks/cross-button',
+'./blocks/content',
+'./blocks/freshy-slider',
+'./blocks/freshy',
+'./blocks/healthy',
+'./blocks/thirsty-slider',
+'./blocks/thirsty',
+'./blocks/thirsty-link',
+'./blocks/juisy',
+'./blocks/button',
+'./blocks/section-title',
+'./blocks/request-form',
+'./blocks/footer';

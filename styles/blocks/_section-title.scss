@@ -1,0 +1,9 @@
+.section-title {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+
+    @include mobile-l {
+        margin-bottom: 1rem;
+        font-size: 1.875rem;
+    }
+}

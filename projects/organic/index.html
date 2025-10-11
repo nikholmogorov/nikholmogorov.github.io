@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/scripts.js" type="module"></script>
+    <title>Organic Juicy Co.</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a class="header__logo" href="#">ORGANIC <br>
+                JUICY CO.</a>
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">HOME</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">LOCATION</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">CONTACTS</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__search-button">
+                <svg class="header__search-button-icon" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="header__burger-button burger-button burger-button--position" type="button"
+                onclick="mobileOverlay.showModal()"><span class="visually-hidden">Open Navigation
+                    Menu</span></button>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="visually-hidden">Organic Juicy Co. – Liquid Health for Your Body</h1>
+        <section class="freshy-slider">
+            <h2 class="visually-hidden">Slider With Freshy Fruits and Vegetables</h2>
+            <div class="freshy-slider__inner">
+                <div class="freshy-slider__slide">
+                    <img class="freshy-slider__image" src="./images/freshy-slider__image-1.jpg"
+                        alt="Freshy Fruits and Vegetables" width="480" height="480" loading="lazy">
+                </div>
+                <div class="freshy-slider__slide">
+                    <img class="freshy-slider__image" src="./images/freshy-slider__image-2.jpg"
+                        alt="Freshy Fruits and Vegetables" width="480" height="480" loading="lazy">
+                </div>
+                <div class="freshy-slider__slide">
+                    <img class="freshy-slider__image" src="./images/freshy-slider__image-3.jpg"
+                        alt="Freshy Fruits and Vegetables" width="480" height="480" loading="lazy">
+                </div>
+                <div class="freshy-slider__buttons-wrapper">
+                    <div class="freshy-slider__button-prev"></div>
+                    <a class="freshy-slider__link button" href="#">START DRINKING</a>
+                    <div class="freshy-slider__button-next"></div>
+                </div>
+            </div>
+        </section>
+        <section class="freshy">
+            <h2 class="visually-hidden">Info About Freshy Fruits and Vegetables</h2>
+            <div class="freshy__inner">
+                <h3 class="freshy__title section-title">
+                    GO GREEN <br>
+                    AND STAY <br>
+                    <span class="freshy__title-span section-title-span">
+                        <span class="freshy__title-span-bold section-title-span-bold">FRE-<br></span>
+                        SHY</span>
+                </h3>
+                <div class="freshy__info">
+                    <p class="freshy__text">Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Sed
+                        corrupti atque modi incidunt sunt.
+                        Illum itaque enim dolores provident
+                        quaerat ratione laudantium,
+                        consectetur perspiciatis possimus, non
+                        illo, cumque alias facilis tempore quis!
+                        Praesentium enim minima aperiam
+                        repellat iusto, quas quae porro id amet
+                        ut recusandae iste non dolorem
+                        impedit aliquam.</p>
+                </div>
+            </div>
+        </section>
+        <section class="healthy">
+            <h2 class="visually-hidden">Info About Healthy Fruits and Vegetables</h2>
+            <div class="healthy__inner">
+                <div class="healthy__info">
+                    <p class="healthy__text">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Doloremque animi, ipsa ut
+                        mollitia nihil libero,
+                        veritatis expedita enim vel
+                        cupiditate amet
+                        exercitationem! Quae cum
+                        eveniet veritatis nihil
+                        voluptatem commodi
+                        mollitia?</p>
+                </div>
+                <h3 class="healthy__title section-title">
+                    WORRY LESS <br>
+                    DRINK <br>
+                    <span class="healthy__title-span section-title-span">
+                        <span class="healthy__title-span-bold section-title-span-bold">HEA-<br></span>
+                        LTHY</span>
+                </h3>
+            </div>
+        </section>
+        <section class="thirsty">
+            <h2 class="visually-hidden">Info About Thirsty Fruits and Vegetables</h2>
+            <div class="thirsty__inner">
+                <div class="thirsty__info">
+                    <p class="thirsty__text">Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Ab
+                        tenetur ea minus dignissimos. Quia
+                        quos saepe non eaque hic
+                        recusandae facilis explicabo
+                        corporis. Quasi laboriosam quis
+                        perspiciatis tempore maxime
+                        assumenda.</p>
+                </div>
+                <h3 class="thirsty__title section-title">
+                    ARE YOU <br>
+                    SUMMER <br>
+                    <span class="thirsty__title-span section-title-span">
+                        <span class="thirsty__title-span-bold section-title-span-bold">THIR-<br></span>
+                        STY?</span>
+                </h3>
+            </div>
+        </section>
+        <section class="thirsty-slider">
+            <h2 class="visually-hidden">Slider With Thirsty Fruits and Vegetables</h2>
+            <div class="thirsty-slider__inner">
+                <div class="thirsty-slider__slide">
+                    <img class="thirsty-slider__image" src="./images/thirsty-slider__image-1.jpg"
+                        alt="Thirsty Fruits and Vegetables" width="600" height="600" loading="lazy">
+                </div>
+                <div class="thirsty-slider__slide">
+                    <img class="thirsty-slider__image" src="./images/thirsty-slider__image-2.jpg"
+                        alt="Thirsty Fruits and Vegetables" width="600" height="600" loading="lazy">
+                </div>
+                <div class="thirsty-slider__slide">
+                    <img class="thirsty-slider__image" src="./images/thirsty-slider__image-3.jpg"
+                        alt="Thirsty Fruits and Vegetables" width="600" height="600" loading="lazy">
+                </div>
+                <div class="thirsty-slider__slide">
+                    <img class="thirsty-slider__image" src="./images/thirsty-slider__image-4.jpg"
+                        alt="Thirsty Fruits and Vegetables" width="600" height="600" loading="lazy">
+                </div>
+                <div class="thirsty-slider__link-wrapper">
+                    <a class="thirsty-slider__link button" href="#">START DRINKING</a>
+                </div>
+                <div class="thirsty-slider__pagination-wrapper">
+                </div>
+            </div>
+        </section>
+        <section class="thirsty-link">
+            <h2 class="visually-hidden">Link to Thirsty Fruits and Vegetables</h2>
+            <div class="thirsty-link__inner">
+                <a class="thirsty-link__link button" href="#">START DRINKING</a>
+                <button class="thirsty-link__button button"></button>
+            </div>
+        </section>
+        <section class="footer">
+            <h2 class="visually-hidden">Footer of Website</h2>
+            <div class="footer__inner">
+                <ul class="footer__socials-list">
+                    <li class="footer__socials-item">
+                        <a class="footer__socials-link" href="https://www.instagram.com" target="_blank">
+                            <svg class="footer__socials-image" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7.465 1.066C8.638 1.012 9.012 1 12 1C14.988 1 15.362 1.013 16.534 1.066C17.706 1.119 18.506 1.306 19.206 1.577C19.939 1.854 20.604 2.287 21.154 2.847C21.714 3.396 22.146 4.06 22.422 4.794C22.694 5.494 22.88 6.294 22.934 7.464C22.988 8.639 23 9.013 23 12C23 14.988 22.987 15.362 22.934 16.535C22.881 17.705 22.694 18.505 22.422 19.205C22.146 19.9391 21.7133 20.6042 21.154 21.154C20.604 21.714 19.939 22.146 19.206 22.422C18.506 22.694 17.706 22.88 16.536 22.934C15.362 22.988 14.988 23 12 23C9.012 23 8.638 22.987 7.465 22.934C6.295 22.881 5.495 22.694 4.795 22.422C4.06092 22.146 3.39582 21.7133 2.846 21.154C2.28638 20.6047 1.85331 19.9399 1.577 19.206C1.306 18.506 1.12 17.706 1.066 16.536C1.012 15.361 1 14.987 1 12C1 9.012 1.013 8.638 1.066 7.466C1.119 6.294 1.306 5.494 1.577 4.794C1.85372 4.06008 2.28712 3.39531 2.847 2.846C3.39604 2.2865 4.06047 1.85344 4.794 1.577C5.494 1.306 6.294 1.12 7.464 1.066H7.465ZM16.445 3.046C15.285 2.993 14.937 2.982 12 2.982C9.063 2.982 8.715 2.993 7.555 3.046C6.482 3.095 5.9 3.274 5.512 3.425C4.999 3.625 4.632 3.862 4.247 4.247C3.88205 4.60205 3.60118 5.03428 3.425 5.512C3.274 5.9 3.095 6.482 3.046 7.555C2.993 8.715 2.982 9.063 2.982 12C2.982 14.937 2.993 15.285 3.046 16.445C3.095 17.518 3.274 18.1 3.425 18.488C3.601 18.965 3.882 19.398 4.247 19.753C4.602 20.118 5.035 20.399 5.512 20.575C5.9 20.726 6.482 20.905 7.555 20.954C8.715 21.007 9.062 21.018 12 21.018C14.938 21.018 15.285 21.007 16.445 20.954C17.518 20.905 18.1 20.726 18.488 20.575C19.001 20.375 19.368 20.138 19.753 19.753C20.118 19.398 20.399 18.965 20.575 18.488C20.726 18.1 20.905 17.518 20.954 16.445C21.007 15.285 21.018 14.937 21.018 12C21.018 9.063 21.007 8.715 20.954 7.555C20.905 6.482 20.726 5.9 20.575 5.512C20.375 4.999 20.138 4.632 19.753 4.247C19.3979 3.88207 18.9657 3.60121 18.488 3.425C18.1 3.274 17.518 3.095 16.445 3.046V3.046ZM10.595 15.391C11.3797 15.7176 12.2534 15.7617 13.0669 15.5157C13.8805 15.2697 14.5834 14.7489 15.0556 14.0422C15.5278 13.3356 15.7401 12.4869 15.656 11.6411C15.572 10.7953 15.197 10.005 14.595 9.405C14.2112 9.02148 13.7472 8.72781 13.2363 8.54515C12.7255 8.36248 12.1804 8.29536 11.6405 8.34862C11.1006 8.40187 10.5792 8.57418 10.1138 8.85313C9.64846 9.13208 9.25074 9.51074 8.9493 9.96185C8.64786 10.413 8.45019 10.9253 8.37052 11.462C8.29084 11.9986 8.33115 12.5463 8.48854 13.0655C8.64593 13.5847 8.91648 14.0626 9.28072 14.4647C9.64496 14.8668 10.0938 15.1832 10.595 15.391ZM8.002 8.002C8.52702 7.47698 9.15032 7.0605 9.8363 6.77636C10.5223 6.49222 11.2575 6.34597 12 6.34597C12.7425 6.34597 13.4777 6.49222 14.1637 6.77636C14.8497 7.0605 15.473 7.47698 15.998 8.002C16.523 8.52702 16.9395 9.15032 17.2236 9.8363C17.5078 10.5223 17.654 11.2575 17.654 12C17.654 12.7425 17.5078 13.4777 17.2236 14.1637C16.9395 14.8497 16.523 15.473 15.998 15.998C14.9377 17.0583 13.4995 17.654 12 17.654C10.5005 17.654 9.06234 17.0583 8.002 15.998C6.94166 14.9377 6.34597 13.4995 6.34597 12C6.34597 10.5005 6.94166 9.06234 8.002 8.002V8.002ZM18.908 7.188C19.0381 7.06527 19.1423 6.91768 19.2143 6.75397C19.2863 6.59027 19.3248 6.41377 19.3274 6.23493C19.33 6.05609 19.2967 5.87855 19.2295 5.71281C19.1622 5.54707 19.0624 5.39651 18.936 5.27004C18.8095 5.14357 18.6589 5.04376 18.4932 4.97652C18.3275 4.90928 18.1499 4.87598 17.9711 4.87858C17.7922 4.88119 17.6157 4.91965 17.452 4.9917C17.2883 5.06374 17.1407 5.1679 17.018 5.298C16.7793 5.55103 16.6486 5.88712 16.6537 6.23493C16.6588 6.58274 16.7992 6.91488 17.0452 7.16084C17.2911 7.40681 17.6233 7.54723 17.9711 7.5523C18.3189 7.55737 18.655 7.42669 18.908 7.188V7.188Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a class="footer__socials-link" href="https://www.x.com" target="_blank">
+                            <svg class="footer__socials-image" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23.643 4.93699C22.808 5.30699 21.911 5.55699 20.968 5.66999C21.941 5.08778 22.669 4.17145 23.016 3.09199C22.1019 3.63497 21.1014 4.01718 20.058 4.22199C19.3564 3.47285 18.4271 2.97631 17.4143 2.80946C16.4016 2.64261 15.3621 2.81478 14.4572 3.29924C13.5524 3.7837 12.8328 4.55335 12.4102 5.48869C11.9875 6.42403 11.8855 7.47274 12.12 8.47199C10.2677 8.37898 8.45564 7.89753 6.80144 7.05889C5.14723 6.22025 3.68785 5.04315 2.51801 3.60399C2.11801 4.29399 1.88801 5.09399 1.88801 5.94599C1.88757 6.71298 2.07644 7.46823 2.43789 8.14472C2.79934 8.82121 3.32217 9.39802 3.96001 9.82399C3.22029 9.80045 2.49688 9.60057 1.85001 9.24099V9.30098C1.84994 10.3767 2.22204 11.4194 2.90319 12.252C3.58434 13.0846 4.53258 13.6559 5.58701 13.869C4.9008 14.0547 4.18135 14.0821 3.48301 13.949C3.78051 14.8746 4.36001 15.684 5.14038 16.2639C5.92075 16.8438 6.86293 17.1652 7.83501 17.183C6.18485 18.4784 4.1469 19.1811 2.04901 19.178C1.67739 19.1781 1.30609 19.1564 0.937012 19.113C3.06649 20.4822 5.54535 21.2088 8.07701 21.206C16.647 21.206 21.332 14.108 21.332 7.95199C21.332 7.75199 21.327 7.54999 21.318 7.34999C22.2293 6.69096 23.0159 5.87488 23.641 4.93999L23.643 4.93699V4.93699Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a class="footer__socials-link" href="https://www.fb.com" target="_blank">
+                            <svg class="footer__socials-image" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.397 20.997V12.801H16.162L16.573 9.59199H13.397V7.54799C13.397 6.62199 13.655 5.98799 14.984 5.98799H16.668V3.12699C15.8487 3.03918 15.0251 2.99678 14.201 2.99999C11.757 2.99999 10.079 4.49199 10.079 7.23099V9.58599H7.33203V12.795H10.085V20.997H13.397Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a class="footer__socials-link" href="https://www.linkedin.com" target="_blank">
+                            <svg class="footer__socials-image" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 21H9V9H13V11C13.4211 10.4643 13.9555 10.0284 14.565 9.72356C15.1744 9.41875 15.8438 9.25259 16.525 9.237C17.7164 9.24361 18.8565 9.72242 19.6954 10.5684C20.5343 11.4144 21.0035 12.5586 21 13.75V21H17V14.25C16.9226 13.7096 16.6527 13.2153 16.2398 12.8581C15.8269 12.5009 15.2989 12.3048 14.753 12.306C14.5087 12.3137 14.2684 12.3707 14.0466 12.4736C13.8249 12.5765 13.6262 12.7231 13.4624 12.9046C13.2987 13.0862 13.1734 13.2989 13.0939 13.5301C13.0144 13.7613 12.9825 14.0062 13 14.25V21ZM7 21H3V9H7V21ZM5 7C4.46957 7 3.96086 6.78929 3.58579 6.41421C3.21071 6.03914 3 5.53043 3 5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3C5.53043 3 6.03914 3.21071 6.41421 3.58579C6.78929 3.96086 7 4.46957 7 5C7 5.53043 6.78929 6.03914 6.41421 6.41421C6.03914 6.78929 5.53043 7 5 7Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <form class="footer__form request-form request-form--position uniFormJS2" method="POST">
+                    <label class="request-form__label visually-hidden" for="email">YOUR EMAIL</label>
+                    <input class="request-form__field" type="email" name="email" id="email" placeholder="YOUR EMAIL"
+                        required>
+                    <button class="request-form__submit" type="submit">SUBMIT</button>
+                </form>
+                <a class="footer__logo" href="#">
+                    <svg class="footer__logo-image" width="50" height="75" viewBox="0 0 50 75" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M41.3144 1.15428C43.0001 0.774518 44.9144 0.759017 46.4064 1.75493C49.3825 3.4445 50.018 7.85444 47.9642 10.4973C45.7825 13.7292 40.3534 13.5354 38.2763 10.2803C37.1486 8.83486 37.1719 6.89727 37.4199 5.1767C37.8772 3.25075 39.4737 1.77043 41.3144 1.15428Z"
+                            fill="#6A6A6A" />
+                        <path
+                            d="M8.83669 25.9376C11.8632 25.0307 15.3082 25.1044 18.0945 26.7126C22.0277 28.6542 24.8721 32.8668 24.7055 37.3157C25.155 43.9194 18.9625 49.9224 12.4135 49.5697C5.97682 49.6782 -0.00642878 43.7954 0.493467 37.2692C0.365587 32.1498 4.03149 27.48 8.83669 25.9376Z"
+                            fill="#6A6A6A" />
+                        <path
+                            d="M37.0944 37.5598C41.0742 37.3157 45.0695 37.4746 49.0531 37.4784C49.4019 42.3072 48.2858 47.1476 46.4141 51.581C44.1821 57.0104 40.5471 61.8663 36.0403 65.6254C32.4054 68.904 27.9025 70.9967 23.3492 72.6709C20.4079 73.5273 17.3776 74.0893 14.3162 74.221C13.7349 74.1939 13.173 74.0389 12.6072 73.9304C12.6227 69.9581 12.5414 65.982 12.6576 62.0097C19.0865 62.0368 25.4146 59.386 29.9215 54.8131C32.1458 52.5537 33.971 49.872 35.1878 46.9422C35.5211 46.0857 35.8272 45.2215 36.1295 44.3534C36.2457 43.9465 36.3697 43.5396 36.4976 43.1404C36.8812 41.2996 37.0324 39.4355 37.0944 37.5598Z"
+                            fill="#6A6A6A" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+        <section class="juisy">
+            <h2 class="visually-hidden">Link to Buy Fresh Juice</h2>
+            <div class="juisy__inner">
+                <h3 class="juisy__title section-title">
+                    NOW TRY <br>
+                    OUT OUR <br>
+                    <span class="juisy__title-span section-title-span">
+                        <span class="juisy__title-span-bold section-title-span-bold">JUI-<br></span>
+                        SY</span>
+                </h3>
+                <div class="juisy__info">
+                    <p class="juisy__text">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit. Commodi
+                        alias adipisci voluptate
+                        quod, magni aut architecto
+                        nobis reprehenderit,
+                        corporis corrupti eveniet
+                        veritatis ratione placeat
+                        minima!</p>
+                    <a class="juisy__link button" href="#">MORE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <dialog class="mobile-overlay" id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog" id="mobileMenu">
+            <button class="mobile-overlay__close-button cross-button cross-button--position" type="submit">
+                <span class="visually-hidden">Close Navigation Menu</span>
+            </button>
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();">HOME</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();">ABOUT</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();">PRODUCTS</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();">LOCATION</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();">CONTACTS</a>
+                </li>
+            </ul>
+        </div>
+    </dialog>
+</body>
+
+</html>

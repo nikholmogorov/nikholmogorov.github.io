@@ -1,0 +1,18 @@
+$color-light: #ffffff;
+$color-dark: #000000;
+$color-gray: #00000080;
+$color-gray-alternate: #ffffff80;
+
+$transition-duration: 0;
+
+html[data-theme="light"] {
+    --color-element: #{$color-dark};
+    --color-background: #{$color-light};
+    --color-gray: #{$color-gray};
+}
+
+html[data-theme="dark"] {
+    --color-element: #{$color-light};
+    --color-background: #{$color-dark};
+    --color-gray: #{$color-gray-alternate};
+}

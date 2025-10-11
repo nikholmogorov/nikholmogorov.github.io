@@ -1,0 +1,83 @@
+.header {
+    &__inner {
+        @include flex(row, space-between, center, 25px);
+    }
+
+    &__logo {}
+
+    &__menu {}
+
+    &__menu-list {
+        @include flex(row, space-between, center, 50px);
+
+        @include mobile-l {
+            @include flex(row, space-between, center, 20px);
+        }
+    }
+
+    &__menu-item {}
+
+    &__menu-link {
+        font-family: $second-family;
+        font-size: 48px;
+        color: $color-text;
+        white-space: nowrap;
+        text-shadow:
+            0 0 7px $color-text,
+            0 0 10px $color-text,
+            0 0 21px $color-text,
+            0 0 42px $color-accent-first,
+            0 0 82px $color-accent-first,
+            0 0 92px $color-accent-first,
+            0 0 102px $color-accent-first,
+            0 0 151px $color-accent-first;
+        animation: pulsate-alternate 0.15s ease-in-out infinite alternate;
+
+        &:hover {
+            text-shadow:
+                0 0 7px $color-text,
+                0 0 10px $color-text,
+                0 0 21px $color-text,
+                0 0 32px $color-accent-first,
+                0 0 42px $color-accent-first,
+                0 0 52px $color-accent-first,
+                0 0 62px $color-accent-first,
+                0 0 71px $color-accent-first;
+                animation: none;
+        }
+
+        @include mobile-l {
+            font-size: 22px;
+        }
+
+        @include mobile-s {
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes pulsate-alternate {
+    100% {
+        text-shadow:
+            0 0 4px $color-text,
+            0 0 11px $color-text,
+            0 0 19px $color-text,
+            0 0 40px $color-accent-first,
+            0 0 80px $color-accent-first,
+            0 0 90px $color-accent-first,
+            0 0 100px $color-accent-first,
+            0 0 150px $color-accent-first;
+    }
+
+    0% {
+        text-shadow:
+            0 0 4px $color-text,
+            0 0 10px $color-text,
+            0 0 18px $color-text,
+            0 0 38px $color-accent-first,
+            0 0 73px $color-accent-first,
+            0 0 80px $color-accent-first,
+            0 0 94px $color-accent-first,
+            0 0 140px $color-accent-first;
+    }
+}

@@ -1,0 +1,44 @@
+.cross-button {
+    padding: 0;
+    aspect-ratio: 1;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+
+    &--position {
+        position: relative;
+        margin: 5px 20px 0 0;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        width: 50%;
+        height: 2px;
+        background-color: $color-main;
+        transition: $transition-duration ease-out;
+    }
+
+    &::before {
+        rotate: 45deg;
+    }
+
+    &::after {
+        rotate: -45deg;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        background-color: $color-blue;
+        transition: $transition-duration ease-out;
+    }
+
+    &:active::before,
+    &:active::after {
+        background-color: $color-blue-alternate;
+        transition: $transition-duration ease-out;
+    }
+}

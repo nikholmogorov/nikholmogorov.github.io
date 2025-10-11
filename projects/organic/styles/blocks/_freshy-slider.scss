@@ -1,0 +1,156 @@
+.freshy-slider {
+    width: 100%;
+    height: 100%;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        @include tablet {
+            height: 270px;
+        }
+
+        @include mobile-l {
+            height: 250px;
+        }
+    }
+
+    &__slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+
+        &.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        @include tablet {
+            height: 270px;
+        }
+
+        @include mobile-l {
+            height: 250px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        filter: brightness(80%);
+
+        @include tablet {
+            width: 700px;
+            height: 700px;
+            position: relative;
+            top: -80px;
+        }
+
+        @include mobile-l {
+            width: 450px;
+            height: 450px;
+            position: relative;
+            top: -50px;
+        }
+    }
+
+    &__buttons-wrapper {
+        @include flex(row, space-evenly, center, 10px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 10;
+    }
+
+    &__button-prev {
+        flex-shrink: 0;
+        position: relative;
+        margin-top: 0;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-text;
+        border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $color-green;
+            border: 2px solid $color-green;
+        }
+
+        &:active {
+            background-color: $color-green-alternate;
+            border: 2px solid $color-green-alternate;
+        }
+    }
+
+    &__button-prev::after {
+        content: '';
+        display: block;
+        position: relative;
+        top: 14px;
+        left: 13px;
+        background-image: url('../images/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__link {
+        flex-shrink: 0;
+
+        &:hover {
+            background-color: $color-green;
+            border: 2px solid $color-green;
+        }
+
+        &:active {
+            background-color: $color-green-alternate;
+            border: 2px solid $color-green-alternate;
+        }
+    }
+
+    &__button-next {
+        flex-shrink: 0;
+        position: relative;
+        margin-top: 0;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-text;
+        border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $color-green;
+            border: 2px solid $color-green;
+        }
+
+        &:active {
+            background-color: $color-green-alternate;
+            border: 2px solid $color-green-alternate;
+        }
+    }
+
+    &__button-next::after {
+        content: '';
+        display: block;
+        position: relative;
+        top: 14px;
+        left: 15px;
+        background-image: url('../images/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        rotate: 180deg;
+    }
+}

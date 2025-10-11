@@ -1,0 +1,35 @@
+.projects {
+    &__inner {
+        margin: 0 0 4rem;
+    }
+
+    &__title {}
+
+    &__card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 34rem);
+        justify-content: center;
+        gap: 3rem;
+
+        @include desktop-m {
+            grid-template-columns: repeat(2, 34rem);
+            gap: 4rem;
+        }
+
+        @include tablet-l {
+            grid-template-columns: repeat(2, 30rem);
+            gap: 1rem;
+        }
+
+        @include tablet-s {
+            grid-template-columns: repeat(2, 22rem);
+        }
+
+        @include mobile-l {
+            grid-template-columns: repeat(1, 100%);
+            gap: 3rem;
+        }
+    }
+
+    &__card {}
+}

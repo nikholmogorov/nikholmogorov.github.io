@@ -1,0 +1,13 @@
+.experience {
+    &__inner {
+        margin: 1rem 0 4rem;
+    }
+
+    &__title {}
+
+    &__card {}
+
+    &__card:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}

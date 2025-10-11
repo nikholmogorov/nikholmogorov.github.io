@@ -1,0 +1,27 @@
+.burger-button {
+    position: relative;
+    padding: 0;
+    aspect-ratio: 1;
+    width: 3.125rem;
+    background-color: transparent;
+    border: 1px solid var(--color-element);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 50%;
+        height: 1px;
+        background-color: var(--color-element);
+        box-shadow: 0 -8px var(--color-element), 0 8px var(--color-element);
+        transition: $transition-duration ease-out;
+    }
+
+    &:hover::after {
+        background-color: var(--color-element);
+        box-shadow: 0 -8px var(--color-element), 0 8px var(--color-element);
+        transition: $transition-duration ease-out;
+    }
+}

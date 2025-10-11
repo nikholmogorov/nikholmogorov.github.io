@@ -1,0 +1,91 @@
+.card {
+    @include flex(column, start, center, 0);
+    padding: 30px 0 30px;
+    border: 1px solid $color-text-alternate;
+    border-radius: 30px;
+
+    &:hover {
+        border: 1px solid $color-accent-second;
+        box-shadow: 0px 0px 15px 15px rgba(35, 114, 73, 0.5) inset;
+    }
+
+    &:hover .card__image {
+        transform: scale(1.05);
+    }
+
+    @include desktop-s {
+        padding: 20px 0 20px;
+        border-radius: 20px;
+    }
+
+    @include mobile-l {
+        padding: 20px 0 20px;
+        border-radius: 20px;
+    }
+
+    &__image {
+        @include mobile-l {
+            aspect-ratio: 290 / 245;
+            width: 200px;
+        }
+    }
+
+    &__title {
+        padding-top: 10px;
+        font-weight: 600;
+        font-size: 32px;
+        color: $color-text;
+        text-align: center;
+
+        @include mobile-l {
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        padding-top: 10px;
+        width: 220px;
+        text-align: center;
+
+        @include mobile-l {
+            font-size: 14px;
+        }
+    }
+
+    &__price {
+        padding-top: 10px;
+        text-align: center;
+
+        @include mobile-l {
+            font-size: 14px;
+        }
+    }
+
+    &__span {
+        font-weight: 600;
+        font-size: 32px;
+        color: $color-text;
+
+        @include mobile-l {
+            font-size: 20px;
+        }
+    }
+
+    &__button {
+        margin-top: 10px;
+        padding: 15px 40px;
+        font-weight: 600;
+        font-size: 18px;
+        color: $color-text;
+        border-radius: 60px;
+        border: none;
+        background: linear-gradient(210deg, $color-accent-second 0%, $color-accent-first 100%);
+
+        @include mobile-l {
+            margin-top: 10px;
+            padding: 10px 25px;
+            font-size: 12px;
+            border-radius: 30px;
+        }
+    }
+}

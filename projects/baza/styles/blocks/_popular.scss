@@ -1,0 +1,22 @@
+.popular {
+    overflow: hidden;
+
+    &__inner {
+        margin: 80px 0 0;
+        @include flex(column, start, center, 20px);
+
+        @include mobile-l {
+            margin: 40px 0 0;
+        }
+    }
+
+    &__title {}
+
+    &__list {
+        @include mobile-l {
+            width: 100vw;
+        }
+    }
+
+    &__card {}
+}

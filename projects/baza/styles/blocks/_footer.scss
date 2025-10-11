@@ -1,0 +1,205 @@
+.footer {
+    &__inner {
+        margin: 80px 0 0;
+        padding-bottom: 10px;
+        @include flex(column, start, center, 20px);
+
+        @include mobile-l {
+            margin: 40px 0 0;
+        }
+    }
+
+    &__top {
+        @include flex(row, space-between, center, 20px);
+        width: 100%;
+
+        @include mobile-l {
+            @include flex(column, start, center, 5px);
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+
+        @include mobile-l {
+            height: 150px;
+        }
+    }
+
+    &__menu {}
+
+    &__menu-list {
+        @include flex(row, space-between, start, 10px);
+
+        @include mobile-l {
+            @include flex(column, start, start, 5px);
+        }
+    }
+
+    &__menu-item {}
+
+    &__menu-item:nth-child(1) {
+        .footer__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/paint.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/paint-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/paint-active.png');
+            }
+
+            @include tablet-l {
+                height: 80px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(2) {
+        .footer__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/markers.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/markers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/markers-active.png');
+            }
+
+            @include tablet-l {
+                height: 80px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(3) {
+        .footer__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/stickers.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/stickers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/stickers-active.png');
+            }
+
+            @include tablet-l {
+                height: 80px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(4) {
+        .footer__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/clothes.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/clothes-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/clothes-active.png');
+            }
+
+            @include tablet-l {
+                height: 80px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(5) {
+        .footer__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/parties.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/parties-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/parties-active.png');
+            }
+
+            @include tablet-l {
+                height: 80px;
+            }
+        }
+    }
+
+    &__menu-link {}
+
+    &__bottom {
+        @include flex(row, space-between, center, 10px);
+        width: 100%;
+
+        @include mobile-l {
+            @include flex(column-reverse, start, center, 10px);
+        }
+    }
+
+    &__button-to-top {
+        display: block;
+        aspect-ratio: 1;
+        width: 84px;
+        background-image: url('../images/footer__button-to-top.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-image: url('../images/footer__button-to-top-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/footer__button-to-top-active.png');
+        }
+    }
+
+    &__link {
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: $color-light;
+        font-weight: 600;
+
+        @include mobile-l {
+            letter-spacing: 0;
+        }
+    }
+
+    &__text {
+        letter-spacing: 1px;
+        font-weight: 700;
+        @include mobile-l {
+            letter-spacing: 0;
+        }
+    }
+
+    &__empty {
+        width: 200px;
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+}

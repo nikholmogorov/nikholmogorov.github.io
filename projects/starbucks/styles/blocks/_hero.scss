@@ -1,0 +1,160 @@
+.hero {
+    @include tablet {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__inner {
+        @include flex(row, space-between, center, 10px);
+        padding-top: 80px;
+
+        @include desktop-s {
+            padding-top: 0;
+        }
+
+        @include tablet {
+            @include flex(column-reverse, start, center, 10px);
+            padding-top: 80px;
+        }
+
+        @include mobile-l {
+            padding-top: 0;
+        }
+    }
+
+    &__info {
+        @include flex(column, start, start, 50px);
+        max-width: 570px;
+
+        @include desktop-s {
+            @include flex(column, start, start, 25px);
+        }
+
+        @include tablet {
+            @include flex(column, start, start, 40px);
+        }
+
+        @include mobile-l {
+            @include flex(column, start, start, 25px);
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 80px;
+        line-height: 1;
+        color: $color-text;
+
+        @include mobile-l {
+            font-size: 48px;
+        }
+    }
+
+    &__title-accent {
+        position: relative;
+        background: linear-gradient(223deg, $color-accent-second 0%, $color-accent-first 100%);
+        color: transparent;
+        background-clip: text;
+
+        &::after {
+            content: url('../images/glow.png');
+            position: absolute;
+            top: -110%;
+            left: -20%;
+            z-index: -10;
+            aspect-ratio: 1;
+            width: 300px;
+
+            @include mobile-l {
+                top: -220%;
+                left: -25%;
+            }
+        }
+    }
+
+    &__text {
+        text-wrap: balance;
+
+        @include mobile-l {
+            font-size: 12px;
+        }
+    }
+
+    &__links {
+        white-space: nowrap;
+    }
+
+    &__link {}
+
+    &__statistic {}
+
+    &__image-wrapper {
+        position: relative;
+
+        @include tablet {
+            position: static;
+        }
+
+        &::after {
+            content: url('../images/three__lines.svg');
+            position: absolute;
+            top: 25%;
+            left: -5%;
+            z-index: -10;
+            rotate: 10deg;
+
+            @include desktop-m {
+                top: 15%;
+                left: -35%;
+                rotate: 0deg;
+            }
+
+            @include tablet {
+                top: 10%;
+                left: 10%;
+                rotate: 20deg;
+            }
+
+            @include mobile-l {
+                top: -15%;
+                left: 0;
+                rotate: 30deg;
+            }
+        }
+    }
+
+    &__block-parallax-1 {
+        overflow: visible;
+        width: 500px;
+        height: 600px;
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__block-parallax-figure-1 {
+        overflow: visible;
+        position: relative;
+        top: 40px;
+        left: 40px;
+        background-image: url("../images/hero__image.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.1s ease;
+        -o-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+    }
+
+    &__image-static {
+        display: none;
+
+        @include mobile-l {
+            display: block;
+            margin-top: 50px;
+            height: 300px;
+        }
+    }
+}

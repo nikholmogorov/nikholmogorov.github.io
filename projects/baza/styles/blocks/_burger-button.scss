@@ -1,0 +1,16 @@
+.burger-button {
+    aspect-ratio: 1;
+    height: 50px;
+    background-image: url('../images/burger-button.png');
+    background-position: center center;
+    background-size: contain;
+    border: none;
+
+    &:hover {
+        background-image: url('../images/burger-button-hover.png');
+    }
+
+    &:active {
+        background-image: url('../images/burger-button-active.png');
+    }
+}

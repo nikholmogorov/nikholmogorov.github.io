@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-image: url(img/background.png);
+    background-color: #050729;
+    background-position: top;
+    background-size: cover; 
+}
+
+.container {
+    width: 100%;
+}
+
+.fixed-button {
+    height: 150px;
+    width: 60px;
+    margin-left: 96%;
+    margin-top: 20px;
+    position: fixed;
+    background-color: #A276FF;
+    z-index: 3;
+    border-radius: 10px 0 0 10px;
+}
+
+.twitter {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.facebook {
+    margin-left: 15px;
+    margin-top: 40px;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #0b0b0d81;
+    float: left;
+    position: fixed;
+}
+
+.logo {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.logo img{
+    display: block;
+    margin: auto;
+}
+
+.menu{
+    margin-top: 80px;
+}
+
+.menu-sidebar{
+    text-align: center;
+    list-style: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-sidebar li{
+    margin-top: 30px;
+
+}
+
+.home {
+    color: #A276FF;
+}
+
+.home:before{  
+    content: '';
+    border: 3px solid #A276FF;
+    position: absolute;
+    height: 25px;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.item_1 {
+    color: #A276FF;
+}
+
+.item_1:before{  
+    content: '';
+    border: 3px solid #A276FF;
+    position: absolute;
+    height: 25px;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.menu-sidebar a:hover{  
+    color: #A276FF;
+}
+
+.sidebar a{
+    text-align: center;
+    list-style: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebar-footer {
+    margin-top: 120px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    list-style: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.sidebar-footer li{
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.copyright {
+    color: rgb(114, 114, 114);
+    margin-top: 25px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.sidebar-footer a:hover{  
+    color: #A276FF;
+}
+
+.content {   
+    width: 80%;
+    float: right;
+}
+
+.container-in {   
+    width: 80%;
+    margin: 20px auto;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+}
+
+h1 span {
+    font-size: 70px;
+    color: #A276FF;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 29px;
+}
+
+button {
+    width: 254px;
+    height: 44px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.container-img-content {
+    margin-top: 40px;
+    height: 110px;
+}
+
+.block {
+    width: 20%;
+    height: 100px;
+    background-color: #00000000;
+    float: left;
+    margin-right: 5%;
+}
+
+.block img {
+    height: 100px;
+}
+
+.container-in h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.news_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.container-in-2 {   
+    width: 75%;
+    margin: 20px auto;
+    background-color: rgb(224, 224, 224);
+    border-radius: 50px;
+    padding: 30px;
+    height: 1220px;
+}
+
+.col1 {
+    width: 48%;
+    height: 1400px;
+    margin-left: 20px;
+    float: left;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.container-in-2 h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+
+.line {
+    margin-top: 10px;
+    width: 50px;
+    content: '';
+    border: 3px solid #A276FF;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.container-in-2 p {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.col2 {
+    width: 48%;
+    height: 1400px;
+    float: left;
+    background-color: rgba(0, 0, 255, 0);
+}
+
+.col2 img {
+    height: 500px;
+    float: right;
+}
+
+.col2 p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    padding-left: 85px; 
+    margin-top: 0; 
+}
+
+.button-to-top {    
+    width: 254px;
+    height: 44px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);  
+    position: absolute;
+    top: 1320px; left: 670px;
+}
+
+.button-to-top a {    
+    position: relative;
+    top: 10px; left: 45px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-to-top img {
+    transform: rotate(180deg);
+    height: 16px;
+}

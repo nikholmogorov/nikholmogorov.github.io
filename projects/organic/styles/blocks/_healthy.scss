@@ -1,0 +1,37 @@
+.healthy {
+    background-color: $color-red;
+
+    &__inner {
+        @include flex(column, end, start, 30px);
+        height: 100%;
+        padding: 40px 40px 60px 40px;
+
+        @include desktop-m {
+            padding: 20px 20px 60px 20px;
+        }
+
+        @include desktop-s {
+            @include flex(column, end, start, 10px);
+            padding: 20px 20px 40px 20px;
+        }
+
+        @include tablet {
+            @include flex(column, center, center, 10px);
+            padding: 30px;
+        }
+
+        @include mobile-l {
+            @include flex(row, center, center, 20px);
+        }
+    }
+
+    &__title {}
+
+    &__title-span {}
+
+    &__title-span-bold {}
+
+    &__info {}
+
+    &__text {}
+}

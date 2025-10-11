@@ -1,0 +1,78 @@
+::-moz-selection {
+    background-color: $color-main;
+}
+
+::selection {
+    background-color: $color-main;
+    color: $color-text;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-text;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-main;
+}
+
+*:focus-visible {
+    outline: 1px solid $color-main;
+    outline-offset: 5px;
+
+    @include tablet {
+        outline-offset: 1px;
+    }
+}
+
+* {
+    transition: $transition-duration ease-out;
+}
+
+*:hover {
+    transition: $transition-duration ease-out;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+}
+
+body {
+    font-family: $first-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $color-main;
+    color: $color-text;
+
+    @include desktop-s {
+        line-height: 1.2;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1920px;
+    padding-inline: 0px;
+    margin: 0 auto;
+}

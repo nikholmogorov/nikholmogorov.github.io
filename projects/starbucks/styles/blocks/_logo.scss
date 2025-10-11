@@ -1,0 +1,13 @@
+.logo {
+    padding: 10px;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1;
+    background: linear-gradient(223deg, $color-accent-second 0%, $color-accent-first 100%);
+    color: transparent;
+    background-clip: text;
+
+    @include mobile-l {
+        font-size: 22px;
+    }
+}

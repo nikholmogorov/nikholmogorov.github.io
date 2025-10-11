@@ -1,0 +1,57 @@
+.thirsty-link {
+    @include mobile-l {
+        width: 100%;
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/thirsty-link__inner-image.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include tablet {
+            height: 270px;
+        }
+
+        @include mobile-l {
+            height: 250px;
+        }
+    }
+
+    &__link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+            background-color: $color-orange;
+            border: 2px solid $color-orange;
+        }
+
+        &:active {
+            background-color: $color-orange-alternate;
+            border: 2px solid $color-orange-alternate;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-90%, -90%);
+        background-color: transparent;
+        border: none !important;
+        background-image: url(../images/arrow-alternate.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        aspect-ratio: 1;
+        width: 50px;
+
+        &:hover {
+            background-image: url(../images/arrow-alternate-hover.svg);
+        }
+    }
+}

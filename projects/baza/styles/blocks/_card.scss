@@ -1,0 +1,94 @@
+.card {
+    @include flex(column, center, center, 5px);
+    // aspect-ratio: 10/13;
+    width: 350px !important;
+    height: 500px !important;
+    background-image: url('../images/card-background.png');
+    background-position: center center;
+    background-size: 350px 500px !important;
+    background-repeat: no-repeat;
+
+    @include tablet-l {
+        width: 250px !important;
+        height: 450px !important;
+        background-size: 250px 450px !important;
+    }
+
+    @include mobile-l {
+        width: 300px !important;
+        height: 450px !important;
+        background-size: 300px 450px !important;
+    }
+
+    &__image {
+        margin-top: 40px;
+        aspect-ratio: 1;
+        width: 200px;
+        filter: grayscale(1);
+
+        @include tablet-l {
+            width: 125px;
+        }
+
+        @include mobile-l {
+            width: 150px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-align: center;
+
+        @include tablet-l {
+            width: 200px;
+        }
+    }
+
+    &__price {
+        font-size: 20px;
+    }
+
+    &__link {
+        width: 125px;
+        height: 45px;
+        background-image: url('../images/want-buy-button.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-image: url('../images/want-buy-button-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/want-buy-button-active.png');
+        }
+    }
+
+    &__link-more {
+        width: 125px;
+        height: 45px;
+        background-image: url('../images/more-button.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-image: url('../images/more-button-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/more-button-active.png');
+        }
+    }
+
+    &--small {
+        width: 150px !important;
+        height: 150px !important;
+        background-image: url('../images/card-background.png');
+        background-position: center center;
+        background-size: 150px 150px !important;
+        background-repeat: no-repeat;
+    }
+}

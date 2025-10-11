@@ -1,0 +1,90 @@
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 3fr 4fr;
+    grid-template-areas: 'freshy-slider healthy thirsty thirsty'
+        'freshy-slider healthy thirsty thirsty'
+        'freshy-slider healthy thirsty thirsty'
+        'freshy-slider healthy thirsty-slider thirsty-link'
+        'freshy healthy thirsty-slider thirsty-link'
+        'footer footer footer juisy';
+
+    @include tablet {
+        grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas: 'freshy freshy freshy healthy'
+            'freshy-slider freshy-slider freshy-slider healthy'
+            'thirsty thirsty thirsty thirsty'
+            'thirsty-slider thirsty-slider thirsty-link thirsty-link'
+            'juisy juisy juisy juisy'
+            'footer footer footer footer';
+    }
+
+    @include mobile-l {
+        @include flex(column, start, center, 0);
+    }
+}
+
+.freshy-slider {
+    grid-area: freshy-slider;
+
+    @include mobile-l {
+        order: -8;
+    }
+}
+
+.freshy {
+    grid-area: freshy;
+
+    @include mobile-l {
+        order: -9;
+    }
+}
+
+.healthy {
+    grid-area: healthy;
+
+    @include mobile-l {
+        order: -7;
+    }
+}
+
+.thirsty {
+    grid-area: thirsty;
+
+    @include mobile-l {
+        order: -5;
+    }
+}
+
+.thirsty-slider {
+    grid-area: thirsty-slider;
+
+    @include mobile-l {
+        order: -6;
+    }
+}
+
+.thirsty-link {
+    grid-area: thirsty-link;
+
+    @include mobile-l {
+        order: -4;
+    }
+}
+
+.footer {
+    grid-area: footer;
+
+    @include mobile-l {
+        order: -2;
+    }
+}
+
+.juisy {
+    grid-area: juisy;
+
+    @include mobile-l {
+        order: -3;
+    }
+}

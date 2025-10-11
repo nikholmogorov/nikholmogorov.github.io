@@ -1,0 +1,204 @@
+.events {
+    position: relative;
+    padding-top: 100px;
+
+    @include tablet {
+        overflow: hidden;
+    }
+
+    &::after {
+        content: '';
+        background-image: url('../images/three__lines.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -30%;
+        left: 0%;
+        z-index: -10;
+        rotate: 45deg;
+        width: 1000px;
+        height: 100%;
+
+        @include desktop-m {
+            bottom: -25%;
+        }
+
+        @include mobile-m {
+            bottom: -15%;
+            left: 10%;
+        }
+
+        @include mobile-s {
+            bottom: -25%;
+        }
+    }
+
+    @include mobile-l {
+        padding-top: 70px;
+    }
+
+    &__inner {}
+
+    &__top {
+        @include flex(row, end, center, 70px);
+
+        @include tablet {
+            @include flex(column-reverse, end, center, 30px);
+        }
+    }
+
+    &__title {}
+
+    &__text {
+        max-width: 450px;
+        text-wrap: pretty;
+
+        @include tablet {
+            max-width: 60%;
+            text-align: center;
+        }
+
+        @include mobile-l {
+            font-size: 14px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-rows: repeat(2, 260px);
+        grid-template-areas: "two-coffee two-coffee kitchen kitchen"
+            "free-coffee socials socials global";
+        gap: 25px;
+        margin-top: 50px;
+
+        @include desktop-s {
+            gap: 20px;
+        }
+
+        @include tablet {
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows: repeat(3, 260px);
+            grid-template-areas: "two-coffee two-coffee"
+                "free-coffee socials"
+                "kitchen kitchen";
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        @include mobile-l {
+            grid-template-rows: repeat(3, 140px);
+        }
+    }
+
+    &__card {
+        @include flex(column, space-between, start, 10px);
+        padding: 40px 30px 30px 30px;
+        border-radius: 35px;
+
+        @include tablet {
+            @include flex(column, space-between, center, 10px);
+            padding: 30px;
+            text-align: center;
+        }
+
+        @include mobile-l {
+            padding: 20px;
+            border-radius: 25px;
+        }
+    }
+
+    &__card:nth-child(1) {
+        background: url('../images/events__card-1.png') no-repeat center / cover;
+        grid-area: two-coffee;
+        background-size: 100% 100%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            background-size: 110% 110%;
+        }
+    }
+
+    &__card:nth-child(2) {
+        background: url('../images/events__card-2.png') no-repeat center / cover;
+        grid-area: kitchen;
+        background-size: 100% 100%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            background-size: 110% 110%;
+        }
+    }
+
+
+    &__card:nth-child(3) {
+        background: url('../images/events__card-3.png') no-repeat center / cover;
+        grid-area: free-coffee;
+        background-size: 100% 100%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            background-size: 110% 110%;
+        }
+    }
+
+
+    &__card:nth-child(4) {
+        background: url('../images/events__card-4.png') no-repeat center / cover;
+        grid-area: socials;
+        background-size: 100% 100%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            background-size: 110% 110%;
+        }
+    }
+
+
+    &__card:nth-child(5) {
+        background: url('../images/events__card-5.png') no-repeat center / cover;
+        grid-area: global;
+        background-size: 100% 100%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            background-size: 110% 110%;
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__card-title {
+        width: 300px;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1;
+        color: $color-text;
+        text-wrap: balance;
+
+        @include tablet {
+            width: fit-content;
+        }
+
+        @include mobile-l {
+            font-size: 18px;
+        }
+    }
+
+    &__card-link {
+        padding: 20px 50px;
+        font-weight: 600;
+        font-size: 24px;
+        border-radius: 80px;
+        color: $color-text;
+        background: linear-gradient(245deg, $color-accent-second 0%, $color-accent-first 100%);
+
+        @include mobile-l {
+            padding: 10px 30px;
+            font-size: 14px;
+            border-radius: 45px;
+        }
+    }
+}

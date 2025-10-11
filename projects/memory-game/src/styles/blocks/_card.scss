@@ -1,0 +1,107 @@
+.card {
+    position: relative;
+    width: $card-size-l;
+    user-select: none;
+    transition-duration: $transition-duration;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition-duration: $transition-duration;
+    }
+
+    @include desktop-m {
+        width: $card-size-m;
+    }
+
+    @include desktop-s {
+        width: $card-size-s;
+    }
+
+    @include tablet-l {
+        width: $card-size-l;
+    }
+
+    @include tablet-s {
+        width: $card-size-m;
+    }
+
+    @include mobile-l {
+        width: $card-size-xs;
+    }
+
+    @include mobile-m {
+        width: $card-size-xxs;
+    }
+
+    @include mobile-s {
+        width: $card-size-xxxs;
+    }
+
+
+    &__back,
+    &__front {
+        @include flex(row, center, center, 0);
+        width: 100%;
+        aspect-ratio: 1;
+        transition-duration: $transition-duration;
+    }
+
+    &__front {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        transform: rotateZ(180deg);
+        background-image: url("../../assets/images/card__front-image.webp");
+        background-size: contain;
+
+        &--dark {
+            background-image: url("../../assets/images/card__front-image-dark.webp");
+        }
+
+        &--transparent {
+            transform: rotate3d(0, 90, 90, 180deg);
+            background-image: url("../../assets/images/transparent.webp");
+        }
+
+        &-image {
+            width: ($card-size-l - 48px);
+            transform: scaleX(-1);
+            user-select: none;
+
+            @include desktop-m {
+                width: ($card-size-m - 32px);
+            }
+
+            @include desktop-s {
+                width: ($card-size-s - 32px);
+            }
+
+            @include tablet-l {
+                width: ($card-size-l - 48px);
+            }
+
+            @include tablet-s {
+                width: ($card-size-m - 48px);
+            }
+
+            @include mobile-l {
+                width: ($card-size-s - 64px);
+            }
+
+            @include mobile-s {
+                width: ($card-size-xxs - 32px);
+            }
+        }
+    }
+}
+
+.selected>.card__back {
+    transform: rotateX(180deg);
+}
+
+.selected>.card__front {
+    opacity: 1;
+    transform: rotateY(180deg);
+}

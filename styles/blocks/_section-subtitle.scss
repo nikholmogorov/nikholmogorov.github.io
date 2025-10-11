@@ -1,0 +1,11 @@
+.section-subtitle {
+    font-size: 2rem;
+
+    @include tablet-l {
+        font-size: 1.625rem;
+    }
+
+    @include mobile-s {
+        font-size: 1rem;
+    }
+}

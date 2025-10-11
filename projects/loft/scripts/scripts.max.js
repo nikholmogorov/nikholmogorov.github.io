@@ -1,0 +1,84 @@
+document.querySelectorAll('.gallery__link').forEach(function (e) {
+    let img = new Image(), hrefURL = e.getAttribute('href')
+    img.onload = function () {
+        e.dataset.pswpWidth = this.width
+        e.dataset.pswpHeight = this.height
+    }
+    img.src = hrefURL
+})
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
+const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.gallery__link',
+    pswpModule: () => import('./photoswipe.esm.min.js')
+});
+lightbox.init();
+
+$(".telephone").mask("+7(999)999-99-99");
+
+const submitButton1 = document.querySelector('.request-form__submit');
+document.querySelector('.uniFormJS1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitButton1.textContent = 'Заявка Отправлена';
+    document.querySelector('.request-form__submit').classList.add('sended');
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
+});
+
+const submitButton2 = document.querySelector('.request-form__submit-2');
+document.querySelector('.uniFormJS2').addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitButton2.textContent = 'Заявка Отправлена';
+    document.querySelector('.request-form__submit-2').classList.add('sended');
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
+});
+
+ymaps.ready(init);
+function init() {
+    var map = new ymaps.Map('map', {
+        center: [59.928614, 30.292194],
+        zoom: 15,
+    });
+    var myPlacemark = new ymaps.Placemark(
+        [59.928614, 30.292194],
+        {
+            balloonContent: `
+				<div class="balloon">
+					<div class="balloon__address">Наб. Адмиралтейского канала, 2</div>
+					<div class="balloon__contacts">
+						<a href="tel:+78127777878">+7 (812) 777-78-78</a>
+					</div>
+				</div>
+			`,
+        },
+        {
+            iconLayout: 'default#image',
+            iconImageHref: './images/location-pin.svg',
+            iconImageSize: [40, 40],
+            iconImageOffset: [-20, -40],
+        }
+    );
+    map.controls.remove('geolocationControl');
+    map.controls.remove('searchControl');
+    map.controls.remove('trafficControl');
+    map.controls.remove('typeSelector');
+    // map.controls.remove('fullscreenControl');
+    // map.controls.remove('zoomControl');
+    map.controls.remove('rulerControl');
+    map.behaviors.disable(['scrollZoom']);
+    map.geoObjects.add(myPlacemark);
+    // myPlacemark.balloon.open();
+}
+
+tippy('#videoTooltip', {
+    content: 'Необходим VPN для корректной работы Youtube Lightbox',
+    maxWidth: 250,
+    followCursor: true,
+    animation: 'scale-extreme',
+    inertia: true,
+    duration: [600, 200],
+    theme: 'golden',
+});

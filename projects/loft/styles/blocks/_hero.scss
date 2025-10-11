@@ -1,0 +1,124 @@
+.hero {
+    background: linear-gradient(180deg, #242b33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242b33 92.19%), url("../images/hero-background-desktop.webp");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--position {
+        margin-top: -100px;
+
+        @include mobile-l {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 200px;
+        height: clamp(480px, 90vh, 1000px);
+
+        @include desktop-m {
+            row-gap: 150px;
+        }
+
+        @include desktop-s {
+            row-gap: 100px;
+        }
+
+        @include mobile-l {
+            row-gap: 150px;
+        }
+
+        @include mobile-m {
+            row-gap: 100px;
+        }
+
+        @include mobile-s {
+            row-gap: 50px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 220px;
+        margin-top: 250px;
+        width: 600px;
+
+        @include desktop-m {
+            margin-top: 160px;
+            row-gap: 160px;
+        }
+
+        @include desktop-s {
+            margin-top: 130px;
+            row-gap: 130px;
+        }
+
+        @include tablet {
+            margin-top: 300px;
+        }
+
+        @include mobile-l {
+            margin-top: 150px;
+            width: 100%;
+        }
+
+        @include mobile-m {
+            margin-top: 200px;
+            row-gap: 200px;
+        }
+
+        @include mobile-s {
+            row-gap: 150px;
+        }
+    }
+
+    &__title {
+        font-family: $second-family;
+        font-size: 48px;
+        font-weight: 400;
+        text-align: center;
+        color: $color-accent;
+
+        @include mobile-l {
+            font-size: 36px;
+        }
+
+        @include mobile-m {
+            font-size: 28px;
+        }
+
+        @include mobile-s {
+            font-size: 26px;
+        }
+
+        &-background {
+            text-wrap: nowrap;
+            background-color: #242b3380;
+
+            @include mobile-m {
+                border-radius: 5px;
+            }
+        }
+
+        ::-moz-selection {
+            background-color: $color-text;
+        }
+
+        ::selection {
+            background-color: $color-text;
+        }
+    }
+
+    &__decore {
+        g {
+            path {
+                fill: $color-accent;
+            }
+        }
+    }
+}
