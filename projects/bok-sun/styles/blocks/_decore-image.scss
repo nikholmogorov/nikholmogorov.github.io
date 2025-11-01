@@ -1,0 +1,80 @@
+.decore-image {
+    &:nth-child(1) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: scale(-1, -1);
+
+        @include tablet-l {
+            left: 10px;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 84/80;
+            width: 3.75rem;
+        }
+    }
+
+    &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include tablet-l {
+            left: 10px;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 84/80;
+            width: 3.75rem;
+        }
+    }
+
+    &:nth-child(3) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: scaleX(-1);
+
+        @include tablet-l {
+            right: 10px;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 84/80;
+            width: 3.75rem;
+        }
+    }
+
+    &:nth-child(4) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleY(-1);
+
+        @include tablet-l {
+            left: 10px;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 84/80;
+            width: 3.75rem;
+        }
+    }
+
+    &:nth-child(5) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: scale(-1, -1);
+
+        @include tablet-l {
+            right: 10px;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 84/80;
+            width: 3.75rem;
+        }
+    }
+}

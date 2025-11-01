@@ -1,0 +1,94 @@
+window.onload = () => {
+	let userAgentString =
+		navigator.userAgent;
+	let firefoxAgent =
+		userAgentString.indexOf('Firefox') > -1;
+	if (firefoxAgent == true) {
+		document.documentElement.classList.add('scrollbar-moz-fallback');
+	}
+};
+
+const swiper = new Swiper('.swiper', {
+	direction: 'horizontal',
+	loop: true,
+	simulateTouch: true,
+	touchRatio: 1,
+	touchAngle: 45,
+	grabCursor: true,
+	slidesPerView: 'auto',
+	slideToClickedSlide: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	autoplay: {
+		delay: 2000,
+	},
+	centeredSlides: true,
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	},
+	a11y: {
+		enabled: true,
+		prevSlideMessage: 'Предыдущий скриншот',
+		nextSlideMessage: 'Следующий скриншот',
+		lastSlideMessage: 'Это последний скриншот',
+	},
+});
+
+ymaps.ready(init);
+function init() {
+	var map = new ymaps.Map('map', {
+		center: [55.165367, 61.410488],
+		zoom: 16,
+	});
+	var myPlacemark = new ymaps.Placemark(
+		[55.165367, 61.410488],
+		{
+			// НЕ СТАВИТЬ *{transition:...} В _globals.scss ВМЕСТЕ С ЯНДЕКС КАРТАМИ
+			balloonContent: `
+				<div class="balloon">
+					<div class="balloon__address">Ул. Маркса, д. 81</div>
+					<div class="balloon__contacts">
+						<a href="tel:+79227041950" target="_blank">+7 (922) 704-19-50</a>
+					</div>
+				</div>
+			`,
+		},
+		{
+			iconLayout: 'default#image',
+			iconImageHref: './images/marker.svg',
+			iconImageSize: [40, 40],
+			iconImageOffset: [-20, -40],
+		}
+	);
+	map.controls.remove('geolocationControl');
+	map.controls.remove('searchControl');
+	map.controls.remove('trafficControl');
+	map.controls.remove('typeSelector');
+	// map.controls.remove('fullscreenControl');
+	// map.controls.remove('zoomControl');
+	map.controls.remove('rulerControl');
+	map.behaviors.disable(['scrollZoom']);
+	map.geoObjects.add(myPlacemark);
+	// myPlacemark.balloon.open();
+};
+
+document.querySelectorAll('.gallery__link').forEach(function (e) {
+	let img = new Image(), hrefURL = e.getAttribute('href')
+	img.onload = function () {
+		e.dataset.pswpWidth = this.width
+		e.dataset.pswpHeight = this.height
+	}
+	img.src = hrefURL
+})
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
+const lightbox = new PhotoSwipeLightbox({
+	gallery: '.gallery',
+	children: '.gallery__link',
+	imageClickAction: 'next',
+	tapAction: 'next',
+	pswpModule: () => import('./photoswipe.esm.min.js')
+});
+lightbox.init();

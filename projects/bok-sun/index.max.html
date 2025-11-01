@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Столовая корейской кухни «Бок-Сун» г. Челябинск">
+    <meta name="keywords"
+        content="Столовая, кафе, ресторан, бистро, еда, бизнес-ланч, обед, корейская кухня, корейская еда, Челябинск, «Бок-Сун», Бок-Сун, Бок Сун, Bok-Sun">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="«Бок-Сун»">
+    <meta property="og:title" content="Столовая корейской кухни «Бок-Сун» г. Челябинск">
+    <meta property="og:description"
+        content="Семейная столовая с аутентичными блюдами, приготовленными с любовью и заботой. Меню представлено широким выбором блюд как и для ценителей корейской кухни, так и для новичков в этой области. Гарантия свежих и качественных ингредиентов, доступных цен, а также уютной и дружелюбной атмосферы.">
+    <meta property="og:url" content="https://nikholmogorov.github.io/bok-sun">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="https://nikholmogorov.github.io/bok-sun/images/site-thumbnail.webp">
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="preload" as="image" href="./images/footer__button-to-top-hover.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=3fdf7e9b-458d-4371-884c-90c9c217a5ef&lang=ru_RU"></script>
+    <script src="./scripts/scripts.js" type="module"></script>
+    <title>Бок-Сун | 복순</title>
+</head>
+
+<body>
+    <header class="header header--position">
+        <div class="header__inner container">
+            <a class="header__logo" href="#">
+                <img class="header__logo-image" src="./images/logo-small.webp" alt="Логотип «Бок-Сун»" width="60"
+                    height="60" loading="lazy">
+                <p class="header__logo-text">Бок-Сун</p>
+            </a>
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link button" href="#menu">Меню</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link button" href="#contacts">Контакты</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link button" href="#about">О Нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__links">
+                <a class="header__links-map" href="https://go.2gis.com/m9jXH" target="_blank">
+                    <svg class="header__links-map-svg" fill="#000000" width="40px" height="40px" viewBox="0 0 15 15"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.5,14.941l-.4-.495c-.973-1.189-4.9-6.556-4.9-9.16A5.066,5.066,0,0,1,7.036,0q.222-.01.445,0a5.066,5.066,0,0,1,5.286,4.836q.01.225,0,.45c0,2.213-2.669,6.111-4.678,8.851ZM7.481.986a4.077,4.077,0,0,0-4.3,4.3c0,1.832,2.759,6.038,4.286,8.034,1.25-1.71,4.315-5.989,4.315-8.034a4.077,4.077,0,0,0-4.3-4.3Z" />
+                    </svg>
+                    <span class="header__links-map-text">г. Челябинск,<br>ул. Маркса, д. 81</span>
+                </a>
+                <a class="header__links-telephone" href="tel:+79227041950">
+                    <svg class="header__links-telephone-svg" fill="#000000" width="40px" height="40px"
+                        viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.194 1.156c1.169 1.612 2.563 3.694 4.175 6.237 0.406 0.688 0.344 1.512-0.181 2.481-0.2 0.406-0.706 1.331-1.512 2.787 0.887 1.25 2.238 2.787 4.056 4.6s3.331 3.169 4.538 4.056c1.45-0.85 2.381-1.369 2.788-1.575 0.525-0.281 1.031-0.425 1.512-0.425 0.363 0 0.688 0.081 0.969 0.244 1.856 1.131 3.956 2.525 6.294 4.175 0.444 0.325 0.694 0.769 0.756 1.331 0.063 0.569-0.113 1.169-0.512 1.819-0.2 0.281-0.525 0.694-0.969 1.244-0.444 0.544-1.113 1.231-2 2.056s-1.613 1.244-2.181 1.244h-0.063c-4.269-0.169-9.531-3.369-15.762-9.6-6.237-6.238-9.438-11.494-9.6-15.769 0-0.563 0.412-1.3 1.244-2.212 0.825-0.906 1.506-1.563 2.025-1.969 0.525-0.4 0.969-0.725 1.331-0.969 0.444-0.325 0.95-0.481 1.513-0.481 0.694 0 1.212 0.244 1.581 0.725zM6.194 2.425c-0.85 0.606-1.644 1.287-2.394 2.031-0.744 0.75-1.181 1.3-1.3 1.662 0.163 3.756 3.156 8.537 8.988 14.35s10.625 8.819 14.375 9.019c0.325-0.119 0.856-0.563 1.606-1.331s1.425-1.575 2.025-2.419c0.119-0.163 0.163-0.3 0.119-0.425-2.419-1.694-4.438-3.044-6.056-4.056-0.163 0-0.363 0.063-0.606 0.181-0.363 0.2-1.269 0.706-2.725 1.512l-1.031 0.606-1.031-0.669c-1.331-0.925-2.944-2.363-4.844-4.3-1.894-1.894-3.306-3.512-4.238-4.844l-0.725-0.969 0.606-1.088c0.806-1.45 1.313-2.363 1.512-2.725 0.119-0.244 0.181-0.444 0.181-0.606-1.438-2.294-2.769-4.313-3.981-6.050h-0.063c-0.156 0-0.3 0.044-0.419 0.119z">
+                        </path>
+                    </svg>
+                    <span class="header__links-telephone-text">+7 (922) 704-19-50<br>Пн – Пт с 11:00 до 20:00</span>
+                </a>
+            </div>
+            <button class="header__burger-button burger-button" type="button" onclick="mobileOverlay.showModal()"><span
+                    class="visually-hidden">Открыть меню навигации</span></button>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="visually-hidden">Столовая корейской кухни «Бок-Сун» г. Челябинск</h1>
+        <section class="hero">
+            <h2 class="visually-hidden">Стартовый экран сайта столовой «Бок-Сун»</h2>
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero__info">
+                        <h3 class="hero__title">Бок-Сун</h3>
+                        <p class="hero__text">Семейная столовая с аутентичными блюдами, приготовленными с любовью
+                            и заботой. Меню представлено широким выбором блюд как и для ценителей корейской кухни, так
+                            и для новичков в этой области. Гарантия свежих и качественных ингредиентов, доступных цен,
+                            а также уютной и дружелюбной атмосферы.</p>
+                        <a class="hero__link button button--bordered" href="#menu">Смотреть меню</a>
+                    </div>
+                    <div class="hero__image-wrapper">
+                        <img class="hero__image" src="./images/logo-big.webp" alt="Логотип «Бок-Сун»" width="300"
+                            height="300" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="about"></div>
+        </div>
+        <section class="about about--position">
+            <h2 class="visually-hidden">О столовой корейской кухни «Бок-Сун»</h2>
+            <div class="container">
+                <h3 class="about__title section-title">О Нас</h3>
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <div class="about__inner">
+                    <div class="about__card">
+                        <img class="about__card-image" src="./images/about__card-image-1.webp" alt="Фото блюд Бок-Сун"
+                            width="600" height="400" loading="lazy">
+                        <h4 class="about__card-title">Вкусно</h4>
+                        <p class="about__card-text">Погрузитесь во вкус Кореи. Ароматные специи, сочное мясо и гармония
+                            вкусов в каждом блюде.</p>
+                    </div>
+                    <div class="about__card">
+                        <img class="about__card-image" src="./images/about__card-image-2.webp" alt="Фото блюд Бок-Сун"
+                            width="600" height="400" loading="lazy">
+                        <h4 class="about__card-title">Уютно</h4>
+                        <p class="about__card-text">Семейная корейская столовая — уют, тепло и вкус, как дома. Приходите
+                            за душевным обедом!</p>
+                    </div>
+                    <div class="about__card">
+                        <img class="about__card-image" src="./images/about__card-image-3.webp" alt="Фото блюд Бок-Сун"
+                            width="600" height="400" loading="lazy">
+                        <h4 class="about__card-title">Доступно</h4>
+                        <p class="about__card-text">Настоящие корейские блюда по честным ценам. Вкусно, сытно и доступно
+                            каждому.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="menu"></div>
+        </div>
+        <section class="menu menu--position">
+            <h2 class="visually-hidden">Меню столовой корейской кухни «Бок-Сун»</h2>
+            <div class="container">
+                <h3 class="menu__title section-title">Меню</h3>
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <div class="menu__inner">
+                    <h4 class="menu__subtitle section-subtitle">Салаты</h4>
+                    <div class="menu__cards-wrapper">
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-1.webp"
+                                    alt="Фото салата из морских водорослей" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Салат из морских водорослей</h4>
+                            <p class="menu__card-text">Свежий салат Чука с сочной икрой Тобико и нежным соусом.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-2.webp"
+                                    alt="Фото салата Айсберг" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Айсберг салат</h4>
+                            <p class="menu__card-text"> Салат с айсбергом, огурцами, болгарским
+                                перцем, морковью, красной капустой и апельсином.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-3.webp"
+                                    alt="Фото салата из битых огурцов" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Битые огурцы</h4>
+                            <p class="menu__card-text">Освежающие битые огурцы в пряном соусе с чили.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                    </div>
+                    <h4 class="menu__subtitle section-subtitle">Супы</h4>
+                    <div class="menu__cards-wrapper">
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-4.webp"
+                                    alt="Фото супа Хемуль Тендян" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Хемуль Тендян</h4>
+                            <p class="menu__card-text">Суп из соевой пасты с морепродуктами, брынзой тубу, кабачками и
+                                острым перцем.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-5.webp"
+                                    alt="Фото супа Сундубу" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Сундубу</h4>
+                            <p class="menu__card-text">Острый и насыщенный корейский суп с капустой кимчи, нежной соевой
+                                брынзой, свининой, яйцом и зелёным луком.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-6.webp"
+                                    alt="Фото супа Тогани Тан" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Тогани Тан</h4>
+                            <p class="menu__card-text">Насыщенный суп с мягкими говяжьими сухожилиями и овощами,
+                                приготовленный на крепком бульоне.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                    </div>
+                    <h4 class="menu__subtitle section-subtitle">Лапша</h4>
+                    <div class="menu__cards-wrapper">
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-7.webp"
+                                    alt="Фото лапши Покум Куксу" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Покум Куксу</h4>
+                            <p class="menu__card-text">Домашняя пшеничная лапша с ароматными древесными грибами, сладким
+                                болгарским перцем и луком.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-8.webp"
+                                    alt="Фото лапши Чаджан Мен" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Чаджан Мен</h4>
+                            <p class="menu__card-text">Домашняя лапша с нежной свининой в китайском черном соусе с
+                                овощами и яйцом.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                        <div class="menu__card">
+                            <div class="menu__card-image-wrapper">
+                                <img class="menu__card-image" src="./images/menu__card-image-9.webp"
+                                    alt="Фото лапши Хемуль Рамен" width="300" height="150" loading="lazy">
+                            </div>
+                            <h4 class="menu__card-title">Хемуль Рамен</h4>
+                            <p class="menu__card-text">Лапша с морепродуктами в остром бульоне с яйцом и овощами.</p>
+                            <a class="menu__card-link button button--bordered" href="#">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="contacts"></div>
+        </div>
+        <section class="contacts">
+            <h2 class="visually-hidden">Контакты столовой корейской кухни «Бок-Сун»</h2>
+            <div class="container">
+                <h3 class="contacts__title section-title">Контакты</h3>
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <img class="decore-image" src="./images/decore-image.webp" alt="Декор раздела" width="84" height="80"
+                    loading="lazy">
+                <div class="contacts__inner">
+                    <div class="contacts__top">
+                        <div class="contacts__info">
+                            <p class="contacts__text">г. Челябинск, ул. Маркса, д. 81</p>
+                            <a class="contacts__link" href="tel:+79227041950" target="_blank">
+                                <div class="contacts__link-image"></div>+7 (922) 704-19-50
+                            </a>
+                            <a class="contacts__link" href="https://vk.com/boksun" target="_blank">
+                                <div class="contacts__link-image"></div>ВКонтакте
+                            </a>
+                        </div>
+                        <div class="yandex-map" id="map"></div>
+                    </div>
+                    <div class="contacts__bottom gallery">
+                        <a class="gallery__link" data-pswp-width="1200" data-pswp-height="800"
+                            href="./images/gallery__image-1.webp" target="_blank">
+                            <img class="gallery__image" src="./images/gallery__image-1.webp"
+                                alt="Фото столовой корейской кухни «Бок-Сун» #1" width="250" height="166"
+                                loading="lazy">
+                        </a>
+                        <a class="gallery__link" data-pswp-width="1200" data-pswp-height="800"
+                            href="./images/gallery__image-2.webp" target="_blank">
+                            <img class="gallery__image" src="./images/gallery__image-2.webp"
+                                alt="Фото столовой корейской кухни «Бок-Сун» #2" width="250" height="166"
+                                loading="lazy">
+                        </a>
+                        <a class="gallery__link" data-pswp-width="1200" data-pswp-height="800"
+                            href="./images/gallery__image-3.webp" target="_blank">
+                            <img class="gallery__image" src="./images/gallery__image-3.webp"
+                                alt="Фото столовой корейской кухни «Бок-Сун» #3" width="250" height="166"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a class="footer__link" href="https://nikholmogorov.github.io" target="_blank">разработка сайта -
+                    nikholmogorov</a>
+                <p class="footer__text">© 2025 Бок-Сун | ИП Юн Бок&#8209;Сун ОГРНИП <span
+                        class="footer__text-span">323745600155112</span></p>
+                <a class="footer__button-to-top button button--bordered" href="#"></a>
+            </div>
+        </div>
+    </footer>
+    <dialog class="mobile-overlay" id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog" id="mobileMenu">
+            <button class="mobile-overlay__close-button cross-button cross-button--position" type="submit">
+                <span class="visually-hidden">Закрыть меню навигации</span>
+            </button>
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#"
+                        onclick="document.getElementById('mobileMenu').submit();"><img
+                            class="mobile-overlay__link-image" src="./images/logo-small.webp" alt="Логотип «Бок-Сун»"
+                            width="60" height="60" loading="lazy">
+                        <p class="mobile-overlay__link-text">Бок-Сун</p>
+                    </a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#menu"
+                        onclick="document.getElementById('mobileMenu').submit();">Меню</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#contacts"
+                        onclick="document.getElementById('mobileMenu').submit();">Контакты</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="#about"
+                        onclick="document.getElementById('mobileMenu').submit();">О Нас</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="https://go.2gis.com/m9jXH" target="_blank"
+                        onclick="document.getElementById('mobileMenu').submit();"><svg
+                            class="mobile-overlay__link-map-svg" fill="#000000" width="30px" height="30px"
+                            viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.5,14.941l-.4-.495c-.973-1.189-4.9-6.556-4.9-9.16A5.066,5.066,0,0,1,7.036,0q.222-.01.445,0a5.066,5.066,0,0,1,5.286,4.836q.01.225,0,.45c0,2.213-2.669,6.111-4.678,8.851ZM7.481.986a4.077,4.077,0,0,0-4.3,4.3c0,1.832,2.759,6.038,4.286,8.034,1.25-1.71,4.315-5.989,4.315-8.034a4.077,4.077,0,0,0-4.3-4.3Z" />
+                        </svg>
+                        <span class="mobile-overlay__link-map-text">г. Челябинск,<br>ул. Маркса, д. 81</span></a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link" href="tel:+79227041950"
+                        onclick="document.getElementById('mobileMenu').submit();"> <svg
+                            class="mobile-overlay__link-telephone-svg" fill="#000000" width="30px" height="30px"
+                            viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.194 1.156c1.169 1.612 2.563 3.694 4.175 6.237 0.406 0.688 0.344 1.512-0.181 2.481-0.2 0.406-0.706 1.331-1.512 2.787 0.887 1.25 2.238 2.787 4.056 4.6s3.331 3.169 4.538 4.056c1.45-0.85 2.381-1.369 2.788-1.575 0.525-0.281 1.031-0.425 1.512-0.425 0.363 0 0.688 0.081 0.969 0.244 1.856 1.131 3.956 2.525 6.294 4.175 0.444 0.325 0.694 0.769 0.756 1.331 0.063 0.569-0.113 1.169-0.512 1.819-0.2 0.281-0.525 0.694-0.969 1.244-0.444 0.544-1.113 1.231-2 2.056s-1.613 1.244-2.181 1.244h-0.063c-4.269-0.169-9.531-3.369-15.762-9.6-6.237-6.238-9.438-11.494-9.6-15.769 0-0.563 0.412-1.3 1.244-2.212 0.825-0.906 1.506-1.563 2.025-1.969 0.525-0.4 0.969-0.725 1.331-0.969 0.444-0.325 0.95-0.481 1.513-0.481 0.694 0 1.212 0.244 1.581 0.725zM6.194 2.425c-0.85 0.606-1.644 1.287-2.394 2.031-0.744 0.75-1.181 1.3-1.3 1.662 0.163 3.756 3.156 8.537 8.988 14.35s10.625 8.819 14.375 9.019c0.325-0.119 0.856-0.563 1.606-1.331s1.425-1.575 2.025-2.419c0.119-0.163 0.163-0.3 0.119-0.425-2.419-1.694-4.438-3.044-6.056-4.056-0.163 0-0.363 0.063-0.606 0.181-0.363 0.2-1.269 0.706-2.725 1.512l-1.031 0.606-1.031-0.669c-1.331-0.925-2.944-2.363-4.844-4.3-1.894-1.894-3.306-3.512-4.238-4.844l-0.725-0.969 0.606-1.088c0.806-1.45 1.313-2.363 1.512-2.725 0.119-0.244 0.181-0.444 0.181-0.606-1.438-2.294-2.769-4.313-3.981-6.050h-0.063c-0.156 0-0.3 0.044-0.419 0.119z">
+                            </path>
+                        </svg>
+                        <span class="mobile-overlay__link-telephone-text">+7 922 704 19 50<br>Пн – Пт с 11:00 до
+                            20:00</span></a>
+                </li>
+            </ul>
+        </div>
+    </dialog>
+</body>
+
+</html>

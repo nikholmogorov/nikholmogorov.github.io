@@ -1,0 +1,60 @@
+.yandex-map {
+    height: 350px;
+    width: 55%;
+    overflow: hidden;
+
+    @include tablet-l {
+        width: 100%;
+    }
+}
+
+[class*="gototech"] {
+    display: none !important;
+}
+
+[class*="copyright__wrap"] {
+    display: none !important;
+}
+
+[class*="copyrights-promo"] {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.yandex-map:hover [class*="copyrights-promo"] {
+    opacity: 1;
+}
+
+[class*="ground-pane"] {
+    // filter: grayscale(1);
+}
+
+[class*="balloon__layout"],
+[class*="balloon__content"] {
+    background-color: $color-light !important;
+    color: $color-dark !important;
+
+    @include mobile-l {
+        margin-right: auto !important;
+    }
+}
+
+[class*="balloon__tail"]::after {
+    background-color: $color-light !important;
+}
+
+[class*="balloon_layout_panel"] {
+    background-color: $color-light !important;
+}
+
+[class*="balloon__layout"],
+[class*="balloon__content"] a {
+    color: $color-dark !important;
+}
+
+[class*="balloon__close-button"] {
+    background: url('../images/cross.svg') 50% no-repeat !important;
+    width: 15px !important;
+    height: 15px !important;
+    margin: 10px 10px;
+}

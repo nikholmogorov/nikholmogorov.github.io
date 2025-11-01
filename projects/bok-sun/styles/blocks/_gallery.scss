@@ -1,0 +1,25 @@
+.gallery {
+    @include flex(row, center, center, 1rem);
+
+    @include mobile-l {
+        @include flex(column, center, center, 1rem);
+    }
+
+    &__link {}
+
+    &__image {
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        @include tablet-s {
+            aspect-ratio: 250/166;
+            width: 14.0625rem;
+        }
+
+        @include mobile-l {
+            width: 100%;
+        }
+    }
+}
