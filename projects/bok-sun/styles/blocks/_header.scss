@@ -1,0 +1,144 @@
+.header {
+    &--position {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: $color-light;
+    }
+
+    &__inner {
+        @include flex(row, space-between, center, 1rem);
+
+        @include tablet-l {
+            @include flex(row, space-between, center, 0.5rem);
+        }
+
+        @include mobile-l {
+            @include flex(row, space-between, center, 1rem);
+            padding-top: 0.5rem;
+            padding-bottom: 0.75rem;
+        }
+    }
+
+    &__logo {
+        @include flex(row, start, center, 1rem);
+        flex-shrink: 0;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    &__logo-image {
+        @include mobile-s {
+            aspect-ratio: 1;
+            width: 3rem;
+        }
+    }
+
+    &__logo-text {
+        font-size: 2rem;
+        font-weight: 700;
+
+        @include mobile-l {
+            font-size: 1.5rem;
+        }
+
+        @include mobile-s {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__menu {
+        @include tablet-l {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        @include flex(row, start, center, 1rem);
+    }
+
+    &__menu-item {}
+
+    &__menu-link {
+        font-size: 1.25rem;
+    }
+
+    &__links {
+        @include flex(row, start, center, 1rem);
+
+        @include tablet-s {
+            @include flex(row, start, center, 0.5rem);
+        }
+    }
+
+    &__links-map {
+        padding: 1rem;
+        white-space: nowrap;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+
+        @include mobile-l {
+            padding: 0.5rem;
+        }
+    }
+
+    &__links-map-svg {
+        margin: 0.5rem 0.5rem 0 0;
+
+        @include mobile-l {
+            margin: 0;
+            width: 30px;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__links-map-text {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__links-telephone {
+        padding: 1rem;
+        white-space: nowrap;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+
+        @include mobile-l {
+            padding: 0.5rem;
+        }
+    }
+
+    &__links-telephone-svg {
+        margin: 0.5rem 0.75rem 0 0;
+
+        @include mobile-l {
+            margin: 0;
+            width: 30px;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__links-telephone-text {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__burger-button {
+        display: none;
+
+        @include mobile-l {
+            display: block;
+        }
+    }
+}

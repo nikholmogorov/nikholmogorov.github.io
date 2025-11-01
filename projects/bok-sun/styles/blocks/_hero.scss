@@ -1,0 +1,79 @@
+.hero {
+    &__inner {
+        @include flex(row, center, center, 12.5rem);
+        min-height: calc(100vh - 80px);
+
+        @include tablet-l {
+            @include flex(row, center, center, 0);
+        }
+
+        @include tablet-s {
+            @include flex(column-reverse, center, center, 3rem);
+        }
+
+        @include mobile-l {
+            @include flex(column-reverse, start, center, 0);
+        }
+    }
+
+    &__info {
+        width: 40%;
+
+        @include tablet-l {
+            width: 55%;
+        }
+
+        @include tablet-s {
+            width: 80%;
+        }
+
+        @include mobile-l {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 3.75rem;
+        text-wrap: nowrap;
+
+        @include mobile-l {
+            font-size: 2.5rem;
+        }
+
+        @include mobile-l {
+            line-height: 1;
+        }
+    }
+
+    &__text {
+        margin: 1.5rem 0 1.5rem;
+        text-wrap: balance;
+
+        @include mobile-l {
+            margin: 0.5rem 0 0.5rem;
+        }
+    }
+
+    &__link {}
+
+    &__image-wrapper {
+        width: 50%;
+
+        @include mobile-l {
+            width: 80%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+
+        @include desktop-s {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include mobile-l {
+            width: 80%;
+        }
+    }
+}
