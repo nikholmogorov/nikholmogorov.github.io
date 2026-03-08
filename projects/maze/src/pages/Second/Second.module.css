@@ -1,0 +1,11 @@
+.area {
+    position: relative;
+}
+
+.next {
+    position: absolute;
+    bottom: 15px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
