@@ -30,6 +30,7 @@ jobs:
     strategy:
       matrix:
         project: [calc, maze, memory-game, seku, todo]
+      fail-fast: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,7 +43,7 @@ jobs:
       - name: Install dependencies for ${{ matrix.project }}
         run: |
           cd projects/${{ matrix.project }}
-          npm ci
+          npm install
 
       - name: Build ${{ matrix.project }}
         run: |
