@@ -1,0 +1,49 @@
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.ascii {
+    line-height: 1;
+}
+
+.bsod {
+    position: absolute;
+    top: 35%;
+    width: 18vw;
+    font-size: 8px;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+@media screen and (max-width: 1920px) {
+    .bsod {
+        top: 28%;
+        width: 24vw;
+    }
+}
+
+@media screen and (max-width: 1536px) {
+    .bsod {
+        top: 26%;
+        width: 28vw;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .bsod {
+        top: 18%;
+        width: 32vw;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .bsod {
+        top: 22%;
+        width: 33vw;
+    }
+}

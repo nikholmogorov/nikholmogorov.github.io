@@ -1,0 +1,11 @@
+.calc {
+    width: 330px;
+    touch-action: manipulation;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: fit-content;
+}

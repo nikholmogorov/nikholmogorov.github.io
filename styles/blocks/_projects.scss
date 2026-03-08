@@ -5,6 +5,43 @@
 
     &__title {}
 
+    &__navigate {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+    }
+
+    &__button {
+        min-width: 6rem;
+        text-decoration: line-through;
+
+        &--active {
+            text-decoration: none;
+
+            &:hover {
+                box-shadow: 0px 0px 0px 0px transparent inset;
+                cursor: url('../images/cursor.png') 14 14, auto;
+            }
+
+            &:active {
+                background-color: var(--color-background);
+                color: var(--color-element);
+            }
+        }
+
+        &:nth-child(1) {
+            border-right: none;
+        }
+    }
+
+    &__pane {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
     &__card-wrapper {
         display: grid;
         grid-template-columns: repeat(3, 34rem);
