@@ -1,0 +1,58 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy-root:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy root files
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
+          clean: false
+          target-folder: .
+
+  build-and-deploy-projects:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: deploy-root
+    strategy:
+      matrix:
+        project: [calc, maze, memory-game, seku, todo]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies for ${{ matrix.project }}
+        run: |
+          cd projects/${{ matrix.project }}
+          npm ci
+
+      - name: Build ${{ matrix.project }}
+        run: |
+          cd projects/${{ matrix.project }}
+          npm run build
+
+      - name: Deploy ${{ matrix.project }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: projects/${{ matrix.project }}/dist
+          clean: false
+          target-folder: projects/${{ matrix.project }}
