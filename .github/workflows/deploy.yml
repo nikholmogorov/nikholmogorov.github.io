@@ -22,10 +22,8 @@ jobs:
           clean: false
           target-folder: .
 
-  build-and-deploy-projects:
+  build-projects:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     needs: deploy-root
     strategy:
       matrix:
@@ -50,10 +48,42 @@ jobs:
           cd projects/${{ matrix.project }}
           npm run build
 
-      - name: Deploy ${{ matrix.project }}
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.project }}
+          path: projects/${{ matrix.project }}/dist
+
+  deploy-projects:
+    runs-on: ubuntu-latest
+    needs: build-projects
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download all builds
+        uses: actions/download-artifact@v4
+        with:
+          path: ./builds
+
+      - name: Prepare deployment folder
+        run: |
+          mkdir -p deploy/projects
+
+          for project in calc maze memory-game seku todo; do
+            if [ -d "builds/build-$project" ]; then
+              echo "Copying $project..."
+              mkdir -p "deploy/projects/$project"
+              cp -r "builds/build-$project/"* "deploy/projects/$project/"
+            fi
+          done
+
+      - name: Deploy all projects
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: projects/${{ matrix.project }}/dist
+          folder: deploy
           clean: false
-          target-folder: projects/${{ matrix.project }}
+          target-folder: .
