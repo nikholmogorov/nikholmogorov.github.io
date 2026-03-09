@@ -13,8 +13,8 @@ export default function Fourth() {
 
     const handleGoHome = () => {
         let soundExit = unusualMode
-            ? "./exit_unusual_sound.mp3"
-            : "./exit_usual_sound.mp3";
+            ? `${import.meta.env.BASE_URL}exit_unusual_sound.mp3`
+            : `${import.meta.env.BASE_URL}exit_usual_sound.mp3`;
         new Audio(soundExit).play();
         setMode(false);
         navigate("/");
@@ -24,8 +24,8 @@ export default function Fourth() {
         const playOnce = async () => {
             if (!hasPlayed.current) {
                 let soundEntry = unusualMode
-                    ? "./entry_unusual_sound.mp3"
-                    : "./entry_usual_sound.mp3";
+                    ? `${import.meta.env.BASE_URL}entry_unusual_sound.mp3`
+                    : `${import.meta.env.BASE_URL}entry_usual_sound.mp3`;
                 await new Audio(soundEntry).play();
                 hasPlayed.current = true;
             }

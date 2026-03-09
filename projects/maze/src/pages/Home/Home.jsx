@@ -8,11 +8,11 @@ export default function Home() {
     const setMode = useStore((state) => state.setMode);
 
     const handleGoFirst = () => {
-        new Audio("./door_sound.mp3").play();
+        new Audio(`${import.meta.env.BASE_URL}door_sound.mp3`).play();
     };
 
     const activateUnusualMode = () => {
-        new Audio("./activate_unusual_mode_sound.mp3").play();
+        new Audio(`${import.meta.env.BASE_URL}activate_unusual_mode_sound.mp3`).play();
         activatorRef.current.innerText = "¡";
         setMode(true);
     };

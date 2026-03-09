@@ -5,12 +5,12 @@ export default function First() {
     const navigate = useNavigate();
 
     const handleGoHome = () => {
-        new Audio("./damage_sound.mp3").play();
+        new Audio(`${import.meta.env.BASE_URL}damage_sound.mp3`).play();
         navigate("/");
     };
 
     const handleGoSecond = () => {
-        new Audio("./door_sound.mp3").play();
+        new Audio(`${import.meta.env.BASE_URL}door_sound.mp3`).play();
         navigate("/second");
     };
     return (
