@@ -7,7 +7,7 @@ import Fourth from "./pages/Fourth/Fourth";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/projects/maze">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/first" element={<First />} />
