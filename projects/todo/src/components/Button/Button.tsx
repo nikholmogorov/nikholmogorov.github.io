@@ -1,17 +1,16 @@
-import { memo } from 'react'
-import styles from "./Button.module.scss"
+import styles from "./Button.module.css";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
     className?: string;
 }
 
-const Button = ({ children, className, ...props }: ButtonProps) => {
+const Button = ({children, className, ...props}: ButtonProps) => {
     return (
-        <button className={`${styles.button} ${className || ''}`} {...props}>
-            {children}
-        </button>
+    <button className={`${styles.button} ${className || ''}`} {...props}>
+        {children}
+    </button>
     )
 }
 
-export default memo(Button)
+export default Button

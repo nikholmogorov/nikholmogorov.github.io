@@ -1,1 +1,30 @@
-.button{-ms-flex-negative:0;flex-shrink:0;min-width:80px;min-height:50px;color:var(--color-element);background-color:var(--color-background);border:1px solid var(--color-element);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}@media(max-width: 767px){.button{width:150px;height:50px}}.button:hover{-webkit-box-shadow:0px 0px 0px 2px var(--color-element) inset;box-shadow:0px 0px 0px 2px var(--color-element) inset;cursor:url(/cursor_interactive.png) 14 14,auto}.button:active{background-color:var(--color-element);color:var(--color-background)}.button:focus-visible{outline:none;-webkit-box-shadow:0px 0px 0px 2px var(--color-element) inset;box-shadow:0px 0px 0px 2px var(--color-element) inset}/*# sourceMappingURL=Button.module.css.map */
+.button {
+    flex-shrink: 0;
+    width: 75px;
+    height: 50px;
+    color: var(--color-element);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-element);
+    user-select: none;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 0px 2px var(--color-element) inset;
+    cursor:
+        url(/cursor_interactive.png) 14 14,
+        auto;
+}
+
+.button:active {
+    background-color: var(--color-element);
+    color: var(--color-background);
+}
+
+.button:active span {
+    color: var(--color-background);
+}
+
+.button:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 2px var(--color-element) inset;
+}
