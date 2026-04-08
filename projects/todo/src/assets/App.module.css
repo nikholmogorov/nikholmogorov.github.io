@@ -1,0 +1,7 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 330px;
+    margin-block: 10px;
+}

@@ -1,15 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
-    inputs:
-      clean_deploy:
-        description: 'Perform a clean deploy (removes all old files)'
-        required: false
-        type: boolean
-        default: false
 
 jobs:
   deploy-root:
@@ -20,12 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy root static files
+      - name: Deploy root files
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .
-          clean: ${{ github.event.inputs.clean_deploy || false }}
+          clean: false
           target-folder: .
 
   build-projects:
@@ -43,40 +37,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: projects/${{ matrix.project }}/package-lock.json
 
-      - name: Install dependencies
-        working-directory: projects/${{ matrix.project }}
-        run: npm ci
-
-      - name: Build project with dynamic base path
-        working-directory: projects/${{ matrix.project }}
+      - name: Install dependencies for ${{ matrix.project }}
         run: |
-          BASE_PATH="/projects/${{ matrix.project }}/"
-          echo "Building ${{ matrix.project }} with base=$BASE_PATH"
+          cd projects/${{ matrix.project }}
+          npm install
 
-          npm run build -- --base="$BASE_PATH"
-
-          if [ ! -d "dist" ]; then
-            echo "Build failed: 'dist' directory not created"
-            exit 1
-          fi
-
-          if [ ! -f "dist/index.html" ]; then
-            echo "Build failed: 'dist/index.html' not found"
-            exit 1
-          fi
-
-          echo "Build successful. Contents of dist:"
-          ls -la dist/
+      - name: Build ${{ matrix.project }}
+        run: |
+          cd projects/${{ matrix.project }}
+          npm run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.project }}
           path: projects/${{ matrix.project }}/dist
-          retention-days: 1
 
   deploy-projects:
     runs-on: ubuntu-latest
@@ -87,43 +63,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download all build artifacts
+      - name: Download all builds
         uses: actions/download-artifact@v4
         with:
           path: ./builds
 
-      - name: Prepare deployment folder structure
+      - name: Prepare deployment folder
         run: |
           mkdir -p deploy/projects
 
-          echo "Preparing projects for deployment..."
           for project in calc maze memory-game seku todo; do
-            artifact_dir="builds/build-$project"
-            target_dir="deploy/projects/$project"
-
-            if [ -d "$artifact_dir" ]; then
-              echo "Copying $project from $artifact_dir to $target_dir"
-              mkdir -p "$target_dir"
-              cp -r "$artifact_dir"/* "$target_dir/"
-
-              if [ ! -f "$target_dir/index.html" ]; then
-                echo "WARNING: index.html not found in $target_dir"
-              else
-                echo "index.html present"
-              fi
-            else
-              echo "ERROR: Artifact for $project not found at $artifact_dir"
-              exit 1
+            if [ -d "builds/build-$project" ]; then
+              echo "Copying $project..."
+              mkdir -p "deploy/projects/$project"
+              cp -r "builds/build-$project/"* "deploy/projects/$project/"
             fi
           done
 
-          echo "Final deployment structure:"
-          tree deploy/ || ls -R deploy/
-
-      - name: Deploy all projects to GitHub Pages
+      - name: Deploy all projects
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: deploy
-          clean: ${{ github.event.inputs.clean_deploy || false }}
+          clean: false
           target-folder: .
