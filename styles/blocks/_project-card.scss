@@ -1,9 +1,19 @@
 .project-card {
-    padding: 1rem;
-    aspect-ratio: 32 / 25;
+    display: flex;
+    flex-direction: column;
     width: 34rem;
+    padding: 1rem;
+
+    &:nth-child(even) {
+        @media (max-width: 1280px) {
+            .project-card__icon-wrapper:nth-last-child(1)>.project-card__icon-tooltip {
+                left: -125%;
+            }
+        }
+    }
 
     @include tablet-l {
+        aspect-ratio: 32 / 25;
         width: 30rem;
     }
 
@@ -16,25 +26,11 @@
     }
 
     &__swiper {
+        width: 100%;
         user-select: none;
     }
 
-    &__swiper-slide-image {
-        aspect-ratio: 600 / 280;
-        width: 34rem;
-
-        @include tablet-l {
-            width: 30rem;
-        }
-
-        @include tablet-s {
-            width: 22rem;
-        }
-
-        @include mobile-l {
-            width: 100%;
-        }
-    }
+    &__swiper-slide-image {}
 
     &__swiper-button-prev {
         aspect-ratio: 1;
@@ -83,18 +79,35 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: auto;
     }
 
     &__icons-wrapper {
         display: flex;
         align-items: center;
         gap: 1rem;
+
+        @include mobile-s {
+            gap: 0.5rem;
+        }
     }
 
     &__icon-wrapper {
         position: relative;
         display: inline-block;
+
+        @include mobile-s {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        @include mobile-l {
+
+            &:nth-last-child(2)>.project-card__icon-tooltip,
+            &:nth-last-child(1)>.project-card__icon-tooltip {
+                left: -100%;
+            }
+        }
     }
 
     &__icon-tooltip {
@@ -134,4 +147,56 @@
 .tooltip-typescript {
     top: 135%;
     left: 275%;
+}
+
+.projects__pane:nth-last-child(2) .project-card {
+    height: 28rem;
+
+    @include tablet-l {
+        height: 27rem;
+    }
+
+    @include tablet-s {
+        height: 25rem;
+    }
+
+    @include mobile-l {
+        height: 27rem;
+    }
+
+    @include mobile-m {
+        height: 25rem;
+    }
+
+    @include mobile-s {
+        height: 24rem;
+    }
+}
+
+.projects__pane:nth-last-child(1) .project-card {
+    height: 31rem;
+
+    @include tablet-l {
+        height: 29rem;
+    }
+
+    @include tablet-s {
+        height: 28rem;
+    }
+
+    @include mobile-l {
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            height: 25rem;
+        }
+    }
+
+    @include mobile-s {
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            height: 24rem;
+        }
+    }
 }
