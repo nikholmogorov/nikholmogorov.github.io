@@ -1,6 +1,10 @@
 import styles from "./Output.module.css";
 
-const Output = (props) => {
+interface OutputProps {
+    outputValue: string;
+}
+
+const Output = (props: OutputProps) => {
     const { outputValue } = props;
 
     return (

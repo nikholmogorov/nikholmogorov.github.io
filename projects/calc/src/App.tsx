@@ -8,7 +8,7 @@ function App() {
     const [inputValue, setInputValue] = useState("");
     const [outputValue, setOutputValue] = useState("result here");
 
-    const inputRef = useRef(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     function handleDeleteAllButton() {
         setInputValue("");
@@ -20,16 +20,17 @@ function App() {
         inputRef.current?.focus();
     }
 
-    function handleButtonClick(e) {
-        setInputValue((inputValue) => (inputValue += e.target.innerText));
+    function handleButtonClick(e: React.MouseEvent<HTMLButtonElement>) {
+        let buttonText = e.currentTarget.innerText;
+        setInputValue((inputValue) => (inputValue += buttonText));
         inputRef.current?.focus();
     }
 
-    function handleInput(e) {
-        const value = e.target.value;
+    function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
+        const value = e.currentTarget.value;
         const filteredValue = value.replace(/[^0-9+\-*/e().,%÷×−]/g, "");
         if (filteredValue !== value) {
-            e.target.value = filteredValue;
+            e.currentTarget.value = filteredValue;
         }
         setInputValue(filteredValue);
     }
@@ -67,8 +68,8 @@ function App() {
             } else if (result !== 2.718282) {
                 setOutputValue("result here");
             }
-        } catch (e) {
-            if (e.name === `SyntaxError`) {
+        } catch (e: unknown) {
+            if (e instanceof Error && e.name === `SyntaxError`) {
                 if (inputValue === "%") {
                     setOutputValue("1% = 0,01");
                     return;

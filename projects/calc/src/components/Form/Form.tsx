@@ -2,7 +2,14 @@ import Output from "../Output/Output";
 import Input from "../Input/Input";
 import styles from "./Form.module.css";
 
-const Form = (props) => {
+interface FormProps {
+    inputValue: string;
+    handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    inputRef: React.RefObject<HTMLInputElement | null>;
+    outputValue: string;
+}
+
+const Form = (props: FormProps) => {
     const { inputValue, handleInput, inputRef, outputValue } = props;
 
     return (

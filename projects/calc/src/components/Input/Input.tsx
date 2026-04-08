@@ -1,10 +1,16 @@
 import styles from "./Input.module.css";
 
-const Input = (props) => {
+interface InputProps {
+    inputValue: string;
+    handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    inputRef: React.RefObject<HTMLInputElement | null>;
+}
+
+const Input = (props: InputProps) => {
     const { inputValue, handleInput, inputRef } = props;
 
     // обработчик взаимодействия с клавиатуры
-    function handleKeyDown(e) {
+    function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return true;
         }
@@ -37,7 +43,7 @@ const Input = (props) => {
             className={styles.input}
             value={inputValue}
             onKeyDown={handleKeyDown}
-            onInput={handleInput}
+            onChange={handleInput}
             ref={inputRef}
             id="calc"
             placeholder=""
