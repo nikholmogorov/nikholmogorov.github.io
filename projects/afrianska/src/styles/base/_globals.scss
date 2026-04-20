@@ -1,0 +1,72 @@
+::selection {
+  background-color: var(--color-blue-04);
+  color: var(--color-light);
+}
+
+::selection {
+  background-color: var(--color-blue-04);
+  color: var(--color-light);
+}
+
+.scrollbar-moz-fallback {
+  scrollbar-color: var(--color-blue-04) var(--color-light);
+  scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-light);
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue-04);
+}
+
+* {
+  transition: var(--transition-duration) ease-out;
+}
+
+*:hover {
+  transition: var(--transition-duration) ease-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scrollbar-gutter: auto;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: var(--color-blue-04);
+  background-color: var(--color-light);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 61.25rem;
+  padding-inline: 1.25rem;
+  margin: 0 auto;
+}
+
+.block-scroll {
+  overflow: hidden;
+}
