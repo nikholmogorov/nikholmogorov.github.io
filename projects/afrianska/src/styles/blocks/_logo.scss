@@ -1,0 +1,18 @@
+.logo {
+  &:hover {
+    .logo__image-svg {
+      g {
+        :nth-child(1),
+        :nth-child(3) {
+          fill: var(--color-blue-04);
+          transition-duration: var(--transition-duration);
+        }
+
+        :nth-child(2) {
+          stroke: var(--color-blue-04);
+          transition-duration: var(--transition-duration);
+        }
+      }
+    }
+  }
+}

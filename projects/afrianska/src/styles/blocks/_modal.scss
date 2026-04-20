@@ -1,0 +1,71 @@
+@use "../base/media" as *;
+
+.modal {
+  width: 33.75rem;
+  height: 50rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius);
+
+  @include desktop-s {
+    width: 30rem;
+    height: 40rem;
+  }
+
+  @include mobile-s {
+    height: 38rem;
+  }
+
+  &::backdrop {
+    background-color: #00000080;
+  }
+
+  &__inner {
+    display: flex;
+    height: 100%;
+    padding: 3.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include desktop-s {
+      padding: 2.5rem;
+    }
+
+    @include mobile-s {
+      padding: 2rem;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-blue-04);
+  }
+
+  &__close-button {
+    width: 3rem;
+    aspect-ratio: 1;
+    font-size: 1.65rem;
+    color: var(--color-blue-01);
+    background-color: transparent;
+    border: 0.0625rem solid var(--color-blue-01);
+    border-radius: var(--border-radius);
+
+    &:hover {
+      color: var(--color-blue-04);
+      border: 0.0625rem solid var(--color-blue-04);
+      box-shadow: 0 0 1rem var(--color-blue-04);
+    }
+
+    @include mobile-m {
+      padding-top: 0.3125rem;
+    }
+  }
+}

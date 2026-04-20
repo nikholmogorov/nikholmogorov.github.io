@@ -1,0 +1,14 @@
+@use "../base/media" as *;
+
+.error {
+  min-height: 0.85rem;
+  line-height: 1;
+  visibility: hidden;
+  transition: visibility 0.2s;
+
+  &--show {
+    font-size: 0.85rem;
+    visibility: visible;
+    color: var(--color-error);
+  }
+}

@@ -27,7 +27,7 @@ jobs:
     needs: deploy-root
     strategy:
       matrix:
-        project: [calc, maze, memory-game, seku, todo]
+        project: [calc, maze, memory-game, seku, todo, afrianska]
       fail-fast: false
     steps:
       - name: Checkout repository
@@ -72,7 +72,7 @@ jobs:
         run: |
           mkdir -p deploy/projects
 
-          for project in calc maze memory-game seku todo; do
+          for project in calc maze memory-game seku todo afrianska; do
             if [ -d "builds/build-$project" ]; then
               echo "Copying $project..."
               mkdir -p "deploy/projects/$project"

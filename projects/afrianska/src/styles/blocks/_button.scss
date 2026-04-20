@@ -1,0 +1,16 @@
+.button {
+  flex-shrink: 0;
+  width: 13.75rem;
+  height: 3.5rem;
+  padding: 1rem 3rem;
+  white-space: nowrap;
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--color-light);
+  background-color: var(--color-blue-01);
+  box-shadow: var(--shadow-button);
+
+  &:hover {
+    background-color: var(--color-blue-04);
+  }
+}

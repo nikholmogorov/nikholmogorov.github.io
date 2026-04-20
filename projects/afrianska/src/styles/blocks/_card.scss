@@ -1,0 +1,64 @@
+@use "../base/media" as *;
+
+.card {
+  width: 23.75rem;
+  height: 32.875rem;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-light);
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  @include mobile-m {
+    width: 19rem;
+    height: 32rem;
+    padding: 2rem;
+  }
+
+  @include mobile-s {
+    height: 34rem;
+  }
+
+  &__title {
+    margin-top: 3.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-blue-04);
+
+    @include mobile-m {
+      margin-top: 2rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    width: 8rem;
+    height: 3rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-blue-01);
+
+    &:hover {
+      color: var(--color-blue-04);
+    }
+
+    @include mobile-m {
+      margin-top: 1rem;
+    }
+  }
+
+  &__link-arrow {
+    fill: currentcolor;
+  }
+}

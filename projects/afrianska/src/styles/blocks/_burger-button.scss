@@ -1,0 +1,25 @@
+.burger-button {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    .burger-button__image-svg {
+      path {
+        fill: var(--color-blue-04);
+        transition-duration: var(--transition-duration);
+      }
+    }
+  }
+
+  &__image-svg {
+    path {
+      fill: var(--color-blue-02);
+    }
+  }
+}

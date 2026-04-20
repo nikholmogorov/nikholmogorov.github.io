@@ -1,0 +1,27 @@
+@use "../base/media" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: var(--header-height);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: var(--color-light);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75rem;
+
+    @include tablet-l {
+      margin-inline: 2rem;
+    }
+
+    @include mobile-l {
+      margin-inline: 1rem;
+    }
+  }
+}
