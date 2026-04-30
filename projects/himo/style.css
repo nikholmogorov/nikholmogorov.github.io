@@ -414,6 +414,11 @@ a:hover {
     margin-left: 20px;
 }
 
+.purchase-form-label-bike,
+.purchase-form-label-radio-style {
+    display: block;
+}
+
 .purchase-form-label-radio:checked+.purchase-form-label-bike {
     display: block;
     position: absolute;
