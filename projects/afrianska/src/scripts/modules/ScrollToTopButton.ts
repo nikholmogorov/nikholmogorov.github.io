@@ -1,17 +1,14 @@
 /**
- *
+ * Управление видимостью кнопки скролла наверх
  */
+
 export class ScrollToTopButton {
+
   scrollToTopButtonElement: HTMLElement;
 
-  selectors = {
-    scrollToTopButton: `.scroll-to-top-button`,
-  };
-
   constructor() {
-    this.scrollToTopButtonElement = document.querySelector(
-      this.selectors.scrollToTopButton,
-    )!;
+    this.scrollToTopButtonElement =
+      document.getElementById(`scroll-to-top-button`)!;
     this.showScrollButton = this.showScrollButton.bind(this);
     this.bindEvents();
     this.showScrollButton();
@@ -28,4 +25,5 @@ export class ScrollToTopButton {
   bindEvents() {
     window.addEventListener(`scroll`, this.showScrollButton);
   }
+
 }

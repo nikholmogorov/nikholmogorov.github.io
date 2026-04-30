@@ -1,9 +1,11 @@
 import type { Modal } from "./Modal";
 
 /**
- *
+ * Управление попапом с сообщением об отправке данных
  */
+
 export class Popup {
+
   popupElement: HTMLDialogElement;
 
   innerElement: HTMLElement;
@@ -14,20 +16,13 @@ export class Popup {
 
   modal: Modal;
 
-  selectors = {
-    popup: `.popup`,
-    inner: `.popup__inner`,
-    title: `.popup__title`,
-    closeButton: `.popup__close-button`,
-  };
-
   constructor(modal: Modal) {
     this.modal = modal;
-    this.popupElement = document.querySelector(this.selectors.popup)!;
-    this.innerElement = this.popupElement.querySelector(this.selectors.inner)!;
-    this.titleElement = this.popupElement.querySelector(this.selectors.title)!;
+    this.popupElement = document.querySelector(`[data-popup]`)!;
+    this.innerElement = this.popupElement.querySelector(`[data-popup-inner]`)!;
+    this.titleElement = this.popupElement.querySelector(`[data-popup-title]`)!;
     this.closeButtonElement = this.popupElement.querySelector(
-      this.selectors.closeButton,
+      `[data-popup-close-button]`
     )!;
     this.close = this.close.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -51,7 +46,7 @@ export class Popup {
 
   handleClick(e: MouseEvent) {
     const target = e.target as HTMLElement;
-    if (target.closest(this.selectors.inner)) {
+    if (target.closest(`[data-popup-inner]`)) {
       return;
     }
     this.close();
@@ -61,4 +56,5 @@ export class Popup {
     this.closeButtonElement.addEventListener(`click`, this.close);
     this.popupElement.addEventListener(`click`, this.handleClick);
   }
+
 }

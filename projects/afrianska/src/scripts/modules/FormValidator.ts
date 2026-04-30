@@ -1,126 +1,85 @@
 import type { FormSend } from "./FormSend";
 
 /**
+* Валидации формы
+ */
+
+interface IFieldValidator {
+  validate(value: string): true | string;
+}
+
+interface IFieldConfig {
+  input: string;
+  error: string;
+  validator: IFieldValidator;
+}
+
+/**
  *
  */
 export class FormValidator {
-  formElement: HTMLElement;
 
-  nameInputElement: HTMLInputElement;
-
-  errorNameInputElement: HTMLElement;
-
-  emailInputElement: HTMLInputElement;
-
-  errorEmailInputElement: HTMLElement;
-
-  messageInputElement: HTMLInputElement;
-
-  errorMessageInputElement: HTMLElement;
+  formElement: HTMLFormElement;
 
   formSend: FormSend;
 
-  selectors = {
-    form: `.form`,
-    nameInput: `#name`,
-    errorNameInput: `.error-name`,
-    emailInput: `#email`,
-    errorEmailInput: `.error-email`,
-    messageInput: `#message`,
-    errorMessageInput: `.error-message`,
-    error: `.error`,
-    errorShow: `error--show`,
-  };
+  fields: Record<
+    string,
+    {
+      inputElement: HTMLInputElement | HTMLTextAreaElement;
+      errorElement: HTMLElement;
+      validator: IFieldValidator;
+    }
+  > = {};
 
-  constructor(formSend: FormSend) {
+  constructor(
+    formId: string,
+    formConfig: Record<string, IFieldConfig>,
+    formSend: FormSend
+  ) {
+    this.formElement = document.getElementById(formId) as HTMLFormElement;
+    for (const [ inputName, inputConfig ] of Object.entries(formConfig)) {
+      const inputElement = this.formElement.querySelector(inputConfig.input) as
+        | HTMLInputElement
+        | HTMLTextAreaElement;
+      const errorElement = this.formElement.querySelector(
+        inputConfig.error
+      ) as HTMLElement;
+      const validator = inputConfig.validator;
+      this.fields[inputName] = { inputElement, errorElement, validator };
+    }
     this.formSend = formSend;
-    this.formElement = document.querySelector(this.selectors.form)!;
-    this.nameInputElement = this.formElement.querySelector(
-      this.selectors.nameInput,
-    )!;
-    this.errorNameInputElement = this.formElement.querySelector(
-      this.selectors.errorNameInput,
-    )!;
-    this.emailInputElement = this.formElement.querySelector(
-      this.selectors.emailInput,
-    )!;
-    this.errorEmailInputElement = this.formElement.querySelector(
-      this.selectors.errorEmailInput,
-    )!;
-    this.messageInputElement = this.formElement.querySelector(
-      this.selectors.messageInput,
-    )!;
-    this.errorMessageInputElement = this.formElement.querySelector(
-      this.selectors.errorMessageInput,
-    )!;
     this.validateForm = this.validateForm.bind(this);
     this.bindEvents();
   }
 
-  isCorrectEmail(email: string) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
   showError(el: HTMLElement, message: string) {
     el.textContent = message;
-    el.classList.add(this.selectors.errorShow);
+    el.classList.add(`error--show`);
   }
 
   clearErrors() {
     this.formElement
-      .querySelectorAll(this.selectors.error)
-      .forEach((el) => el.classList.remove(this.selectors.errorShow));
-  }
-
-  validateName() {
-    const clearNameInputValue = this.nameInputElement.value
-      .trim()
-      .replace(/[^\p{L}\s]/gu, "");
-    if (clearNameInputValue.length === 0) {
-      this.showError(this.errorNameInputElement, `Enter name in letters`);
-      return false;
-    } else if (clearNameInputValue.length < 2) {
-      this.showError(this.errorNameInputElement, `Enter more than 1 letter`);
-      return false;
-    }
-    return true;
-  }
-
-  validateEmail() {
-    const emailInputValue = this.emailInputElement.value.trim();
-    if (emailInputValue.length === 0) {
-      this.showError(this.errorEmailInputElement, `Enter email`);
-      return false;
-    } else if (!this.isCorrectEmail(emailInputValue)) {
-      this.showError(this.errorEmailInputElement, `Incorrect email format`);
-      return false;
-    }
-    return true;
-  }
-
-  validateMessage() {
-    const messageInputValue = this.messageInputElement.value.trim();
-    if (messageInputValue.length === 0) {
-      this.showError(this.errorMessageInputElement, `Enter message`);
-      return false;
-    } else if (messageInputValue.length < 5) {
-      this.showError(
-        this.errorMessageInputElement,
-        `Enter more than 4 characters`,
-      );
-      return false;
-    }
-    return true;
+      .querySelectorAll(`[data-error]`)
+      .forEach((el) => el.classList.remove(`error--show`));
   }
 
   validateForm(e: SubmitEvent) {
     e.preventDefault();
     this.clearErrors();
-    const isNameValid = this.validateName();
-    const isEmailValid = this.validateEmail();
-    const isMessageValid = this.validateMessage();
+    let isValid = true;
 
-    if (isNameValid && isEmailValid && isMessageValid) {
+    for (const fieldConfig of Object.values(this.fields)) {
+      const result = fieldConfig.validator.validate(
+        fieldConfig.inputElement.value.trim()
+      );
+      if (result !== true) {
+        this.showError(fieldConfig.errorElement, result);
+        isValid = false;
+      }
+    }
+
+    if (isValid) {
       this.formSend.send();
     }
   }
@@ -128,4 +87,5 @@ export class FormValidator {
   bindEvents() {
     this.formElement.addEventListener(`submit`, this.validateForm);
   }
+
 }

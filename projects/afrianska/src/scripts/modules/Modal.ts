@@ -1,7 +1,9 @@
 /**
- *
+ * Управление модальным окном
  */
+
 export class Modal {
+
   openButtonElement: HTMLElement;
 
   modalElement: HTMLDialogElement;
@@ -10,21 +12,13 @@ export class Modal {
 
   innerElement: HTMLElement;
 
-  selectors = {
-    openButton: `.modal-open-button`,
-    modal: `.modal`,
-    closeButton: `.modal__close-button`,
-    inner: `.modal__inner`,
-    blockScroll: `block-scroll`,
-  };
-
-  constructor() {
-    this.openButtonElement = document.querySelector(this.selectors.openButton)!;
-    this.modalElement = document.querySelector(this.selectors.modal)!;
+  constructor(openButtonAttr: string) {
+    this.openButtonElement = document.querySelector(openButtonAttr)!;
+    this.modalElement = document.querySelector(`[data-modal]`)!;
     this.closeButtonElement = this.modalElement.querySelector(
-      this.selectors.closeButton,
+      `[data-modal-close-button]`
     )!;
-    this.innerElement = this.modalElement.querySelector(this.selectors.inner)!;
+    this.innerElement = this.modalElement.querySelector(`[data-modal-inner]`)!;
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -34,7 +28,7 @@ export class Modal {
 
   open() {
     this.modalElement.showModal();
-    document.body.classList.add(this.selectors.blockScroll);
+    document.body.classList.add(`block-scroll`);
   }
 
   close() {
@@ -43,14 +37,14 @@ export class Modal {
 
   handleClick(e: MouseEvent) {
     const target = e.target as HTMLElement;
-    if (target.closest(this.selectors.inner)) {
+    if (target.closest(`[data-modal-inner]`)) {
       return;
     }
     this.close();
   }
 
   unlockScroll() {
-    document.body.classList.remove(this.selectors.blockScroll);
+    document.body.classList.remove(`block-scroll`);
   }
 
   bindEvents() {
@@ -59,4 +53,5 @@ export class Modal {
     this.modalElement.addEventListener(`click`, this.handleClick);
     this.modalElement.addEventListener(`close`, this.unlockScroll);
   }
+
 }
