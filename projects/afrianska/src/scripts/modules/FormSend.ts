@@ -2,7 +2,7 @@ import type { Popup } from "./Popup";
 
 /**
 * Сбор и отправка данных
- */
+*/
 
 export class FormSend {
 

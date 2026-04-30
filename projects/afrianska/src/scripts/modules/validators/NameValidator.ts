@@ -1,6 +1,6 @@
 /**
 * Проверка поля "name"
- */
+*/
 
 export class NameValidator {
 

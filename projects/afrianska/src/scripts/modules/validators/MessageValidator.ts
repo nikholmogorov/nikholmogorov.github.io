@@ -1,6 +1,6 @@
 /**
 * Проверка поля "message"
- */
+*/
 
 export class MessageValidator {
 

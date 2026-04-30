@@ -14,9 +14,6 @@ interface IFieldConfig {
   validator: IFieldValidator;
 }
 
-/**
- *
- */
 export class FormValidator {
 
   formElement: HTMLFormElement;

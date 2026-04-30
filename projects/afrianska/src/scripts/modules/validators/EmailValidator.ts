@@ -1,6 +1,6 @@
 /**
 * Проверка поля "email"
- */
+*/
 
 export class EmailValidator {
 
