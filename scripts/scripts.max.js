@@ -19,14 +19,24 @@ document.addEventListener(`DOMContentLoaded`, () => {
     };
 
     function setTheme(e) {
+        let animationDirection = { clipPath: [`inset(0 0 100% 0)`, `inset(0)`] };
+        let animationProperties = { pseudoElement: "::view-transition-new(root)", duration: 600 };
         let isChecked = e.target.checked;
-        document.documentElement.setAttribute(
-            `data-theme`,
-            isChecked ? `dark` : `light`
-        );
-        checkboxDesktop.checked = isChecked;
-        checkboxMobile.checked = isChecked;
-    };
+        let transition = document.startViewTransition(() => {
+            document.documentElement.setAttribute(
+                `data-theme`,
+                isChecked ? `dark` : `light`
+            );
+            checkboxDesktop.checked = isChecked;
+            checkboxMobile.checked = isChecked;
+        });
+        transition.ready.then(() => {
+            document.documentElement.animate(
+                animationDirection,
+                animationProperties,
+            );
+        });
+    }
 
     setThemeFromSystem();
     checkboxDesktop.addEventListener(`click`, setTheme);
@@ -69,11 +79,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
         let hash = window.location.hash.substring(1);
 
         if (hash) {
-            let hashParts = hash.split('/');
+            let hashParts = hash.split(`/`);
 
-            if (hashParts.length === 2 && hashParts[0] === 'projects') {
+            if (hashParts.length === 2 && hashParts[0] === `projects`) {
                 return {
-                    type: 'projects',
+                    type: `projects`,
                     section: hashParts[0],
                     tabId: hashParts[1]
                 };
@@ -81,7 +91,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
             if (hashParts.length === 1) {
                 return {
-                    type: 'anchor',
+                    type: `anchor`,
                     section: hashParts[0],
                     tabId: null
                 };
@@ -96,7 +106,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     };
 
     function scrollToSection(sectionId) {
-        if (sectionId === '') {
+        if (sectionId === ``) {
             window.scrollTo({
                 top: 0,
             });
@@ -106,7 +116,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
         let section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({
-                block: 'start'
+                block: `start`
             });
         };
     };
@@ -122,7 +132,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     function handleHashChange() {
         let urlData = getURLData();
 
-        if (urlData.type === 'projects' && urlData.section === 'projects') {
+        if (urlData.type === `projects` && urlData.section === `projects`) {
             if (urlData.tabId) {
                 activateTab(urlData.tabId);
             } else {
@@ -131,11 +141,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
                     activateTab(firstTab.dataset.tab);
                 };
             };
-            scrollToSection('projects');
-        } else if (urlData.type === 'anchor') {
+            scrollToSection(`projects`);
+        } else if (urlData.type === `anchor`) {
             scrollToSection(urlData.section);
         } else {
-            scrollToSection('');
+            scrollToSection(``);
             let firstTab = document.querySelector(`.projects__button`);
             if (firstTab) {
                 activateTab(firstTab.dataset.tab);
@@ -150,21 +160,21 @@ document.addEventListener(`DOMContentLoaded`, () => {
         let tabId = e.target.dataset.tab;
         if (tabId) {
             activateTab(tabId);
-            updateURL('projects', tabId);
+            updateURL(`projects`, tabId);
         };
     });
 
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener(`hashchange`, handleHashChange);
 
     handleHashChange();
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll(`a[href^="#"]`).forEach(anchor => {
+        anchor.addEventListener(`click`, function (e) {
             e.preventDefault();
-            let href = this.getAttribute('href');
+            let href = this.getAttribute(`href`);
 
-            if (href === '#') {
-                window.location.hash = '';
+            if (href === `#`) {
+                window.location.hash = ``;
                 window.scrollTo({
                     top: 0,
                 });
@@ -173,7 +183,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
             let hashValue = href.substring(1);
 
-            let targetElement = document.getElementById(hashValue.split('/')[0]);
+            let targetElement = document.getElementById(hashValue.split(`/`)[0]);
 
             if (targetElement) {
                 window.location.hash = hashValue;
@@ -181,11 +191,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
         });
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            let href = this.getAttribute('href');
+    document.querySelectorAll(`a[href^="#"]`).forEach(anchor => {
+        anchor.addEventListener(`click`, function (e) {
+            let href = this.getAttribute(`href`);
 
-            if (href === '#') {
+            if (href === `#`) {
                 e.preventDefault();
                 window.scrollTo({
                     top: 0,
@@ -193,13 +203,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 return;
             };
 
-            let targetId = href.split('/')[0];
+            let targetId = href.split(`/`)[0];
             let targetElement = document.getElementById(targetId.substring(1));
 
             if (targetElement && window.location.hash === href) {
                 e.preventDefault();
                 targetElement.scrollIntoView({
-                    block: 'start'
+                    block: `start`
                 });
             };
         });
