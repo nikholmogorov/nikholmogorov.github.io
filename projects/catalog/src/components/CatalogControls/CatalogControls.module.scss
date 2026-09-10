@@ -1,0 +1,139 @@
+@use "@/assets/media.scss" as *;
+
+.catalogControls {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  height: 3.125rem;
+  border: 1px solid var(--color-element);
+
+  @include mobile-l {
+    flex-direction: column;
+    height: unset;
+    border: none;
+  }
+
+  &[data-loading] {
+    pointer-events: none;
+    user-select: none;
+    border: none;
+
+    .checkbox {
+      display: none;
+    }
+
+    .search,
+    .label,
+    .sortButton {
+      background-color: var(--color-element);
+      color: transparent !important;
+    }
+
+    .search {
+      animation: global(pulse) 1s ease-in-out infinite alternate;
+    }
+
+    .label {
+      padding-right: 11.625rem;
+      animation: global(pulse) 1s ease-in-out infinite alternate 0.1s;
+    }
+
+    .sortButton {
+      animation: global(pulse) 1s ease-in-out infinite alternate 0.2s;
+    }
+  }
+}
+
+.searchLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.search {
+  padding-left: 0.5rem;
+  width: 16rem;
+  border: none;
+  offset: 0;
+  color: var(--color-element);
+  background-color: var(--color-background);
+
+  &::placeholder {
+    color: var(--color-element);
+
+    @include mobile-l {
+      padding-left: 5rem;
+    }
+  }
+
+  @include mobile-l {
+    height: 3.125rem;
+    border: 1px solid var(--color-element);
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
+
+  @include mobile-l {
+    gap: 1.5rem;
+    height: 3.125rem;
+    border: 1px solid var(--color-element);
+  }
+}
+
+.checkbox {
+  position: relative;
+  margin: 0;
+  height: 3.125rem;
+  width: 3.125rem;
+  border-left: 1px solid var(--color-element);
+  border-right: 1px solid var(--color-element);
+  border-radius: 0;
+  appearance: none;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 0px;
+  height: 0px;
+  font-size: 50px;
+  overflow: hidden;
+}
+
+.checkbox:checked::after {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-element);
+}
+
+.sortButton {
+  padding-left: 0.5rem;
+  padding-right: 0;
+  width: 6.25rem;
+  border: none;
+  border-left: 1px solid var(--color-element);
+
+  @include mobile-l {
+    height: 3.125rem;
+    width: 100%;
+    border: 1px solid var(--color-element);
+  }
+}

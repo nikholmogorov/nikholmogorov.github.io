@@ -1,0 +1,22 @@
+declare const classNames: {
+  readonly productDetails: "productDetails";
+  readonly title: "title";
+  readonly image: "image";
+  readonly miniaturesButton: "miniaturesButton";
+  readonly colorPickerButton: "colorPickerButton";
+  readonly sizesPickerButton: "sizesPickerButton";
+  readonly text: "text";
+  readonly price: "price";
+  readonly addToShoppingCartButton: "addToShoppingCartButton";
+  readonly errorProductText: "errorProductText";
+  readonly wrapper: "wrapper";
+  readonly productControls: "productControls";
+  readonly sizesPicker: "sizesPicker";
+  readonly actionButtons: "actionButtons";
+  readonly miniaturesList: "miniaturesList";
+  readonly miniaturesImage: "miniaturesImage";
+  readonly colorPicker: "colorPicker";
+  readonly selected: "selected";
+  readonly goBackButton: "goBackButton";
+};
+export = classNames;

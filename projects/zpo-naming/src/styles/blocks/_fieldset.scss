@@ -1,0 +1,109 @@
+@use '../base/media' as *;
+
+.fieldset {
+    &>.fieldset__label {
+        width: fit-content;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__legend {}
+
+    &__help-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        line-height: 1;
+        border: 2px solid var(--color-element);
+        border-radius: 0;
+        color: var(--color-element);
+        background-color: var(--color-background);
+        transition: border var(--transition-duration);
+
+        &:hover {
+            border: 2px solid var(--color-accent);
+            border-radius: 0;
+            outline: 0;
+            color: var(--color-accent);
+        }
+
+        &:active {
+            box-shadow: 0px 0px 25px 0px var(--color-accent);
+        }
+    }
+
+    &__input-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include mobile-l {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__label {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: fit-content;
+        white-space: nowrap;
+        transition: color var(--transition-duration);
+
+        &:hover {
+            color: var(--color-accent);
+        }
+
+        &:has(.fieldset__input-radio:disabled) {
+            color: var(--color-element);
+            cursor: not-allowed;
+        }
+    }
+
+    &__input-radio {
+        margin-top: 0;
+        margin-right: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    &__input-text {
+        border: 2px solid var(--color-element);
+        border-radius: 0;
+        margin-top: 0.5rem;
+        width: 20rem;
+        height: 3rem;
+        transition: border var(--transition-duration);
+
+        &::placeholder {
+            transition: color var(--transition-duration);
+        }
+
+        &:hover,
+        &:focus {
+            border: 2px solid var(--color-accent);
+            border-radius: 0;
+            outline: 0;
+
+            &::placeholder {
+                color: var(--color-accent);
+            }
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 25px 0px var(--color-accent);
+        }
+    }
+}
