@@ -28,7 +28,7 @@ const products = [
       {
         id: 1,
         name: "чёрный",
-        images: ["/images/1/black_front.webp ", "/images/1/black_back.webp "],
+        images: ["/projects/catalog/images/1/black_front.webp ", "/projects/catalog/images/1/black_back.webp "],
         price: "900",
         description: 'Описание для "Футболка чёрный"',
         sizes: [1, 2, 3],
