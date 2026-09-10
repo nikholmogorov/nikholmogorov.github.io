@@ -176,7 +176,7 @@ export default function ProductDetails() {
           className={styles.image}
           src={selectedColor.images[selectedImageIndex]}
           onError={(e) => {
-            e.currentTarget.src = `/images/no_photo.jpg`;
+            e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
           }}
           alt={`Фото ${product.name} ${selectedColor.name}`}
           loading="lazy"
@@ -193,7 +193,7 @@ export default function ProductDetails() {
                     className={styles.miniaturesImage}
                     src={item}
                     onError={(e) => {
-                      e.currentTarget.src = `/images/no_photo.jpg`;
+                      e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
                     }}
                     alt="Просмотр вещи"
                   />
