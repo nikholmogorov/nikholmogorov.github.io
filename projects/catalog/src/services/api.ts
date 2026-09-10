@@ -36,7 +36,7 @@ const products = [
       {
         id: 2,
         name: "белый",
-        images: ["/images/1/white_front.webp ", "/images/1/white_back.webp "],
+        images: ["/projects/catalog/images/1/white_front.webp ", "/projects/catalog/images/1/white_back.webp "],
         price: "1100",
         description: 'Описание для "Футболка белый"',
         sizes: [1, 2, 3, 4, 5, 6],
@@ -44,7 +44,7 @@ const products = [
       {
         id: 3,
         name: "серый",
-        images: ["/images/1/gray_front.webp ", "/images/1/gray_back.webp "],
+        images: ["/projects/catalog/images/1/gray_front.webp ", "/projects/catalog/images/1/gray_back.webp "],
         price: "1000",
         description: 'Описание для "Футболка серый"',
         sizes: [],
@@ -60,7 +60,7 @@ const products = [
       {
         id: 1,
         name: "желтый",
-        images: ["/images/2/yellow_front.webp ", "/images/2/yellow_back.webp "],
+        images: ["/projects/catalog/images/2/yellow_front.webp ", "/projects/catalog/images/2/yellow_back.webp "],
         price: "750",
         description: 'Описание для "Майка желтый"',
         sizes: [1, 2, 3, 4, 5],
@@ -68,7 +68,7 @@ const products = [
       {
         id: 2,
         name: "синий",
-        images: ["/images/2/blue_front.webp ", "/images/2/blue_back.webp "],
+        images: ["/projects/catalog/images/2/blue_front.webp ", "/projects/catalog/images/2/blue_back.webp "],
         price: "1500",
         description: 'Описание для "Майка синий"',
         sizes: [2],
@@ -76,7 +76,7 @@ const products = [
       {
         id: 3,
         name: "чёрный",
-        images: ["/images/2/black_front.webp ", "/images/2/black_back.webp "],
+        images: ["/projects/catalog/images/2/black_front.webp ", "/projects/catalog/images/2/black_back.webp "],
         price: "800",
         description: 'Описание для "Майка чёрный"',
         sizes: [],
@@ -92,7 +92,7 @@ const products = [
       {
         id: 1,
         name: "чёрный",
-        images: ["/images/3/black_front.webp ", "/images/3/black_detail.webp "],
+        images: ["/projects/catalog/images/3/black_front.webp ", "/projects/catalog/images/3/black_detail.webp "],
         price: "1750",
         description: 'Описание для "Худи чёрный"',
         sizes: [3, 4, 5, 6],
@@ -100,7 +100,7 @@ const products = [
       {
         id: 2,
         name: "бежевый",
-        images: ["/images/3/beige_front.webp "],
+        images: ["/projects/catalog/images/3/beige_front.webp "],
         price: "2250",
         description: 'Описание для "Худи бежевый"',
         sizes: [2, 3, 4],
@@ -116,7 +116,7 @@ const products = [
       {
         id: 1,
         name: "хаки",
-        images: ["/images/4/khaki_front.webp ", "/images/4/khaki_back.webp "],
+        images: ["/projects/catalog/images/4/khaki_front.webp ", "/projects/catalog/images/4/khaki_back.webp "],
         price: "750",
         description: 'Описание для "Шорты хаки"',
         sizes: [2, 3, 4, 5],
@@ -124,7 +124,7 @@ const products = [
       {
         id: 2,
         name: "чёрный",
-        images: ["/images/4/black_front.webp ", "/images/4/black_back.webp "],
+        images: ["/projects/catalog/images/4/black_front.webp ", "/projects/catalog/images/4/black_back.webp "],
         price: "500",
         description: 'Описание для "Шорты чёрный"',
         sizes: [3, 4],
@@ -132,7 +132,7 @@ const products = [
       {
         id: 3,
         name: "серый",
-        images: ["/images/4/gray_front.webp ", "/images/4/gray_back.webp "],
+        images: ["/projects/catalog/images/4/gray_front.webp ", "/projects/catalog/images/4/gray_back.webp "],
         price: "250",
         description: 'Описание для "Шорты серый"',
         sizes: [],
@@ -148,7 +148,7 @@ const products = [
       {
         id: 1,
         name: "чёрный",
-        images: ["/images/5/black_front.webp ", "/images/5/black_side.webp "],
+        images: ["/projects/catalog/images/5/black_front.webp ", "/projects/catalog/images/5/black_side.webp "],
         price: "500",
         description: 'Описание для "Кепка чёрный"',
         sizes: [3],
@@ -156,7 +156,7 @@ const products = [
       {
         id: 2,
         name: "белый",
-        images: ["/images/5/white_front.webp ", "/images/5/white_side.webp "],
+        images: ["/projects/catalog/images/5/white_front.webp ", "/projects/catalog/images/5/white_side.webp "],
         price: "750",
         description: 'Описание для "Кепка белый"',
         sizes: [3],
@@ -172,7 +172,7 @@ const products = [
       {
         id: 1,
         name: "чёрный",
-        images: ["/images/6/black_front.webp ", "/images/6/black_back.webp "],
+        images: ["/projects/catalog/images/6/black_front.webp ", "/projects/catalog/images/6/black_back.webp "],
         price: "12000",
         description: 'Описание для "Пальто чёрный"',
         sizes: [],
@@ -181,8 +181,8 @@ const products = [
         id: 2,
         name: "графит",
         images: [
-          "/images/6/graphite_front.webp ",
-          "/images/6/graphite_back.webp ",
+          "/projects/catalog/images/6/graphite_front.webp ",
+          "/projects/catalog/images/6/graphite_back.webp ",
         ],
         price: "15000",
         description: 'Описание для "Пальто графит"',
