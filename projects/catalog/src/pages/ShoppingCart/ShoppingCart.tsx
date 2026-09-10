@@ -66,7 +66,7 @@ export default function ShoppingCart() {
                   className={styles.cartItemImage}
                   src={item.image}
                   onError={(e) => {
-                    e.currentTarget.src = `/images/no_photo.jpg`;
+                    e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
                   }}
                   alt={`Фото для ${item.productName} ${item.colorName}`}
                 />
