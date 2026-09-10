@@ -12,7 +12,7 @@ export default function Card(props: CardProps) {
   const isCardLoading = !itemData;
 
   const cardImage =
-    itemData?.colors?.[0]?.images?.[0] || `/images/no_photo.jpg`;
+    itemData?.colors?.[0]?.images?.[0] || `${import.meta.env.BASE_URL}images/no_photo.jpg`;
   const cardTitle = itemData?.name || ``;
   const cardPrice = isCardLoading
     ? ``
@@ -33,7 +33,7 @@ export default function Card(props: CardProps) {
             className={styles.image}
             src={cardImage}
             onError={(e) => {
-              e.currentTarget.src = `/images/no_photo.jpg`;
+              e.currentTarget.src = `${import.meta.env.BASE_URL}/images/no_photo.jpg`;
             }}
             alt={`Фото товара ${cardTitle}`}
             loading="lazy"
