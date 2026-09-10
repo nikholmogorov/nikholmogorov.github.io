@@ -1,0 +1,43 @@
+.form {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    font-size: 2rem;
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__fieldset {}
+
+    &__result-wrapper {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        background-color: var(--color-accent);
+    }
+
+    &__result-button {
+        width: 100%;
+        border: none;
+        border-top: 2px solid var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-background);
+        transition: background-color var(--transition-duration), color var(--transition-duration);
+
+        &:active {
+            background-color: var(--color-background);
+            color: var(--color-accent);
+        }
+    }
+}

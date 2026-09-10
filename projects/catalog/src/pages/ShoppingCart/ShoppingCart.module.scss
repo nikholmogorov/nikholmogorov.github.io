@@ -1,0 +1,204 @@
+@use "@/assets/media.scss" as *;
+
+.shoppingCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-block: 5rem;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+.emptyShoppingCartText {
+  text-align: center;
+}
+
+.cartList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @include tablet-l {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-l {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cartItem {
+  position: relative;
+
+  &Link {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 40.875rem;
+    width: 19rem;
+
+    @include tablet-l {
+      height: 40.5rem;
+    }
+  }
+
+  &Title {
+    margin: 0;
+    text-align: center;
+  }
+
+  &Image {
+    margin-bottom: 1rem;
+    width: 16rem;
+    height: 21.25rem;
+  }
+
+  &Text {
+    margin: 0;
+    text-wrap: nowrap;
+  }
+
+  &Actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 16.875rem;
+  }
+
+  &QuantityButton {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  &Quantity {
+    font-weight: 600;
+  }
+
+  &Remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.promoForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promoActions {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 3.125rem;
+
+  @include mobile-l {
+    flex-direction: column;
+    height: unset;
+  }
+}
+
+.promoLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.promoInput {
+  padding-left: 0.5rem;
+  width: 16rem;
+  height: 100%;
+  border: 1px solid var(--color-element);
+  border-right: none;
+  offset: 0;
+  color: var(--color-element);
+  background-color: var(--color-background);
+
+  &::placeholder {
+    color: var(--color-element);
+
+    @include mobile-l {
+      padding-left: 4rem;
+    }
+  }
+
+  @include mobile-l {
+    height: 3.125rem;
+    border: 1px solid var(--color-element);
+  }
+}
+
+.addPromoButton {
+  padding: 0.5rem;
+  height: 3.125rem;
+  width: fit-content;
+  border: 1px solid var(--color-element);
+  line-height: 1;
+
+  @include mobile-l {
+    width: 100%;
+    border-top: none;
+  }
+}
+
+.removePromoButton {
+  padding: 0.5rem;
+  height: 3.125rem;
+  width: fit-content;
+  border: 1px solid var(--color-element);
+  line-height: 1;
+}
+
+.promoStatus {
+  font-size: 1.5rem;
+}
+
+.cartTotal {
+}
+
+.cartActions {
+  display: flex;
+  gap: 0.5rem;
+
+  @include mobile-l {
+    flex-direction: column;
+  }
+}
+
+.cartPurchase,
+.cartRemoveAll {
+  padding: 0.5rem;
+  height: 3.125rem;
+  width: fit-content;
+  line-height: 1;
+
+  @include mobile-l {
+    width: 100%;
+  }
+}

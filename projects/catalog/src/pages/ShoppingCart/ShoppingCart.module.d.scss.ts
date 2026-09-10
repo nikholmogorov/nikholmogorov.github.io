@@ -1,0 +1,27 @@
+declare const classNames: {
+  readonly shoppingCart: "shoppingCart";
+  readonly title: "title";
+  readonly emptyShoppingCartText: "emptyShoppingCartText";
+  readonly cartList: "cartList";
+  readonly cartItemLink: "cartItemLink";
+  readonly promoActions: "promoActions";
+  readonly promoInput: "promoInput";
+  readonly addPromoButton: "addPromoButton";
+  readonly cartActions: "cartActions";
+  readonly cartPurchase: "cartPurchase";
+  readonly cartRemoveAll: "cartRemoveAll";
+  readonly cartItem: "cartItem";
+  readonly cartItemTitle: "cartItemTitle";
+  readonly cartItemImage: "cartItemImage";
+  readonly cartItemText: "cartItemText";
+  readonly cartItemActions: "cartItemActions";
+  readonly cartItemQuantityButton: "cartItemQuantityButton";
+  readonly cartItemQuantity: "cartItemQuantity";
+  readonly cartItemRemove: "cartItemRemove";
+  readonly cartSummary: "cartSummary";
+  readonly promoForm: "promoForm";
+  readonly promoLabel: "promoLabel";
+  readonly removePromoButton: "removePromoButton";
+  readonly promoStatus: "promoStatus";
+};
+export = classNames;
