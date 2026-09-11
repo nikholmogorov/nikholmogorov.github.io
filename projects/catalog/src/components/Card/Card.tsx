@@ -11,8 +11,10 @@ export default function Card(props: CardProps) {
 
     const isCardLoading = !itemData;
 
-    const cardImage =
-        itemData?.colors?.[0]?.images?.[0] || `${import.meta.env.BASE_URL}images/no_photo.webp`;
+    const rawImage = itemData?.colors?.[0]?.images?.[0];
+    const cardImage = rawImage
+        ? `${import.meta.env.BASE_URL}${rawImage.trim().replace(/^\//, '')}`
+        : `${import.meta.env.BASE_URL}images/no_photo.webp`;
     const cardTitle = itemData?.name || ``;
     const cardPrice = isCardLoading
         ? ``
