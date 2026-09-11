@@ -3,8 +3,8 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import sassDts from 'vite-plugin-sass-dts';
 
-export default defineConfig({
-    base: '/projects/catalog/',
+export default defineConfig(({ command }) => ({
+    base: command === 'serve' ? '/' : '/projects/catalog/',
     plugins: [
         react(),
         sassDts({
@@ -21,4 +21,4 @@ export default defineConfig({
             '@utils': path.resolve(__dirname, './src/utils'),
         },
     },
-});
+}));
