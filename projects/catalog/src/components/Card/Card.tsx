@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Product } from "@store/storeTypes";
+import { getImageUrl, handleImageError } from "@utils/image";
 import styles from "./Card.module.scss";
 
 interface CardProps {
@@ -11,10 +12,7 @@ export default function Card(props: CardProps) {
 
     const isCardLoading = !itemData;
 
-    const rawImage = itemData?.colors?.[0]?.images?.[0];
-    const cardImage = rawImage
-        ? `${import.meta.env.BASE_URL}${rawImage.trim().replace(/^\//, '')}`
-        : `${import.meta.env.BASE_URL}images/no_photo.webp`;
+    const rawImage = itemData?.colors?.[0]?.images?.[0] || `images/no_photo.webp`;
     const cardTitle = itemData?.name || ``;
     const cardPrice = isCardLoading
         ? ``
@@ -33,10 +31,8 @@ export default function Card(props: CardProps) {
                 ) : (
                     <img
                         className={styles.image}
-                        src={cardImage}
-                        onError={(e) => {
-                            e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
-                        }}
+                        src={getImageUrl(rawImage)}
+                        onError={handleImageError}
                         alt={`Фото товара ${cardTitle}`}
                         loading="lazy"
                     />
