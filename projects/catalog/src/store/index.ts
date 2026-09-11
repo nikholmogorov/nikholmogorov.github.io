@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { getProducts, getProduct, getSizes } from "@services/api";
 import { StoreState, CartItem } from "@store/storeTypes";
+import { preloadImages } from "@utils/preloadImages";
 
 let latestProductId: number | null = null;
 
@@ -33,6 +34,10 @@ const useStore = create<StoreState>()(
         set({ isProductsLoading: true, productsError: null });
         try {
           const response = await getProducts();
+          const mainImageUrls = response
+            .map((item) => item.colors?.[0]?.images?.[0])
+            .filter((url) => Boolean(url));
+          await preloadImages(mainImageUrls, 500);
           set({ products: response, isProductsLoading: false });
         } catch (error) {
           const errorMessage =
@@ -46,6 +51,11 @@ const useStore = create<StoreState>()(
         set({ product: null, isProductLoading: true, productError: null });
         try {
           const response = await getProduct(id);
+          if (latestProductId !== id) return;
+          const allImageUrls = response.colors
+            ? response.colors.flatMap((color) => color.images || [])
+            : [];
+          await preloadImages(allImageUrls, 500);
           if (latestProductId !== id) return;
           set({ product: response, isProductLoading: false });
         } catch (error) {
