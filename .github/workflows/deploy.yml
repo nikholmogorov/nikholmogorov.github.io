@@ -26,16 +26,44 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      # ------------------------------------------------------------
+      # Copy portfolio root
+      # ------------------------------------------------------------
+
       - name: Prepare deployment directory
+        shell: bash
         run: |
-          mkdir -p deploy/projects
+          set -e
+
+          mkdir -p deploy
+
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            --exclude='projects' \
+            --exclude='deploy' \
+            ./ deploy/
+
+      # ------------------------------------------------------------
+      # Process all projects automatically
+      #
+      # Rules:
+      #   package.json + scripts.build -> build project
+      #   everything else              -> static project
+      # ------------------------------------------------------------
 
       - name: Process projects
         shell: bash
         run: |
           set -e
 
+          mkdir -p deploy/projects
+
           for project_path in projects/*; do
+
+            # Skip anything that is not a directory
             if [ ! -d "$project_path" ]; then
               continue
             fi
@@ -47,52 +75,124 @@ jobs:
             echo "Processing: $project_name"
             echo "========================================"
 
+            # ------------------------------------------------------
+            # Determine project type
+            # ------------------------------------------------------
+
+            is_buildable=false
+
             if [ -f "$project_path/package.json" ]; then
-              echo "Type: Vite/Node project"
+
+              echo "package.json found."
+
+              if node -e "
+                const fs = require('fs');
+                const path = process.argv[1];
+
+                const pkg = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+                process.exit(
+                  pkg.scripts && typeof pkg.scripts.build === 'string'
+                    ? 0
+                    : 1
+                );
+              " "$project_path/package.json"; then
+
+                is_buildable=true
+                echo "Build script found."
+
+              else
+
+                echo "No build script found."
+
+              fi
+
+            else
+
+              echo "No package.json found."
+
+            fi
+
+            # ------------------------------------------------------
+            # Buildable project
+            # ------------------------------------------------------
+
+            if [ "$is_buildable" = true ]; then
+
+              echo "Type: Buildable project"
               echo "Building..."
 
-              cd "$project_path"
+              (
+                cd "$project_path"
 
-              npm ci
-              npm run build
+                if [ -f package-lock.json ]; then
+                  echo "Using npm ci..."
+                  npm ci
+                else
+                  echo "No package-lock.json found."
+                  echo "Using npm install..."
+                  npm install
+                fi
 
-              cd ../..
+                npm run build
+              )
+
+              # ----------------------------------------------------
+              # Verify build output
+              # ----------------------------------------------------
 
               if [ ! -d "$project_path/dist" ]; then
-                echo "ERROR: $project_name does not contain dist/"
+                echo ""
+                echo "ERROR: $project_name has a build script,"
+                echo "but no dist/ directory was created."
+                echo ""
                 exit 1
               fi
 
+              if [ ! -f "$project_path/dist/index.html" ]; then
+                echo ""
+                echo "ERROR: $project_name build completed,"
+                echo "but dist/index.html was not found."
+                echo ""
+                exit 1
+              fi
+
+              # ----------------------------------------------------
+              # Copy build output
+              # ----------------------------------------------------
+
               mkdir -p "deploy/projects/$project_name"
 
-              cp -r "$project_path/dist/." \
+              cp -r \
+                "$project_path/dist/." \
                 "deploy/projects/$project_name/"
 
               echo "Build copied successfully."
 
+            # ------------------------------------------------------
+            # Static project
+            # ------------------------------------------------------
+
             else
+
               echo "Type: Static project"
               echo "Copying files..."
 
               mkdir -p "deploy/projects/$project_name"
 
-              cp -r "$project_path/." \
+              cp -r \
+                "$project_path/." \
                 "deploy/projects/$project_name/"
 
               echo "Static project copied successfully."
+
             fi
+
           done
 
-      - name: Copy portfolio root
-        shell: bash
-        run: |
-          rsync -av \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='node_modules' \
-            --exclude='dist' \
-            --exclude='projects' \
-            ./ deploy/
+      # ------------------------------------------------------------
+      # Verify deployment
+      # ------------------------------------------------------------
 
       - name: Verify deployment
         shell: bash
@@ -104,7 +204,7 @@ jobs:
           echo "Deployment contents"
           echo "========================================"
 
-          find deploy -maxdepth 3 -type f | sort
+          find deploy -maxdepth 4 -type f | sort
 
           echo ""
           echo "========================================"
@@ -112,6 +212,7 @@ jobs:
           echo "========================================"
 
           for project_path in projects/*; do
+
             if [ ! -d "$project_path" ]; then
               continue
             fi
@@ -119,37 +220,24 @@ jobs:
             project_name=$(basename "$project_path")
 
             if [ ! -f "deploy/projects/$project_name/index.html" ]; then
+              echo ""
               echo "ERROR: Missing index.html for $project_name"
+              echo ""
               exit 1
             fi
 
             echo "OK: $project_name"
+
           done
 
           echo ""
+          echo "========================================"
           echo "All projects verified successfully."
+          echo "========================================"
 
-      - name: Upload deployment artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: deployment
-          path: deploy
-          if-no-files-found: error
-
-  deploy:
-    name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: build-and-prepare
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download deployment
-        uses: actions/download-artifact@v4
-        with:
-          name: deployment
-          path: deploy
+      # ------------------------------------------------------------
+      # GitHub Pages deployment
+      # ------------------------------------------------------------
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
