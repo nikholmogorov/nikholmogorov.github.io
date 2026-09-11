@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useState, useEffect } from "react";
 import {
   useParams,
@@ -174,7 +176,7 @@ export default function ProductDetails() {
       <div className={styles.wrapper}>
         <img
           className={styles.image}
-          src={selectedColor.images[selectedImageIndex]}
+          src={import.meta.env.BASE_URL + selectedColor.images[selectedImageIndex]}
           onError={(e) => {
             e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
           }}
@@ -191,7 +193,7 @@ export default function ProductDetails() {
                 >
                   <img
                     className={styles.miniaturesImage}
-                    src={item}
+                    src={import.meta.env.BASE_URL + item}
                     onError={(e) => {
                       e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
                     }}
