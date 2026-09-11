@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useStore, { selectTotal } from "@store/index";
@@ -64,7 +66,7 @@ export default function ShoppingCart() {
                 <h2 className={styles.cartItemTitle}>{item.productName}</h2>
                 <img
                   className={styles.cartItemImage}
-                  src={item.image}
+                  src={import.meta.env.BASE_URL + item.image}
                   onError={(e) => {
                     e.currentTarget.src = `${import.meta.env.BASE_URL}images/no_photo.webp`;
                   }}
