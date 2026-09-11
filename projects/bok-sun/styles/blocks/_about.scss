@@ -1,0 +1,49 @@
+.about {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &--position {
+        margin-bottom: 6rem;
+
+        @include mobile-l {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__title {}
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        padding-bottom: 6rem;
+
+        @include tablet-s {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__card {
+        @include flex(column, start, center, 0);
+    }
+
+    &__card-image {}
+
+    &__card-title {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    &__card-text {
+        text-align: center;
+
+        @include tablet-s {
+            width: 60%;
+        }
+
+        @include mobile-l {
+            width: 80%;
+        }
+    }
+}

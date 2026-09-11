@@ -1,0 +1,51 @@
+.footer {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    &__inner {
+        @include flex(row, space-between, center, 1rem);
+
+        @include tablet-s {
+            @include flex(column-reverse, center, center, 1rem);
+        }
+    }
+
+    &__link {
+        font-size: 0.75rem;
+        text-wrap: nowrap;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        text-wrap: nowrap;
+        pointer-events: none;
+
+        @include mobile-l {
+            text-wrap: wrap;
+        }
+    }
+
+    &__text-span {}
+
+    &__button-to-top {
+        display: block;
+        aspect-ratio: 1;
+        width: 60px;
+        background-image: url('../images/footer__button-to-top.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-image: url('../images/footer__button-to-top-hover.svg');
+        }
+
+        &:active {
+            background-image: url('../images/footer__button-to-top-hover.svg');
+        }
+    }
+}

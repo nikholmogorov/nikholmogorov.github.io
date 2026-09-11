@@ -1,0 +1,45 @@
+.thirsty {
+    @include flex(row, center, center, 0);
+    background-color: $color-orange;
+
+    &__inner {
+        @include flex(row, start, start, 50px);
+        padding: 120px 120px 120px 300px;
+
+        @media (max-width: 1920px) {
+            padding: 50px 50px 50px 200px;
+        }
+
+        @include desktop-m {
+            @include flex(row, center, start, 20px);
+            padding: 20px;
+        }
+
+        @include tablet {
+            @include flex(row, center, center, 20px);
+        }
+    }
+
+    &__title {}
+
+    &__title-span {}
+
+    &__title-span-bold {}
+
+    &__info {
+        width: 50%;
+
+        @include desktop-m {
+            width: 30%;
+        }
+
+        @include mobile-l {
+            width: 50%;
+        }
+    }
+
+    &__text {
+        text-align: right;
+        text-wrap: pretty;
+    }
+}

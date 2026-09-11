@@ -1,0 +1,8 @@
+.section-subtitle {
+    font-size: 2rem;
+    text-align: center;
+
+    @include tablet-l {
+        font-size: 1.625rem;
+    }
+}

@@ -1,0 +1,58 @@
+.request-form {
+    &--position {
+        position: relative;
+    }
+
+    &::before {
+        content: 'SIGN UP FOR A NEWS';
+        display: block;
+        position: relative;
+        top: -15px;
+        width: 120px;
+        font-size: 18px;
+        letter-spacing: 0.11em;
+        text-wrap: balance;
+
+        @include mobile-l {
+            text-align: center;
+            left: 100px;
+        }
+    }
+
+    &__label {}
+
+    &__field {
+        width: 220px;
+        height: 40px;
+        border: none;
+        border-radius: 0;
+        background-color: #bfbfbf;
+        padding-left: 12px;
+        font-size: 14px;
+
+        @include mobile-s {
+            width: 200px;
+        }
+    }
+
+    &__submit {
+        position: relative;
+        left: -5px;
+        top: 1px;
+        width: 100px;
+        height: 40px;
+        letter-spacing: 0.14em;
+        text-align: center;
+        background-color: $color-blue;
+        color: $color-text;
+        border: none;
+
+        &:hover {
+            background-color: #029b96;
+        }
+
+        &:active {
+            background-color: $color-blue-alternate;
+        }
+    }
+}

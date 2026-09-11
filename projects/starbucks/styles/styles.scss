@@ -1,0 +1,20 @@
+@import './base/normalize',
+'./base/fonts',
+'./base/mixins',
+'./base/media',
+'./base/variables',
+'./base/globals';
+
+@import './blocks/header',
+'./blocks/logo',
+'./blocks/hero',
+'./blocks/button',
+'./blocks/statistic',
+'./blocks/advantages',
+'./blocks/delicious',
+'./blocks/section-title',
+'./blocks/products',
+'./blocks/card',
+'./blocks/events',
+'./blocks/contacts',
+'./blocks/footer';

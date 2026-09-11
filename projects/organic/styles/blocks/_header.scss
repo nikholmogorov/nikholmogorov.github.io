@@ -1,0 +1,117 @@
+.header {
+    &__inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr 1fr;
+        grid-template-rows: max-content;
+        grid-template-areas: "no-name logo menu search";
+        align-items: center;
+        padding: 5px 0 5px;
+        overflow: hidden;
+        justify-items: start;
+        background-color: $color-text;
+
+        @include tablet {
+            grid-template-areas: "logo menu";
+            grid-template-columns: 1fr 1fr;
+            padding: 5px 20px 5px;
+        }
+    }
+
+    &__logo {
+        grid-area: logo;
+        font-family: $third-family;
+        font-size: 24px;
+        line-height: 1;
+        color: $color-red;
+
+        &:hover {
+            color: $color-blue;
+        }
+
+        &:active {
+            color: $color-blue-alternate;
+        }
+    }
+
+    &__menu {
+        grid-area: menu;
+        transform: translate(-15px);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        @include flex(row, start, center, 10px);
+    }
+
+    &__menu-item {}
+
+    &__menu-link {
+        position: relative;
+        padding: 10px;
+        font-size: 14px;
+        color: $color-main;
+
+        &:hover {
+            color: $color-blue;
+        }
+
+        &:active {
+            color: $color-blue-alternate;
+        }
+
+        &:hover::after {
+            bottom: -75%;
+        }
+
+        &:active::after {
+            background-color: $color-blue-alternate;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: -300%;
+            transition: all 0.5s;
+            background-color: $color-blue;
+        }
+    }
+
+    &__search-button {
+        grid-area: search;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+
+        @include tablet {
+            display: none;
+        }
+
+        &:hover>.header__search-button-icon>path {
+            stroke: $color-blue;
+        }
+
+        &:active>.header__search-button-icon>path {
+            stroke: $color-blue-alternate;
+        }
+    }
+
+    &__search-button-icon {
+        fill: $color-text;
+    }
+
+    &__burger-button {
+        display: none;
+
+        @include tablet {
+            display: block;
+            justify-self: end;
+        }
+    }
+}

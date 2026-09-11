@@ -1,0 +1,16 @@
+.soc1als {
+    padding: 7px;
+
+    @include mobile-l {
+        padding-top: 40px;
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 20px;
+
+        @include mobile-l {
+            justify-content: center;
+        }
+    }
+}

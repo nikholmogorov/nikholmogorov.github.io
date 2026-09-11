@@ -1,0 +1,37 @@
+.burger-button {
+    padding: 0;
+    aspect-ratio: 1;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+
+    &--position {
+        position: relative;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 50%;
+        height: 2px;
+        background-color: $color-main;
+        border-radius: 2px;
+        box-shadow: 0 -8px $color-main, 0 8px $color-main;
+        transition: $transition-duration ease-out;
+    }
+
+    &:hover::after {
+        background-color: $color-blue;
+        box-shadow: 0 -8px $color-blue, 0 8px $color-blue;
+        transition: $transition-duration ease-out;
+    }
+
+    &:active::after {
+        background-color: $color-blue-alternate;
+        box-shadow: 0 -8px $color-blue-alternate, 0 8px $color-blue-alternate;
+        transition: $transition-duration ease-out;
+    }
+}

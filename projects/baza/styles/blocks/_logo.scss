@@ -1,0 +1,20 @@
+.logo {
+    aspect-ratio: 300/192;
+    height: 80px;
+    background-image: url('../images/logo.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-image: url('../images/logo-hover.png');
+    }
+
+    &:active {
+        background-image: url('../images/logo-active.png');
+    }
+
+    @include tablet-l {
+        height: 50px;
+    }
+}

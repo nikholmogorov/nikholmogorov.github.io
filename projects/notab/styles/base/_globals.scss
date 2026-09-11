@@ -1,0 +1,68 @@
+::-moz-selection {
+    background-color: $color-accent-first;
+}
+
+::selection {
+    background-color: $color-accent-first;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-main;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-accent-first;
+}
+
+*:focus-visible {
+    outline: 1px solid $color-accent-first;
+    outline-offset: 5px;
+}
+
+* {
+    transition: $transition-duration ease-out;
+}
+
+*:hover {
+    transition: $transition-duration ease-out;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: 60px;
+    left: 0;
+}
+
+body {
+    font-family: $first-family;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: $color-main;
+    color: $color-text;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1180px;
+    padding-inline: 10px;
+    margin: 0 auto;
+}

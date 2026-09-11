@@ -1,0 +1,128 @@
+.hero {
+    padding: 50px 0 50px;
+    overflow: hidden;
+
+    @include mobile-l {
+        padding: 10px 0 50px;
+    }
+
+    &:before {
+        content: '';
+        background-image: url(../images/pink-big-light.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -10%;
+        right: 10%;
+        z-index: -10;
+        width: 665px;
+        height: 785px;
+
+        @include desktop-s {
+            right: -10%;
+        }
+    }
+
+    &--position {
+        position: relative;
+    }
+
+    &__inner {}
+
+    &__top {
+        @include flex(row, space-between, start, 25px);
+
+        @include tablet {
+            @include flex(row, center, start, 10px);
+        }
+    }
+
+    &__info {}
+
+    &__title {
+        margin-top: 60px;
+
+        @include tablet {
+            margin-left: 120px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        margin: 50px 0 0 120px;
+        width: 380px;
+
+        @include mobile-l {
+            margin: 30px 0 0 120px;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        &:before {
+            content: '';
+            background-image: url(../images/blue-small-light.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: -110%;
+            left: -60%;
+            z-index: -10;
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    &__image-wrapper {
+        flex-shrink: 0;
+    }
+
+    &__image {
+        border-radius: 60px;
+
+        @include mobile-l {
+            aspect-ratio: 340/680;
+            width: 200px;
+            border-radius: 30px;
+        }
+    }
+
+    &__bottom {
+        @include flex(row, space-between, end, 25px);
+
+        @include tablet {
+            @include flex(row, center, end, 80px);
+            margin-top: 30px;
+        }
+
+        @include mobile-l {
+            @include flex(column, start, center, 25px);
+        }
+    }
+
+    &__bottom-title {}
+
+    &__links-block {
+        @include flex(row, space-between, center, 30px);
+
+        @include mobile-m {
+            @include flex(row, space-between, center, 10px);
+        }
+    }
+
+    &__link {
+        border-radius: 10px;
+        background-color: $color-main;
+    }
+
+    &__link:nth-child(1) {
+        &:hover {
+            box-shadow: 0px 0px 20px 20px rgba(255, 0, 153, 0.5);
+        }
+    }
+
+    &__link:nth-child(2) {
+        &:hover {
+            box-shadow: 0px 0px 20px 20px rgba(102, 102, 255, 0.5);
+        }
+    }
+}

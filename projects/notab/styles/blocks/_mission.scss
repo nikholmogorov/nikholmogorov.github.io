@@ -1,0 +1,103 @@
+.mission {
+    padding: 100px 0 100px;
+
+    @include mobile-l {
+        padding: 100px 0 650px;
+    }
+
+    &__inner {
+        @include flex(row, end, start, 0);
+        position: relative;
+
+        @include mobile-l {
+            @include flex(row, start, start, 0);
+        }
+
+        &:before {
+            content: '';
+            background-image: url(../images/mission-image.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 15%;
+            left: -40%;
+            z-index: -10;
+            width: 1000px;
+            height: 500px;
+            border-radius: 60px;
+
+            @media (max-width: 1279px) {
+                width: 900px;
+                height: 450px;
+                left: -30%;
+            }
+
+            @media (max-width: 999px) {
+                width: 600px;
+                height: 300px;
+                top: 30%;
+                left: -35%;
+            }
+
+            @include mobile-l {
+                rotate: -90deg;
+                top: 170%;
+                left: -20%;
+            }
+
+            @include mobile-m {
+                left: -30%;
+            }
+
+            @include mobile-s {
+                left: -38%;
+            }
+        }
+    }
+
+    &__info {
+        margin-right: 100px;
+        width: 320px;
+
+        @include tablet {
+            margin-right: 20px;
+        }
+
+        @include mobile-l {
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-top: 100px;
+
+        @include mobile-l {
+            margin-top: 0;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        position: relative;
+        margin-top: 30px;
+
+        &:after {
+            content: '';
+            background-image: url(../images/pink-big-light.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            z-index: -10;
+            width: 300px;
+            height: 300px;
+        }
+
+        @include mobile-l {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+}

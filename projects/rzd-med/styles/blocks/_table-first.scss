@@ -1,0 +1,166 @@
+.table-first {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 90px 1fr 1fr 1fr;
+
+    @include tablet {
+        grid-template-rows: 120px 1fr 1fr 1fr;
+    }
+
+    @include mobile-l {
+        @include flex(column, start, center, 0);
+    }
+
+    &__cell {
+        padding: 20px;
+        text-wrap: balance;
+        text-align: center;
+
+        @include mobile-l {
+            width: 100%;
+        }
+
+        &--header {
+            background-color: $color-accent;
+            color: $color-light;
+
+            @include mobile-l {
+                display: none;
+            }
+        }
+
+        &--header:nth-child(1) {
+            border-top-left-radius: $border-radius-large;
+            background-image: url('../images/surface.webp');
+            background-position: center;
+
+            @include mobile-l {
+                border-top-left-radius: $border-radius-medium;
+            }
+        }
+
+        &--header:nth-child(2) {
+            background-image: url('../images/surface.webp');
+            background-position: center;
+            border-left: 3px solid $color-light;
+        }
+
+        &--header:nth-child(3) {
+            border-top-right-radius: $border-radius-large;
+            background-image: url('../images/surface.webp');
+            background-position: center;
+            border-left: 3px solid $color-light;
+
+            @include mobile-l {
+                border-top-right-radius: $border-radius-medium;
+            }
+        }
+    }
+
+    &__cell:nth-child(4) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top-left-radius: $border-radius-medium;
+            border-top-right-radius: $border-radius-medium;
+        }
+    }
+
+    &__cell:nth-child(7) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+
+        @include mobile-l {
+            margin-top: 20px;
+            border: 3px solid $color-accent;
+            border-top-left-radius: $border-radius-medium;
+            border-top-right-radius: $border-radius-medium;
+        }
+    }
+
+    &__cell:nth-child(10) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+        border-bottom-left-radius: $border-radius-large;
+
+        @include mobile-l {
+            margin-top: 20px;
+            border: 3px solid $color-accent;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: $border-radius-medium;
+            border-top-right-radius: $border-radius-medium;
+        }
+    }
+
+    &__cell:nth-child(5) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+        }
+    }
+
+    &__cell:nth-child(8) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+        }
+    }
+
+    &__cell:nth-child(11) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+        }
+    }
+
+    &__cell:nth-child(6) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+        border-right: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+            border-bottom-left-radius: $border-radius-medium;
+            border-bottom-right-radius: $border-radius-medium;
+        }
+    }
+
+    &__cell:nth-child(9) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+        border-right: 3px solid $color-accent;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+            border-bottom-left-radius: $border-radius-medium;
+            border-bottom-right-radius: $border-radius-medium;
+        }
+    }
+
+    &__cell:nth-child(12) {
+        border-left: 3px solid $color-accent;
+        border-bottom: 3px solid $color-accent;
+        border-right: 3px solid $color-accent;
+        border-bottom-right-radius: $border-radius-large;
+
+        @include mobile-l {
+            border: 3px solid $color-accent;
+            border-top: none;
+            border-bottom-left-radius: $border-radius-medium;
+            border-bottom-right-radius: $border-radius-medium;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.section-title {
+    font-family: $second-family;
+    text-align: center;
+    font-size: 66px;
+
+    @include tablet-l {
+        font-size: 42px;
+    }
+
+    @include mobile-s {
+        font-size: 36px;
+    }
+}

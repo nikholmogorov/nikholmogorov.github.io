@@ -1,0 +1,210 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -40;
+        bottom: 18px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-main-alternate;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+        @include tablet {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -50;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-accent;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+        @include tablet {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+    }
+
+    &__inner {
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -100px;
+            width: 600px;
+            height: 600px;
+            background: url('../images/background-logo.svg') left / contain no-repeat;
+
+            @include mobile-l {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -400px;
+            right: -300px;
+            width: 1000px;
+            aspect-ratio: 1;
+            background: url('../images/background-logo.svg') left / contain no-repeat;
+
+            @include desktop-m {
+                top: -300px;
+            }
+
+            @include desktop-s {
+                top: -100px;
+                right: -100px;
+                width: 800px;
+            }
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__info-images-wrapper {
+        display: flex;
+        column-gap: 50px;
+        position: relative;
+        z-index: 10;
+        padding: 100px 0 250px;
+
+        @include tablet {
+            column-gap: 0;
+            padding: 40px 0 200px;
+        }
+
+        @include mobile-l {
+            padding: 320px 0 130px;
+        }
+
+        @include mobile-m {
+            padding: 300px 0 130px;
+        }
+
+        @include mobile-s {
+            padding: 250px 0 130px;
+        }
+    }
+
+    &__info {
+        width: 550px;
+
+        @include tablet {
+            width: 450px;
+        }
+
+        @include mobile-l {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 1.2;
+        color: $color-main;
+
+        @include mobile-l {
+            font-size: 30px;
+        }
+    }
+
+    &__text {
+        margin-top: 15px;
+    }
+
+    &__link {
+        margin-top: 50px;
+        padding: 15px 80px;
+        font-size: 16px;
+        white-space: nowrap;
+        color: $color-main;
+        background-color: $color-accent;
+        border-radius: 68px;
+        transition: .2s ease-out;
+
+        @include mobile-l {
+            margin-top: 20px;
+            padding: 0;
+            height: 50px;
+            width: 100%;
+            display: block;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        &:hover {
+            color: $color-main;
+            background-color: $color-accent-alternate;
+            transition: .2s ease-out;
+        }
+    }
+
+    &__images {
+        position: relative;
+
+        @include mobile-l {
+            position: static;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -10;
+            top: -40px;
+            left: 80px;
+            background: url('../images/hero__image-big.png') left / contain no-repeat;
+            width: 805px;
+            height: 550px;
+            box-shadow: 0 18px 50px -15px rgba(25, 42, 89, 0.2);
+
+            @include mobile-l {
+                top: 150px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 390px;
+                height: 266px;
+            }
+
+            @include mobile-m {
+                width: 350px;
+                height: 240px;
+            }
+
+            @include mobile-s {
+                top: 120px;
+                width: 300px;
+                height: 205px;
+            }
+        }
+    }
+
+    &__image-small {
+        margin-top: 50px;
+
+        @include tablet {
+            margin-top: 110px;
+        }
+
+        @include mobile-l {
+            display: none;
+        }
+    }
+}

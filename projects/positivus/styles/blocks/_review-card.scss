@@ -1,0 +1,94 @@
+.review-card {
+    --reviewCardCornerWidth: 40px;
+    --reviewCardCornerOffsetLeft: 50px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @include mobile {
+        --reviewCardCornerWidth: 30px;
+        --reviewCardCornerOffsetLeft: 40px;
+
+        row-gap: 40px;
+    }
+
+    &__body {
+        position: relative;
+        height: 265px;
+        padding: 50px var(--reviewCardCornerOffsetLeft) 50px;
+        border: 1px solid var(--color-accent);
+        border-radius: var(--border-radius-large);
+        overflow: hidden;
+
+        @include desktop {
+            height: 245px;
+        }
+
+        @media (max-width: 1200px) {
+            height: 285px;
+        }
+
+        @include tablet {
+            height: 285px;
+        }
+
+        @media (max-width: 1000px) {
+            height: 300px;
+        }
+
+        @media (max-width: 900px) {
+            height: 350px;
+        }
+
+        @media (max-width: 800px) {
+            height: 375px;
+        }
+
+        @include mobile {
+            height: 200px;
+            padding: 30px;
+        }
+
+        @media (max-width: 600px) {
+            height: 270px;
+        }
+
+        @media (max-width: 500px) {
+            height: 390px;
+        }
+
+        @media (max-width: 380px) {
+            height: 480px;
+        }
+
+        &::after {
+            @include square(var(--reviewCardCornerWidth));
+
+            content: '';
+            top: 100%;
+            left: var(--reviewCardCornerOffsetLeft);
+            position: absolute;
+            background-color: var(--color-dark);
+            border: inherit;
+            rotate: 45deg;
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            translate: 0 -50%;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        padding-left: calc(var(--reviewCardCornerOffsetLeft) + var(--reviewCardCornerWidth) / 2);
+    }
+
+    &__name,
+    &__company {
+        font-style: normal;
+    }
+
+    &__name {
+        color: var(--color-accent);
+    }
+}

@@ -1,0 +1,50 @@
+.section-title {
+    font-family: $second-family;
+    font-size: 64px;
+    font-weight: 400;
+    color: $color-text;
+    text-shadow:
+        0 0 7px $color-text,
+        0 0 10px $color-text,
+        0 0 21px $color-text,
+        0 0 42px $color-accent-second,
+        0 0 82px $color-accent-second,
+        0 0 92px $color-accent-second,
+        0 0 102px $color-accent-second,
+        0 0 151px $color-accent-second;
+    animation: pulsate 0.15s ease-in-out infinite alternate;
+
+    @include tablet {
+        font-size: 48px;
+    }
+
+    @include mobile-l {
+        font-size: 36px;
+    }
+}
+
+@keyframes pulsate {
+    100% {
+        text-shadow:
+            0 0 4px $color-text,
+            0 0 11px $color-text,
+            0 0 19px $color-text,
+            0 0 40px $color-accent-second,
+            0 0 80px $color-accent-second,
+            0 0 90px $color-accent-second,
+            0 0 100px $color-accent-second,
+            0 0 150px $color-accent-second;
+    }
+
+    0% {
+        text-shadow:
+            0 0 4px $color-text,
+            0 0 10px $color-text,
+            0 0 18px $color-text,
+            0 0 38px $color-accent-second,
+            0 0 73px $color-accent-second,
+            0 0 80px $color-accent-second,
+            0 0 94px $color-accent-second,
+            0 0 140px $color-accent-second;
+    }
+}

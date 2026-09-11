@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include mobile-l {
+        align-items: start;
+        row-gap: 10px;
+    }
+
+    @include mobile-m {
+        width: 340px;
+    }
+
+    @include mobile-s {
+        width: 320px;
+    }
+
+    &__image {
+        @include mobile-l {
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+    }
+
+    &__title {
+        margin-top: 25px;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        text-wrap: nowrap;
+        color: $color-main-alternate;
+
+        @include mobile-l {
+            margin: 0 0 0 100px;
+            text-align: start;
+        }
+    }
+
+    &__text {
+        margin-top: 15px;
+        font-size: 16px;
+        text-align: center;
+
+        @include mobile-l {
+            margin: 0 0 0 100px;
+            text-align: start;
+            font-size: 14px;
+        }
+    }
+}

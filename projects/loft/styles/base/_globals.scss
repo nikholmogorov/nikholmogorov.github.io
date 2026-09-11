@@ -1,0 +1,86 @@
+::-moz-selection {
+    background-color: $color-accent;
+}
+
+::selection {
+    background-color: $color-accent;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-main;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-accent;
+}
+
+*:focus {
+    outline: none;
+}
+
+button,
+.advantages__card,
+.gallery {
+    transition: $transition-duration ease-out;
+}
+
+button,
+.advantages__card:hover,
+.gallery:hover {
+    transition: $transition-duration ease-out;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+}
+
+body {
+    font-family: $first-family;
+    background-color: $color-main;
+    color: $color-text;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body .pswp .pswp__container {
+    transition: transform 1s cubic-bezier(.3, 0, 0, 1);
+}
+
+a {
+    color: $color-text;
+    transition: $transition-duration ease-out;
+
+    &:hover {
+        color: $color-accent;
+        transition: $transition-duration ease-out;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1130px;
+    padding-inline: 10px;
+    margin: 0 auto;
+}

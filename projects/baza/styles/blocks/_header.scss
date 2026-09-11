@@ -1,0 +1,220 @@
+.header {
+    &--position {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: $color-dark;
+    }
+
+    &__inner {
+        @include flex(row, space-between, center, 10px);
+        height: 80px;
+
+        @include tablet-l {
+            height: 50px;
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__menu {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        @include flex(row, space-between, start, 10px);
+    }
+
+    &__menu-item {}
+
+    &__menu-item:nth-child(1) {
+        .header__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/paint.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/paint-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/paint-active.png');
+            }
+
+            @include tablet-l {
+                height: 50px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(2) {
+        .header__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/markers.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/markers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/markers-active.png');
+            }
+
+            @include tablet-l {
+                height: 50px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(3) {
+        .header__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/stickers.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/stickers-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/stickers-active.png');
+            }
+
+            @include tablet-l {
+                height: 50px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(4) {
+        .header__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/clothes.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/clothes-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/clothes-active.png');
+            }
+
+            @include tablet-l {
+                height: 50px;
+            }
+        }
+    }
+
+    &__menu-item:nth-child(5) {
+        .header__menu-link {
+            aspect-ratio: 300/192;
+            height: 80px;
+            background-image: url('../images/parties.png');
+            background-position: center center;
+            background-size: contain;
+
+            &:hover {
+                background-image: url('../images/parties-hover.png');
+            }
+
+            &:active {
+                background-image: url('../images/parties-active.png');
+            }
+
+            @include tablet-l {
+                height: 50px;
+            }
+        }
+    }
+
+    &__menu-link {}
+
+    &__controls {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__search {
+        aspect-ratio: 1;
+        height: 60px;
+        background-image: url('../images/search.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/search-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/search-active.png');
+        }
+
+        @include tablet-l {
+            height: 40px;
+        }
+    }
+
+    &__shopping-bag {
+        aspect-ratio: 1;
+        height: 60px;
+        background-image: url('../images/shopping-bag.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/shopping-bag-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/shopping-bag-active.png');
+        }
+
+        @include tablet-l {
+            height: 40px;
+        }
+    }
+
+    &__account {
+        aspect-ratio: 1;
+        height: 60px;
+        background-image: url('../images/account.png');
+        background-position: center center;
+        background-size: contain;
+
+        &:hover {
+            background-image: url('../images/account-hover.png');
+        }
+
+        &:active {
+            background-image: url('../images/account-active.png');
+        }
+
+        @include tablet-l {
+            height: 40px;
+        }
+    }
+
+    &__burger-button {
+        display: none;
+
+        @include mobile-l {
+            display: block;
+        }
+
+    }
+}

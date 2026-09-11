@@ -1,0 +1,181 @@
+.delicious {
+    position: relative;
+    padding: 130px 0 140px;
+
+    @include tablet {
+        overflow: hidden;
+        padding: 130px 0 100px;
+    }
+
+    &::after {
+        content: '';
+        background-image: url('../images/three__lines.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -40%;
+        right: 5%;
+        z-index: -10;
+        rotate: 45deg;
+        width: 1000px;
+        height: 100%;
+
+        @media (min-width: 2000px) {
+            bottom: -40%;
+            right: 15%;
+        }
+
+        @include desktop-m {
+            bottom: -35%;
+        }
+
+        @include desktop-s {
+            bottom: -35%;
+            right: -20%;
+            rotate: 45deg;
+        }
+
+        @include tablet {
+            bottom: -70%;
+            right: 22%;
+            rotate: 15deg;
+        }
+
+        @include mobile-l {
+            bottom: -60%;
+            right: -20%;
+        }
+
+        @include mobile-m {
+            bottom: -78%;
+            right: 0%;
+            rotate: 0deg;
+        }
+
+        @include mobile-m {
+            bottom: -75%;
+            right: 0%;
+        }
+    }
+
+    @include mobile-l {
+        padding-top: 100px;
+    }
+
+    &__inner {
+        @include flex (row, space-between, end, 20px);
+
+        @include desktop-m {
+            @include flex (row, center, end, 200px);
+        }
+
+        @include desktop-m {
+            @include flex (row, center, end, 150px);
+        }
+
+        @include tablet {
+            @include flex (column, start, center, 80px);
+        }
+    }
+
+    &__big-image-wrapper {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            z-index: -10;
+            width: 465px;
+            height: 685px;
+            background-color: $color-accent-second;
+            clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 0);
+
+            @include mobile-l {
+                width: 320px;
+                height: 470px;
+                bottom: -20px;
+                left: -20px;
+            }
+
+            @include mobile-s {
+                width: 280px;
+                height: 410px;
+            }
+        }
+    }
+
+    &__big-image-wrapper-second {
+        overflow: hidden;
+    }
+
+    &__big-image {
+        &:hover {
+            transform: scale(1.05);
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+        }
+
+        @include mobile-l {
+            aspect-ratio: 465 / 685;
+            width: 320px;
+        }
+
+        @include mobile-s {
+            width: 280px;
+        }
+    }
+
+    &__info {
+        @include flex (column, start, start, 60px);
+        max-width: 500px;
+
+        @include tablet {
+            @include flex (column, start, start, 30px);
+        }
+
+        @include mobile-l {
+            @include flex (column, start, center, 30px);
+        }
+    }
+
+    &__title {}
+
+    &__text {
+        @include tablet {
+            text-align: center;
+            text-wrap: balance;
+        }
+
+        @include mobile-l {
+            font-size: 14px;
+        }
+    }
+
+    &__small-image-wrapper {
+        overflow: hidden;
+    }
+
+    &__small-image {
+        aspect-ratio: 445 / 275;
+
+        &:hover {
+            transform: scale(1.05);
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+        }
+
+        @include mobile-l {
+            width: 350px;
+        }
+
+        @include mobile-s {
+            width: 300px;
+        }
+    }
+}
+
+.test {
+    overflow: hidden;
+}

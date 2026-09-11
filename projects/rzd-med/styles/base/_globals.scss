@@ -1,0 +1,155 @@
+::-moz-selection {
+    background-color: $color-accent;
+    color: $color-dark;
+}
+
+::selection {
+    background-color: $color-accent;
+    color: $color-dark;
+}
+
+.scrollbar-moz-fallback {
+    scrollbar-color: $color-dark $color-light;
+    scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+}
+
+*:focus-visible {
+    outline: 2px solid $color-dark;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+a,
+p,
+li,
+h4 {
+    transition: $transition-duration ease-out;
+}
+
+a,
+p,
+li,
+h4:hover {
+    transition: $transition-duration ease-out;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    right: 15%;
+    display: none;
+    font-size: 24px;
+    color: transparent;
+    background: transparent;
+    padding: 10px 10px 2px;
+    border: 3px solid $color-accent;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    z-index: 1000;
+
+    @media (max-width: 2560px) {
+        right: 600px;
+    }
+
+    @media (max-width: 1920px) {
+        right: 290px;
+    }
+
+    @media (max-width: 1536px) {
+        right: 100px;
+    }
+
+    @media (max-width: 1440px) {
+        right: 50px;
+    }
+
+    @media (max-width: 1366px) {
+        right: 20px;
+    }
+
+    @media (max-width: 1360px) {
+        right: 3px;
+    }
+
+    @media (max-width: 1280px) {
+        display: none !important;
+    }
+}
+
+.back-to-top:hover {
+    opacity: 0.8;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+
+    @include tablet {
+        top: -120px;
+    }
+
+    @include mobile-l {
+        top: -50px;
+    }
+}
+
+.anchor-crutch {
+    position: absolute;
+    visibility: hidden;
+    top: -80px;
+    left: 0;
+
+
+    @include tablet {
+        top: -120px;
+    }
+
+    @include mobile-l {
+        top: -50px;
+    }
+}
+
+body {
+    font-family: $first-family;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1170px;
+    padding-inline: 10px;
+    margin: 0 auto;
+}

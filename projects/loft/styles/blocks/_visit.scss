@@ -1,0 +1,47 @@
+.visit {
+    padding: 250px 0 250px;
+    background-image: url('../images/visit-background.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+        padding: 150px 0 150px;
+    }
+
+    @include mobile-l {
+        padding: 20px 0 100px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        margin-top: 20px;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 30px;
+            margin-top: 80px;
+        }
+
+        @include mobile-l {
+            margin-top: 30px;
+        }
+    }
+
+    &__info {
+        width: 45%;
+        color: $color-text;
+
+        @include tablet {
+            width: 540px;
+        }
+
+        @include mobile-l {
+            width: 80%;
+            text-align: center;
+        }
+    }
+}

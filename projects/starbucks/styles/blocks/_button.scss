@@ -1,0 +1,62 @@
+.button {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 75px;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 80px;
+    color: $color-text;
+    background: linear-gradient(210deg, $color-accent-second 0%, $color-accent-first 100%);
+
+    &:hover::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0) 70%);
+        top: 0;
+        left: -100px;
+        animation: shine 2s 1 linear;
+    }
+
+    @include mobile-l {
+        padding: 13px 50px;
+        font-size: 16px;
+        border-radius: 50px;
+    }
+
+    @include mobile-m {
+        padding: 13px 40px;
+    }
+
+    &--transparent {
+        font-weight: 400;
+        background: transparent;
+        border: 1px solid $color-text;
+    }
+
+    &--position {
+        margin-left: 15px;
+
+        @include mobile-m {
+            margin-left: 5px;
+        }
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100px;
+    }
+
+    20% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}

@@ -1,0 +1,148 @@
+.contacts {
+    &__inner {
+        @include flex(row, space-between, center, 10px);
+        margin: 80px 0 0;
+
+        @include tablet-l {
+            @include flex(column, start, center, 40px);
+        }
+
+        @include mobile-l {
+            @include flex(column, start, start, 20px);
+            margin: 40px 0 0;
+        }
+    }
+
+    &__info {
+        @include flex(column, start, start, 10px);
+
+        @include tablet-l {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+        }
+
+        @include mobile-l {
+            @include flex(column, start, start, 10px);
+        }
+    }
+
+    &__title {
+        @include tablet-l {
+            grid-column: span 2;
+            text-align: start;
+        }
+    }
+
+    &__text {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 2px;
+
+        @include tablet-l {
+            grid-column: span 2;
+        }
+
+        @include mobile-l {
+            font-size: 22px;
+        }
+
+        @include mobile-s {
+            font-size: 20px;
+        }
+    }
+
+    &__link {
+        @include flex(row, start, center, 0px);
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        white-space: nowrap;
+        color: $color-light;
+
+        &:hover {
+            .contacts__link-image {
+                background-image: url('../images/telephone-hover.png');
+            }
+        }
+
+        &:active {
+            .contacts__link-image {
+                background-image: url('../images/telephone-active.png');
+            }
+        }
+
+        @include mobile-l {
+            font-size: 22px;
+        }
+
+        @include mobile-s {
+            font-size: 20px;
+        }
+    }
+
+    &__link:nth-child(4) {
+        .contacts__link-image {
+            background-image: url('../images/telegram.png');
+        }
+
+        &:hover {
+            .contacts__link-image {
+                background-image: url('../images/telegram-hover.png');
+            }
+        }
+
+        &:active {
+            .contacts__link-image {
+                background-image: url('../images/telegram-active.png');
+            }
+        }
+    }
+
+    &__link:nth-child(5) {
+        .contacts__link-image {
+            background-image: url('../images/vkontakte.png');
+        }
+
+        &:hover {
+            .contacts__link-image {
+                background-image: url('../images/vkontakte-hover.png');
+            }
+        }
+
+        &:active {
+            .contacts__link-image {
+                background-image: url('../images/vkontakte-active.png');
+            }
+        }
+    }
+
+    &__link:nth-child(6) {
+        .contacts__link-image {
+            background-image: url('../images/instagram.png');
+        }
+
+        &:hover {
+            .contacts__link-image {
+                background-image: url('../images/instagram-hover.png');
+            }
+        }
+
+        &:active {
+            .contacts__link-image {
+                background-image: url('../images/instagram-active.png');
+            }
+        }
+    }
+
+    &__link-image {
+        margin: -5px 10px 0 0;
+        aspect-ratio: 1;
+        width: 50px;
+        background-image: url('../images/telephone.png');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+    }
+}

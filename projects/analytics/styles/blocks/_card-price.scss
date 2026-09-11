@@ -1,0 +1,82 @@
+.card-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 70px 70px;
+    width: 340px;
+    height: 440px;
+    border-radius: 30px;
+    background-color: #0f1f4b;
+
+    @include mobile-m {
+        width: 320px;
+    }
+
+    @include mobile-s {
+        padding: 40px;
+    }
+
+    &:hover {
+        background-color: $color-main;
+        cursor: default;
+        transform: scale(1.05);
+
+        .card-price__title {
+            color: $color-main-alternate;
+        }
+
+        .card-price__price {
+            color: $color-main-alternate;
+            transition: 0.00001s ease-out;
+        }
+
+        .card-price__link {
+            color: $color-main;
+            background-color: $color-accent;
+            border: 1px solid $color-accent;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        color: $color-main;
+    }
+
+    &__subtitle {
+        padding: 10px 0 30px;
+        width: 220px;
+        text-align: center;
+        border-bottom: 1px solid #2a407c;
+    }
+
+    &__price {
+        padding-top: 30px;
+        font-weight: 700;
+        font-size: 30px;
+        color: $color-main;
+        transition: 0.00001s ease-out;
+
+        span {
+            font-size: 60px;
+        }
+    }
+
+    &__subprice {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    &__link {
+        margin-top: 40px;
+        padding: 10px 80px;
+        font-size: 16px;
+        color: $color-main;
+        border: 1px solid #2a407c;
+        border-radius: 70px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.section-subtitle {
+    font-size: 32px;
+
+    @include tablet {
+        font-size: 26px;
+    }
+
+    @include mobile-s {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,30 @@
+.table-second-mobile {
+    @include flex(column, start, center, 20px);
+
+    &__cell {
+        width: 100%;
+        border: 3px solid $color-accent;
+        border-radius: $border-radius-medium;
+    }
+
+    &__text {
+        padding: 20px;
+        text-align: center;
+    }
+
+    &__text+.table-second-mobile__text {
+        border-top: 3px solid $color-accent;
+    }
+
+    &__link {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border-top: 3px solid $color-accent;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}

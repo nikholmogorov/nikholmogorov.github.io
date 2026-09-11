@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./photoswipe.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preload" as="image" href="./icons/location.svg">
+    <link rel="preload" as="image" href="./icons/location-hover.svg">
+    <link rel="preload" as="image" href="./icons/telephone.svg">
+    <link rel="preload" as="image" href="./icons/telephone-hover.svg">
+    <script defer src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./scripts.js"></script>
+    <title>Сладкий Сундук</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="header-logo" href="#">
+                    <img class="header-logo-image" src="./images/header-logo-image.svg" alt="Сладкий Сундук Логотип"
+                        width="60" height="60" loading="lazy">
+                    <p class="header-logo-text">Сладкий Сундук</p>
+                </a>
+                <div class="header-links">
+                    <a class="header-links-map" href="https://yandex.ru/maps/-/CHuunQzJ" target="_blank">г.
+                        Санкт-Петербург,<br>ул.
+                        Куйбышева, д. 31</a>
+                    <div class="header-links-telephone">
+                        <a class="header-links-telephone-link" href="tel:+78005553535">+7 800 555 35 35</a>
+                        <p class="header-links-telephone-text">Ежедневно с 9:00 до 20:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="visually-hidden">Сладкий Сундук – Пирожные и капкейки с доставкой по Санкт-Петербургу</h1>
+        <section class="banner">
+            <h2 class="visually-hidden">Сладкий Сундук Стартовый Баннер</h2>
+            <div class="container">
+                <div class="banner-inner">
+                    <div class="banner-info">
+                        <h3 class="banner-info-title">Пирожные и капкейки от <span class="banner-info-title-span">150
+                                ₽/шт.</span> с доставкой по
+                            Санкт-Петербургу</h3>
+                        <p class="banner-info-text">Приготовим за 3 часа в день заказа <br>
+                            Доставим на авто в холодильнике </p>
+                        <a class="banner-info-link" href="#order">Сделать Заказ</a>
+                        <p class="banner-info-subtext">9 различных видов на выбор</p>
+                        <img class="banner-info-mobile-image" src="./images/banner-info-mobile-image.png"
+                            alt="Капкейки из Сладкого Сундука"   loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <img class="banner-decore-bottom" src="./images/image-decore-top.png" alt="Декор Секции Banner"
+                 loading="lazy">
+            <div class="banner-parallax-1">
+                <div class="banner-parallax-figure-1"></div>
+            </div>
+            <div class="banner-parallax-2">
+                <div class="banner-parallax-figure-2"></div>
+            </div>
+            <div class="banner-parallax-3">
+                <div class="banner-parallax-figure-3"></div>
+            </div>
+            <div class="banner-parallax-4">
+                <div class="banner-parallax-figure-4"></div>
+            </div>
+        </section>
+        <section class="types">
+            <h2 class="visually-hidden">Виды Капкейков из Сладкого Сундука</h2>
+            <div class="container">
+                <h3 class="types-title">Виды Капкейков из Сладкого Сундука</h3>
+                <div class="types-inner">
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image1.jpg" alt="Кремовый Замок"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Кремовый Замок</h4>
+                        <p class="types-card-text">Нежный крем любого цвета на выбор, вафельная основа</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image2.jpg" alt="Малиновый Рай"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Малиновый Рай</h4>
+                        <p class="types-card-text">Воздушный крем, темная основа и ягода малины</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image3.jpg" alt="Фейерверк" width="380"
+                            height="245" loading="lazy">
+                        <h4 class="types-card-title">Фейерверк</h4>
+                        <p class="types-card-text">Разноцветные крем, с бисквитной основой</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image4.jpg" alt="Шоколадный Мир"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Шоколадный Мир</h4>
+                        <p class="types-card-text">Ореховая стружка, нежный крем и шоколадная основа</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image5.jpg" alt="Слезы Дракона"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Слезы Дракона</h4>
+                        <p class="types-card-text">Нежный крем любого цвета на выбор, вафельная основа</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image6.jpg" alt="Летняя Фантазия"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Летняя Фантазия</h4>
+                        <p class="types-card-text">Украшения в форме сердец, для любимого человека</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image7.jpg" alt="Мыс Безумия" width="380"
+                            height="245" loading="lazy">
+                        <h4 class="types-card-title">Мыс Безумия</h4>
+                        <p class="types-card-text">Разноцветная основа, стружка и нежный крем</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image8.jpg" alt="Облачная Сказка"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Облачная Сказка</h4>
+                        <p class="types-card-text">Светлая основа, нежный крем со стружкой сверху</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                    <div class="types-card">
+                        <img class="types-card-image" src="./images/types-card-image9.jpg" alt="Тёмный Рыцарь"
+                            width="380" height="245" loading="lazy">
+                        <h4 class="types-card-title">Тёмный Рыцарь</h4>
+                        <p class="types-card-text">Тёмная основа, нежный крем и вкусные шарики</p>
+                        <p class="types-card-price">150 ₽/шт.</p>
+                        <a class="types-card-link" href="#order">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="types-decore-1"></div>
+            <div class="types-decore-2"></div>
+            <div class="types-decore-3"></div>
+        </section>
+        <section class="image">
+            <img class="image-decore-top" src="./images/image-decore-top.png" alt="Декор Секции Image"
+                 loading="lazy">
+            <h2 class="visually-hidden">Заявка на Капкейки из Сладкого Сундука по Фотографии</h2>
+            <div class="container">
+                <div class="image-inner">
+                    <div class="image-info">
+                        <h3 class="image-info-title">Приготовим заказ любой сложности по фото или эскизу</h3>
+                        <p class="image-info-text">Загрузите фотографию или эскиз капкейков, а мы рассчитаем стоимость
+                            за 30&#160;минут</p>
+                        <a class="image-info-link" href="#">Загрузить Фотографию</a>
+                    </div>
+                </div>
+            </div>
+            <div class="image-decore-1"></div>
+            <div class="image-decore-2"></div>
+            <div class="image-decore-bottom"></div>
+        </section>
+        <section class="confectioner">
+            <h2 class="visually-hidden">Юлия Кондратьева – Главный Кондитер из Сладкого Сундука</h2>
+            <div class="container">
+                <div class="confectioner-inner">
+                    <div class="confectioner-info">
+                        <h3 class="confectioner-info-title">Лично приготовлю и всё красиво упакую для вашего события
+                        </h3>
+                        <p class="confectioner-info-text">Проконсультирую по выбору капкейков и придумаю нестандартную
+                            идею</p>
+                        <p class="confectioner-info-text">Приготовлю капкейки для вашего события, которые обязательно
+                            всем понравятся </p>
+                        <p class="confectioner-info-text">Упакую всё красиво и аккуратно, если вы хотите сделать
+                            приятный подарок</p>
+                        <a class="confectioner-info-link" href="#order">Задать Вопрос Юлии</a>
+                    </div>
+                    <img class="confectioner-image" src="./images/confectioner-image.png"
+                        alt="Юлия Кондратьева – Ваш Кондитер" width="726" height="830" loading="lazy">
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <img class="reviews-decore-top" src="./images/image-decore-top.png" alt="Декор Секции Reviews"
+                 loading="lazy">
+            <h2 class="visually-hidden">Отзывы на Капкейки из Сладкого Сундука</h2>
+            <h3 class="reviews-title">Почитайте Отзывы Довольных Клиентов</h3>
+            <div class="reviews-inner">
+                <div class="reviews-swiper swiper">
+                    <div class="reviews-swiper-wrapper swiper-wrapper">
+                        <div class="reviews-swiper-slide swiper-slide">
+                            <div class="reviews-swiper-slide-inner">
+                                <div class="reviews-swiper-slide-left">
+                                    <h3 class="reviews-swiper-slide-left-title">Результат дико порадовал, друзья
+                                        были в восторге</h3>
+                                    <p class="reviews-swiper-slide-left-text">Заказала капкейки, как подарок на
+                                        Новый Год. Делать заказ было легко и приятно, ну а результат дико порадовал,
+                                        друзья были в восторге. И оформление, и на вкус капкейки были просто
+                                        замечательные. Обязательно буду заказывать еще&rpar;&rpar; Уже строю планы,
+                                        чтобы
+                                        попробовать все начинки. Они восхитительны!&rpar; Даже кушать было жалко,
+                                        такая
+                                        красота!&rpar;</p>
+                                </div>
+                                <div class="reviews-swiper-slide-right">
+                                    <img class="reviews-swiper-slide-right-image"
+                                        src="./images/reviews-swiper-slide-right-image1.png" alt="Ирина Ларионова"
+                                        width="380" height="380" loading="lazy">
+                                    <p class="reviews-swiper-slide-right-text">Ирина Ларионова</p>
+                                    <p class="reviews-swiper-slide-right-subtext">HR-специалист</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-swiper-slide swiper-slide">
+                            <div class="reviews-swiper-slide-inner">
+                                <div class="reviews-swiper-slide-left">
+                                    <h3 class="reviews-swiper-slide-left-title">Вкуснейшие капкейки рядом с домом
+                                    </h3>
+                                    <p class="reviews-swiper-slide-left-text">Потрясающие капкейки. Заказывала дочке
+                                        на День рождения с фотографиями подружек. Получилось замечательно. Дочь
+                                        очень довольна, девочки в восторге. Счастливые дети — счастливы и родители.
+                                        Спасибо большое за организацию, пунктуальную доставку и приятное общение</p>
+                                </div>
+                                <div class="reviews-swiper-slide-right">
+                                    <img class="reviews-swiper-slide-right-image"
+                                        src="./images/reviews-swiper-slide-right-image2.png" alt="Анастасия Кобеева"
+                                        width="380" height="380" loading="lazy">
+                                    <p class="reviews-swiper-slide-right-text">Анастасия Кобеева</p>
+                                    <p class="reviews-swiper-slide-right-subtext">Графический Дизайнер</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-swiper-slide swiper-slide">
+                            <div class="reviews-swiper-slide-inner">
+                                <div class="reviews-swiper-slide-left">
+                                    <h3 class="reviews-swiper-slide-left-title">Выручили с подарком на ДР</h3>
+                                    <p class="reviews-swiper-slide-left-text">Заказывала капкейки шоколадные с
+                                        вишнёвой начинкой , шоколадным кремом и фотопечатью. Заказ выполнен в полном
+                                        соответствии с моими требованиями, капкейки очень вкусные, нежные, не
+                                        приторные, очень свежие. Цена-качество на высшем уровне, в следующий раз
+                                        знаю куда обращаться за вкусняшками.
+                                        Спасибо Вам большое!</p>
+                                </div>
+                                <div class="reviews-swiper-slide-right">
+                                    <img class="reviews-swiper-slide-right-image"
+                                        src="./images/reviews-swiper-slide-right-image3.png" alt="Полина Иванова"
+                                        width="380" height="380" loading="lazy">
+                                    <p class="reviews-swiper-slide-right-text">Полина Иванова</p>
+                                    <p class="reviews-swiper-slide-right-subtext">Художница</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-swiper-slide swiper-slide">
+                            <div class="reviews-swiper-slide-inner">
+                                <div class="reviews-swiper-slide-left">
+                                    <h3 class="reviews-swiper-slide-left-title">Любимые!!! &lt;3 &lt;3 &lt;3 </h3>
+                                    <p class="reviews-swiper-slide-left-text">Oгромное спасибо за подарок — супер
+                                        приятно и очень прикольно!!!!
+                                        Спасибо!!!!!!!!!!!!!!!!!!!!!!!!!!!🥳🥳🥳🥳🥳🎂🎂🎂🎂🤣🤣🤣🍧🍧🍧😇😇😇</p>
+                                </div>
+                                <div class="reviews-swiper-slide-right">
+                                    <img class="reviews-swiper-slide-right-image"
+                                        src="./images/reviews-swiper-slide-right-image4.png" alt="Настя Потапова"
+                                        width="380" height="380" loading="lazy">
+                                    <p class="reviews-swiper-slide-right-text">Настя Потапова</p>
+                                    <p class="reviews-swiper-slide-right-subtext">Фрилансер</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-swiper-slide swiper-slide">
+                            <div class="reviews-swiper-slide-inner">
+                                <div class="reviews-swiper-slide-left">
+                                    <h3 class="reviews-swiper-slide-left-title">Лучшие капкейки по эту сторону
+                                        Миссисипи</h3>
+                                    <p class="reviews-swiper-slide-left-text">Потрясающе вкусные капкейки!
+                                        Свежие ягоды, легкий крем — во рту тает.
+                                        Заказывали в офис, всем очень понравилось. Обязательно будем заказывать еще.
+                                        Еще хочется отметить сам сервис. У меня была доставка на определенный день,
+                                        но по обстоятельствам пришлось менять дату. Мне максимально быстро ответили
+                                        и спокойно перенесли доставку на другой день. Спасибо!</p>
+                                </div>
+                                <div class="reviews-swiper-slide-right">
+                                    <img class="reviews-swiper-slide-right-image"
+                                        src="./images/reviews-swiper-slide-right-image5.png" alt="Анна Гефт" width="380"
+                                        height="380" loading="lazy">
+                                    <p class="reviews-swiper-slide-right-text">Анна Гефт</p>
+                                    <p class="reviews-swiper-slide-right-subtext">Бизнес-Аналитик</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-swiper-controls">
+                        <div class="reviews-swiper-button-prev">
+                            <svg class="reviews-swiper-button-prev-svg" width="66" height="66" viewBox="0 0 66 66"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.0722656" width="66" height="66" rx="33" fill="#FED84C" />
+                                <path d="M36.106 22.7062L25.7401 33.072L36.106 43.4379" stroke="#2E363E"
+                                    stroke-width="4" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="reviews-swiper-button-next">
+                            <svg class="reviews-swiper-button-next-svg" width="66" height="66" viewBox="0 0 66 66"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.0722656" width="66" height="66" rx="33" fill="#FED84C" />
+                                <path d="M36.106 22.7062L25.7401 33.072L36.106 43.4379" stroke="#2E363E"
+                                    stroke-width="4" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="reviews-swiper-pagination swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="reviews-decore-1"></div>
+            <div class="reviews-decore-2"></div>
+            <img class="reviews-decore-bottom" src="./images/image-decore-top.png" alt="Декор Секции Reviews"
+                 loading="lazy">
+        </section>
+        <section class="gallery">
+            <h2 class="visually-hidden">Фотографии Выполненных Заказов из Сладкого Сундука</h2>
+            <h3 class="gallery-title">Сделали Более 3 000 Заказов за 2 Года</h3>
+            <p class="gallery-text">Посмотрите фото реальных заказов из нашего Instagram</p>
+            <div class="gallery-inner">
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image1.jpg">
+                    <img class="gallery-image" src="./images/gallery-image1.jpg" alt="Фото Капкейков #1" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image2.jpg">
+                    <img class="gallery-image" src="./images/gallery-image2.jpg" alt="Фото Капкейков #2" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image3.jpg">
+                    <img class="gallery-image" src="./images/gallery-image3.jpg" alt="Фото Капкейков #3" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image4.jpg">
+                    <img class="gallery-image" src="./images/gallery-image4.jpg" alt="Фото Капкейков #4" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image5.jpg">
+                    <img class="gallery-image" src="./images/gallery-image5.jpg" alt="Фото Капкейков #5" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image6.jpg">
+                    <img class="gallery-image" src="./images/gallery-image6.jpg" alt="Фото Капкейков #6" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image7.jpg">
+                    <img class="gallery-image" src="./images/gallery-image7.jpg" alt="Фото Капкейков #7" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image8.jpg">
+                    <img class="gallery-image" src="./images/gallery-image8.jpg" alt="Фото Капкейков #8" width="634"
+                        height="444" loading="lazy">
+                </a>
+                <a class="gallery-link" data-pswp-width="634" data-pswp-height="444" href="./images/gallery-image9.jpg">
+                    <img class="gallery-image" src="./images/gallery-image9.jpg" alt="Фото Капкейков #9" width="634"
+                        height="444" loading="lazy">
+                </a>
+            </div>
+        </section>
+        <div class="block">
+            <div class="anchor" id="order"></div>
+        </div>
+        <section class="order">
+            <img class="order-decore-top" src="./images/image-decore-top.png" alt="Декор Секции Gallery"
+                 loading="lazy">
+            <h2 class="visually-hidden">Форма Для Связи со Сладким Сундуком</h2>
+            <div class="container">
+                <div class="order-inner">
+                    <h3 class="order-title">Укажите Телефон Для Заказа</h3>
+                    <p class="order-text">Мы перезвоним в течении 15 минут, чтобы уточнить ваши пожелания</p>
+                    <form class="order-form uniFormJS1" action="#" method="GET">
+                        <label class="order-form-label visually-hidden" for="telephone">Телефон</label>
+                        <input class="order-form-input telephone" id="telephone" name="Телефон" type="tel"
+                            placeholder="Телефон" inputmode="tel" required>
+                        <button class="order-form-submit submit-button" type="submit">Сделать Заказ</button>
+                        <div class="order-form-checkbox">
+                            <label class="order-form-checkbox-label" for="accept">
+                                <input class="order-form-checkbox-label-input" type="checkbox" id="accept" name="accept"
+                                    required>Нажимая на кнопку, вы соглашаетесь с <a
+                                    class="order-form-checkbox-label-input-link"
+                                    href="https://www.consultant.ru/document/cons_doc_LAW_61801/315f051396c88f1e4f827ba3f2ae313d999a1873/"
+                                    target="_blank">условиями
+                                    обработки персональных данных
+                                </a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="order-decore-1"></div>
+            <div class="order-decore-2"></div>
+            <div class="order-decore-3"></div>
+            <div class="order-decore-4"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a class="footer-link"
+                            href="https://www.consultant.ru/document/cons_doc_LAW_61801/6c94959bc017ac80140621762d2ac59f6006b08c/"
+                            target="_blank">Согласие на Обработку Данных</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="https://ru.wikipedia.org/wiki/Техническая_поддержка"
+                            target="_blank">Служба Поддержки</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link"
+                            href="https://dogovor.ru/contracts/view/politika-konfidencialnosti?yclid=14423393685208563711"
+                            target="_blank">Политика Конфиденциальности</a>
+                    </li>
+                </ul>
+                <p class="footer-text">© 202S Сладкий Сундук | ИП Кондратьева Юлия Владимировна ОГРН 102030405060
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

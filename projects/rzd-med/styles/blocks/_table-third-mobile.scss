@@ -1,0 +1,23 @@
+.table-third-mobile {
+    @include flex(column, start, center, 20px);
+
+    &__cell {
+        width: 100%;
+        border: 3px solid $color-accent;
+        border-radius: $border-radius-medium;
+    }
+
+    &__text {
+        padding: 20px;
+        text-wrap: balance;
+        text-align: center;
+    }
+
+    &__text:nth-child(1) {
+        border-bottom: 3px solid $color-accent;
+    }
+
+    &__text+.table-second-mobile__text {
+        border-top: 3px solid $color-accent;
+    }
+}

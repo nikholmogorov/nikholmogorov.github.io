@@ -1,0 +1,36 @@
+.features {
+    &__inner {
+        padding: 40px 0 40px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__text {
+        margin-top: 30px;
+        max-width: 1060px;
+        text-align: center;
+
+        @include mobile-l {
+            margin-top: 20px;
+            text-align: start;
+            text-wrap: pretty;
+        }
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 20px;
+        margin-top: 80px;
+
+        @include mobile-l {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            row-gap: 30px;
+        }
+    }
+
+    &__card {}
+}

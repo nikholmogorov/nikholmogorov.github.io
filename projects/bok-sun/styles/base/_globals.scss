@@ -1,0 +1,82 @@
+::-moz-selection {
+    background-color: $color-dark;
+    color: $color-light;
+}
+
+::selection {
+    background-color: $color-dark;
+    color: $color-light;
+}
+
+.scrollbar-moz-fallback {
+    scrollbar-color: $color-dark $color-light;
+    scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+}
+
+*:focus-visible {
+    outline: 1px solid $color-dark;
+    outline-offset: 1px;
+}
+
+a,
+img {
+    transition: $transition-duration ease-out;
+}
+
+a:hover,
+img:hover {
+    transition: $transition-duration ease-out;
+}
+
+.block {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+}
+
+body {
+    font-family: $first-family;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $color-light;
+    color: $color-dark;
+}
+
+body .pswp .pswp__container {
+    transition: transform 1s cubic-bezier(.3, 0, 0, 1);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    max-width: 1180px;
+    padding-inline: 10px;
+    margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+@import './base/normalize',
+'./base/fonts',
+'./base/mixins',
+'./base/media',
+'./base/variables',
+'./base/globals';
+ 
+@import './blocks/header',
+'./blocks/logo',
+'./blocks/burger-button',
+'./blocks/mobile-overlay',
+'./blocks/cross-button',
+'./blocks/hero',
+'./blocks/section-title',
+'./blocks/announcement',
+'./blocks/card',
+'./blocks/popular',
+'./blocks/stuff',
+'./blocks/contacts',
+'./blocks/yandex-map',
+'./blocks/footer';

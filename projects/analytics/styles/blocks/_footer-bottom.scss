@@ -1,0 +1,30 @@
+.footer-bottom {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0 60px;
+
+        @include mobile-l {
+            padding: 40px 0 40px;
+        }
+    }
+
+    &__logo {}
+
+    &__menu {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        display: flex;
+        column-gap: 35px;
+    }
+
+    &__menu-item {}
+
+    &__menu-link {}
+
+    &__soc1als {}
+}

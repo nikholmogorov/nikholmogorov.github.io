@@ -1,0 +1,31 @@
+.cross-button {
+    position: relative;
+    padding: 0;
+    border: none;
+    aspect-ratio: 1;
+    height: 50px;
+    background-image: url('../images/cross-button.png');
+    background-position: center center;
+    background-size: contain;
+
+    &:hover {
+        background-image: url('../images/cross-button-hover.png');
+    }
+
+    &:active {
+        background-image: url('../images/cross-button-active.png');
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &--position {
+        margin: 7px 7px 0 0;
+
+        @include mobile-m {
+            margin: 0px 10px 0 0;
+        }
+    }
+
+}

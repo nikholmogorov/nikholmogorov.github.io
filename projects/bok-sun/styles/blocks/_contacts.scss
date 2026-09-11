@@ -1,0 +1,62 @@
+.contacts {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &--position {
+        margin-bottom: 6rem;
+
+        @include mobile-l {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__inner {
+        padding-bottom: 6rem;
+
+        @include mobile-l {
+            padding-bottom: 8rem;
+        }
+    }
+
+    &__top {
+        @include flex(row, space-between, center, 1rem);
+
+        @include tablet-l {
+            @include flex(column, start, center, 2rem);
+        }
+    }
+
+    &__title {}
+
+    &__info {
+        @include flex(column, start, start, 1rem);
+    }
+
+    &__text {
+        font-size: 1.25rem;
+
+        @include mobile-l {
+            font-size: 1rem;
+        }
+    }
+
+    &__link {
+        font-size: 1.25rem;
+        color: $color-dark;
+
+        &:hover {
+            color: $color-accent;
+        }
+
+        @include mobile-l {
+            font-size: 1rem;
+        }
+    }
+
+    &__link-image {}
+
+    &__bottom {
+        margin: 4rem auto 0;
+        width: fit-content;
+    }
+}

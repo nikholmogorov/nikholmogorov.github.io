@@ -1,0 +1,49 @@
+.juisy {
+    @include flex(row, center, center, 0);
+    background-color: $color-blue;
+
+    &__inner {
+        @include flex(row, start, start, 50px);
+        padding: 120px 120px 120px 120px;
+
+        @media (max-width: 1920px) {
+            padding: 50px 50px 50px 50px;
+        }
+
+        @include desktop-m {
+            @include flex(row, start, start, 20px);
+            padding: 30px;
+        }
+
+        @include tablet {
+            @include flex(row, center, center, 20px);
+            padding: 30px;
+        }
+    }
+
+    &__title {}
+
+    &__title-span {}
+
+    &__title-span-bold {}
+
+    &__info {
+        width: 60%;
+    }
+
+    &__text {}
+
+    &__link {
+        margin-top: 25px;
+
+        &:hover {
+            background-color: #029b96;
+            border: 2px solid #029b96;
+        }
+
+        &:active {
+            background-color: $color-blue-alternate;
+            border: 2px solid $color-blue-alternate;
+        }
+    }
+}

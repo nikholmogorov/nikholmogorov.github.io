@@ -1,0 +1,79 @@
+.footer {
+    padding: 50px 0 20px;
+
+    @include mobile-l {
+        padding: 80px 0 20px;
+    }
+
+    &__inner {
+        @include flex(row, space-between, center, 25px);
+        position: relative;
+
+        &:after {
+            content: '';
+            background-image: url(../images/blue-big-light.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            z-index: -10;
+            width: 300px;
+            height: 300px;
+        }
+
+        @include mobile-l {
+            @include flex(column-reverse, center, center, 25px);
+        }
+    }
+
+    &__left {
+        @include flex(column, start, start, 5px);
+
+        @include mobile-l {
+            @include flex(column, center, center, 5px);
+        }
+    }
+
+    &__logo {}
+
+    &__link {
+        font-size: 22px;
+        color: $color-text;
+        text-wrap: nowrap;
+
+        &:hover {
+            text-shadow:
+                0 0 7px $color-text,
+                0 0 10px $color-text,
+                0 0 21px $color-text,
+                0 0 32px $color-accent-first,
+                0 0 42px $color-accent-first,
+                0 0 52px $color-accent-first,
+                0 0 62px $color-accent-first,
+                0 0 71px $color-accent-first;
+        }
+
+        @include mobile-l {
+            font-size: 18px;
+        }
+    }
+
+    &__copyrights {
+        font-size: 22px;
+
+        @include mobile-l {
+            font-size: 18px;
+        }
+    }
+
+    &__right {
+        @include flex(column, bottom, start, 5px);
+        align-self: end;
+
+        @include mobile-l {
+            @include flex(column, center, center, 5px);
+            align-self: center;
+        }
+    }
+}
