@@ -2,33 +2,35 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: 20
+
 jobs:
-  deploy-root:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Deploy root files
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: .
-          clean: false
-          target-folder: .
-
   build-projects:
+    name: Build ${{ matrix.project }}
     runs-on: ubuntu-latest
-    needs: deploy-root
+
     strategy:
-      matrix:
-        project: [calc, maze, memory-game, seku, todo, afrianska, catalog, currency-converter, task-manager-plus, zpo-naming]
       fail-fast: false
+      matrix:
+        project:
+          - calc
+          - maze
+          - memory-game
+          - seku
+          - todo
+          - afrianska
+          - catalog
+          - currency-converter
+          - task-manager-plus
+          - zpo-naming
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,54 +38,123 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: projects/${{ matrix.project }}/package-lock.json
 
-      - name: Install dependencies for ${{ matrix.project }}
-        run: |
-          cd projects/${{ matrix.project }}
-          npm install
+      - name: Install dependencies
+        working-directory: projects/${{ matrix.project }}
+        run: npm ci
 
-      - name: Build ${{ matrix.project }}
-        run: |
-          cd projects/${{ matrix.project }}
-          npm run build
+      - name: Build project
+        working-directory: projects/${{ matrix.project }}
+        run: npm run build
 
-      - name: Upload build artifact
+      - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.project }}
           path: projects/${{ matrix.project }}/dist
+          if-no-files-found: error
 
-  deploy-projects:
+
+  prepare-deployment:
+    name: Prepare deployment
     runs-on: ubuntu-latest
     needs: build-projects
-    permissions:
-      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download all builds
+      - name: Create deployment directory
+        run: mkdir -p deploy/projects
+
+      - name: Copy portfolio root
+        run: |
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            --exclude='projects' \
+            ./ deploy/
+
+      - name: Download project builds
         uses: actions/download-artifact@v4
         with:
-          path: ./builds
+          path: builds
 
-      - name: Prepare deployment folder
+      - name: Copy project builds
         run: |
-          mkdir -p deploy/projects
+          for project in \
+            calc \
+            maze \
+            memory-game \
+            seku \
+            todo \
+            afrianska \
+            catalog \
+            currency-converter \
+            task-manager-plus \
+            zpo-naming
+          do
+            echo "Copying $project..."
 
-          for project in calc maze memory-game seku todo afrianska catalog currency-converter task-manager-plus zpo-naming; do
-            if [ -d "builds/build-$project" ]; then
-              echo "Copying $project..."
-              mkdir -p "deploy/projects/$project"
-              cp -r "builds/build-$project/"* "deploy/projects/$project/"
-            fi
+            mkdir -p "deploy/projects/$project"
+
+            cp -r \
+              "builds/build-$project/." \
+              "deploy/projects/$project/"
           done
 
-      - name: Deploy all projects
+      - name: Verify deployment
+        run: |
+          echo "Checking projects..."
+
+          for project in \
+            calc \
+            maze \
+            memory-game \
+            seku \
+            todo \
+            afrianska \
+            catalog \
+            currency-converter \
+            task-manager-plus \
+            zpo-naming
+          do
+            if [ ! -f "deploy/projects/$project/index.html" ]; then
+              echo "ERROR: $project/index.html is missing"
+              exit 1
+            fi
+
+            echo "OK: $project"
+          done
+
+      - name: Upload deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment
+          path: deploy
+          if-no-files-found: error
+
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: prepare-deployment
+
+    steps:
+      - name: Download deployment
+        uses: actions/download-artifact@v4
+        with:
+          name: deployment
+          path: deploy
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: deploy
-          clean: false
-          target-folder: .
+          clean: true
