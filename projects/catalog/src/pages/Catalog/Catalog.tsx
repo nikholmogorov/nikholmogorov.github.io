@@ -58,9 +58,7 @@ export default function Catalog() {
         content = (
             <>
                 <p className={styles.errorCatalogText}>Не удалось загрузить каталог!</p>
-                {productsError && (
-                    <p className={styles.errorCatalogText}>{productsError}</p>
-                )}
+                <p className={styles.errorCatalogText}>{productsError}</p>
             </>
         );
     } else if (!products.length) {
