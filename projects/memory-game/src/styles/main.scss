@@ -1,10 +1,43 @@
-@import './base/normalize',
-'./base/fonts',
-'./base/mixins',
-'./base/media',
-'./base/variables',
-'./base/globals';
+@use './base/normalize';
 
-@import './blocks/landscape',
-'./blocks/content',
-'./blocks/card';
+@use './blocks/landscape';
+@use './blocks/content';
+@use './blocks/card';
+@use './blocks/loader';
+
+:root {
+  --transition-duration: 0.35s;
+  --card-size-l: 192px;
+  --card-size-m: 160px;
+  --card-size-s: 128px;
+  --card-size-xs: 96px;
+  --card-size-xxs: 88px;
+  --card-size-xxxs: 80px;
+  scrollbar-gutter: auto;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #ffffff;
+    --color-element: #000000;
+    --color-gray: #00000080;
+    --color-accent: #00527f;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000000;
+    --color-element: #ffffff;
+    --color-gray: #ffffff80;
+    --color-accent: #ffffff;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.selected {
+  transform: scale(1.05);
+}
