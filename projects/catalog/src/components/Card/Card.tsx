@@ -4,42 +4,42 @@ import { getImageUrl, handleImageError } from "@utils/image";
 import styles from "./Card.module.scss";
 
 interface CardProps {
-    itemData?: Product;
+  itemData?: Product;
 }
 
 export default function Card(props: CardProps) {
-    const { itemData } = props;
+  const { itemData } = props;
 
-    const isCardLoading = !itemData;
+  const isCardLoading = !itemData;
 
-    const rawImage = itemData?.colors?.[0]?.images?.[0] || `images/no_photo.webp`;
-    const cardTitle = itemData?.name || ``;
-    const cardPrice = isCardLoading
-        ? ``
-        : `от ${Math.min(...itemData?.colors?.map((item) => Number(item.price)))} ₽`;
-    const cardLink = itemData?.id ? `/product/${itemData.id}` : `#`;
+  const rawImage = itemData?.colors?.[0]?.images?.[0] || `images/no_photo.webp`;
+  const cardTitle = itemData?.name || ``;
+  const cardPrice = isCardLoading
+    ? ``
+    : `от ${Math.min(...itemData?.colors?.map((item) => Number(item.price)))} ₽`;
+  const cardLink = itemData?.id ? `/product/${itemData.id}` : `#`;
 
-    return (
-        <li>
-            <Link
-                className={styles.card}
-                to={cardLink}
-                data-loading={isCardLoading ? true : undefined}
-            >
-                {isCardLoading ? (
-                    <div className={styles.image}></div>
-                ) : (
-                    <img
-                        className={styles.image}
-                        src={getImageUrl(rawImage)}
-                        onError={handleImageError}
-                        alt={`Фото товара ${cardTitle}`}
-                        loading="lazy"
-                    />
-                )}
-                <h2 className={styles.title}>{cardTitle}</h2>
-                <p className={styles.price}>{cardPrice}</p>
-            </Link>
-        </li>
-    );
+  return (
+    <li>
+      <Link
+        className={styles.card}
+        to={cardLink}
+        data-loading={isCardLoading ? true : undefined}
+      >
+        {isCardLoading ? (
+          <div className={styles.image}></div>
+        ) : (
+          <img
+            className={styles.image}
+            src={getImageUrl(rawImage)}
+            onError={handleImageError}
+            alt={`Фото товара ${cardTitle}`}
+            loading="lazy"
+          />
+        )}
+        <h2 className={styles.title}>{cardTitle}</h2>
+        <p className={styles.price}>{cardPrice}</p>
+      </Link>
+    </li>
+  );
 }

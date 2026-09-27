@@ -35,7 +35,7 @@ export function DesktopOnlyGuard({ children }: DesktopOnlyGuardProps) {
           }}
         >
           <Typography variant="h5" component="h1">
-            Mobiles not supported.
+            Mobiles not supported
           </Typography>
         </Paper>
       </Box>
