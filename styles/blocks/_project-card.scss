@@ -73,6 +73,10 @@
 
     &__text {
         margin-top: 0.5rem;
+
+        @include mobile-m {
+            margin-bottom: 0.5rem;
+        }
     }
 
     &__bottom {
