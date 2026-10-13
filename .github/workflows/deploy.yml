@@ -12,6 +12,11 @@ permissions:
 env:
   NODE_VERSION: 20
 
+  # Projects excluded from GitHub Pages deployment.
+  # Add one project path per line.
+  EXCLUDED_PROJECTS: |
+    projects/classifieds
+
 jobs:
   build-and-prepare:
     name: Build and prepare deployment
@@ -48,10 +53,6 @@ jobs:
 
       # ------------------------------------------------------------
       # Process all projects automatically
-      #
-      # Rules:
-      #   package.json + scripts.build -> build project
-      #   everything else              -> static project
       # ------------------------------------------------------------
 
       - name: Process projects
@@ -59,12 +60,34 @@ jobs:
         run: |
           set -e
 
+          is_excluded_project() {
+            local candidate="${1%/}"
+            local excluded_path
+
+            while IFS= read -r excluded_path; do
+              excluded_path="${excluded_path%/}"
+
+              [ -z "$excluded_path" ] && continue
+
+              if [ "$candidate" = "$excluded_path" ]; then
+                return 0
+              fi
+            done <<< "$EXCLUDED_PROJECTS"
+
+            return 1
+          }
+
           mkdir -p deploy/projects
 
           for project_path in projects/*; do
 
-            # Skip anything that is not a directory
             if [ ! -d "$project_path" ]; then
+              continue
+            fi
+
+            # Skip explicitly excluded projects.
+            if is_excluded_project "$project_path"; then
+              echo "Skipping excluded project: $project_path"
               continue
             fi
 
@@ -75,10 +98,6 @@ jobs:
             echo "Processing: $project_name"
             echo "========================================"
 
-            # ------------------------------------------------------
-            # Determine project type
-            # ------------------------------------------------------
-
             is_buildable=false
 
             if [ -f "$project_path/package.json" ]; then
@@ -88,7 +107,6 @@ jobs:
               if node -e "
                 const fs = require('fs');
                 const path = process.argv[1];
-
                 const pkg = JSON.parse(fs.readFileSync(path, 'utf8'));
 
                 process.exit(
@@ -126,40 +144,23 @@ jobs:
                 cd "$project_path"
 
                 if [ -f package-lock.json ]; then
-                  echo "Using npm ci..."
                   npm ci
                 else
-                  echo "No package-lock.json found."
-                  echo "Using npm install..."
                   npm install
                 fi
 
                 npm run build
               )
 
-              # ----------------------------------------------------
-              # Verify build output
-              # ----------------------------------------------------
-
               if [ ! -d "$project_path/dist" ]; then
-                echo ""
-                echo "ERROR: $project_name has a build script,"
-                echo "but no dist/ directory was created."
-                echo ""
+                echo "ERROR: $project_name has no dist/ directory."
                 exit 1
               fi
 
               if [ ! -f "$project_path/dist/index.html" ]; then
-                echo ""
-                echo "ERROR: $project_name build completed,"
-                echo "but dist/index.html was not found."
-                echo ""
+                echo "ERROR: $project_name has no dist/index.html."
                 exit 1
               fi
-
-              # ----------------------------------------------------
-              # Copy build output
-              # ----------------------------------------------------
 
               mkdir -p "deploy/projects/$project_name"
 
@@ -199,6 +200,23 @@ jobs:
         run: |
           set -e
 
+          is_excluded_project() {
+            local candidate="${1%/}"
+            local excluded_path
+
+            while IFS= read -r excluded_path; do
+              excluded_path="${excluded_path%/}"
+
+              [ -z "$excluded_path" ] && continue
+
+              if [ "$candidate" = "$excluded_path" ]; then
+                return 0
+              fi
+            done <<< "$EXCLUDED_PROJECTS"
+
+            return 1
+          }
+
           echo ""
           echo "========================================"
           echo "Deployment contents"
@@ -217,12 +235,15 @@ jobs:
               continue
             fi
 
+            if is_excluded_project "$project_path"; then
+              echo "SKIPPED: $project_path"
+              continue
+            fi
+
             project_name=$(basename "$project_path")
 
             if [ ! -f "deploy/projects/$project_name/index.html" ]; then
-              echo ""
               echo "ERROR: Missing index.html for $project_name"
-              echo ""
               exit 1
             fi
 
