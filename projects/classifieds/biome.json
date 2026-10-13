@@ -1,0 +1,85 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "src/shared/ui/button-group.tsx",
+        "src/shared/ui/field.tsx",
+        "src/shared/ui/input-group.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/shared/ui/input-group.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useKeyWithClickEvents": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/app/globals.css"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "noImportantStyles": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/shared/ui/lightbox.tsx"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noImgElement": "off"
+          }
+        }
+      }
+    }
+  ]
+}
