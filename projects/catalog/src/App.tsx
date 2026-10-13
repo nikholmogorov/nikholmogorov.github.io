@@ -9,9 +9,9 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/projects/catalog" element={<Catalog />} />
-        <Route path="/projects/catalog/product/:id" element={<ProductDetails />} />
-        <Route path="/projects/catalog/shopping-cart" element={<ShoppingCart />} />
+        <Route path="/" element={<Catalog />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/shopping-cart" element={<ShoppingCart />} />
       </Routes>
     </BrowserRouter>
   );
