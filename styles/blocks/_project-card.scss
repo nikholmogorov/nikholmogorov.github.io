@@ -98,10 +98,6 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-
-        @include mobile-s {
-            gap: 0.5rem;
-        }
     }
 
     &__icon-wrapper {
@@ -191,11 +187,11 @@
     height: 31rem;
 
     @include tablet-l {
-        height: 29rem;
+        height: 30rem;
     }
 
     @include tablet-s {
-        height: 28rem;
+        height: 29rem;
     }
 
     @include mobile-l {
