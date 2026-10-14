@@ -28,7 +28,7 @@ export function ItemCard(props: ItemCardProps) {
           className="block h-auto w-full object-cover"
         />
         <Badge
-          className="absolute bottom-0 left-4 z-30 translate-y-1/2 bg-card text-sm"
+          className="absolute bottom-0 left-4 z-10 translate-y-1/2 bg-card text-sm"
           variant="outline"
         >
           {getCategoryLabel(category)}

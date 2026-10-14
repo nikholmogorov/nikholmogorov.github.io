@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/app/providers/theme-provider";
 import { cn } from "@/shared/lib/utils";
 import { Toaster } from "@/shared/ui/sonner";
 import { Header } from "@/widgets/header";
+import { Message } from "@/widgets/message";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             offset={{ top: 80, right: 16 }}
             mobileOffset={{ top: 72, right: 16 }}
           />
+          <Message />
         </ThemeProvider>
       </body>
     </html>
