@@ -39,6 +39,11 @@ const ollamaErrors: Record<
     status: 502,
     message: "Модель вернула пустой ответ",
   },
+  MODEL_NOT_FOUND: {
+    status: 503,
+    message:
+      "Не найдена подходящая модель Ollama. Проверьте установленные модели.",
+  },
 };
 
 export async function POST(request: NextRequest): Promise<NextResponse> {

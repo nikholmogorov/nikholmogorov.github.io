@@ -3,12 +3,16 @@
 import Link from "next/link";
 import type { FormEventHandler } from "react";
 
-import { MAX_DESCRIPTION_LENGTH, type Item } from "@/entities/item";
+import { type Item, MAX_DESCRIPTION_LENGTH } from "@/entities/item";
 import { GenerateItemDescription } from "@/features/generate-item-description";
 import { SuggestItemPrice } from "@/features/suggest-item-price";
 import { Button } from "@/shared/ui/button";
-import { InputGroup, InputGroupAddon, InputGroupTextarea } from "@/shared/ui/input-group";
 import { InputField } from "@/shared/ui/input-field";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupTextarea,
+} from "@/shared/ui/input-group";
 import { SelectField } from "@/shared/ui/select-field";
 import { Separator } from "@/shared/ui/separator";
 
@@ -89,14 +93,10 @@ export function ItemEditForm({
         onChange={(event) => {
           const value = event.target.value;
 
-          updateFormData((prev) =>
-            prev ? { ...prev, title: value } : prev,
-          );
+          updateFormData((prev) => (prev ? { ...prev, title: value } : prev));
         }}
         onClear={() => {
-          updateFormData((prev) =>
-            prev ? { ...prev, title: "" } : prev,
-          );
+          updateFormData((prev) => (prev ? { ...prev, title: "" } : prev));
         }}
       />
 
@@ -130,9 +130,7 @@ export function ItemEditForm({
           <SuggestItemPrice
             item={formData}
             onApply={(price) => {
-              updateFormData((prev) =>
-                prev ? { ...prev, price } : prev,
-              );
+              updateFormData((prev) => (prev ? { ...prev, price } : prev));
             }}
           />
         </div>
@@ -171,10 +169,7 @@ export function ItemEditForm({
             }}
           />
 
-          <InputGroupAddon
-            align="block-end"
-            className="justify-end"
-          >
+          <InputGroupAddon align="block-end" className="justify-end">
             {(formData.description ?? "").length}/{MAX_DESCRIPTION_LENGTH}
           </InputGroupAddon>
         </InputGroup>
@@ -190,9 +185,7 @@ export function ItemEditForm({
         <GenerateItemDescription
           item={formData}
           onApply={(description) => {
-            updateFormData((prev) =>
-              prev ? { ...prev, description } : prev,
-            );
+            updateFormData((prev) => (prev ? { ...prev, description } : prev));
           }}
         />
       </div>
@@ -206,11 +199,7 @@ export function ItemEditForm({
           {isSaving ? "Сохранение" : "Сохранить"}
         </Button>
 
-        <Button
-          className="h-10 text-base"
-          variant="destructive"
-          asChild
-        >
+        <Button className="h-10 text-base" variant="destructive" asChild>
           <Link href={`/${id}`}>Отменить</Link>
         </Button>
       </div>

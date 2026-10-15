@@ -1,4 +1,3 @@
-
 import "server-only";
 
 export type OllamaErrorCode =
@@ -12,10 +11,7 @@ export type OllamaErrorCode =
   | "EMPTY_RESPONSE"
   | "MODEL_NOT_FOUND";
 
-export type OllamaResponseFormat =
-  | "text"
-  | "json"
-  | Record<string, unknown>;
+export type OllamaResponseFormat = "text" | "json" | Record<string, unknown>;
 
 interface GenerateOllamaTextOptions {
   prompt: string;
@@ -61,11 +57,7 @@ const MODEL_LIST_CACHE_TTL_MS = 10_000;
 let modelListCache: ModelListCache | undefined;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    !Array.isArray(value)
-  );
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 function getPositiveInteger(
@@ -76,22 +68,17 @@ function getPositiveInteger(
 
   const parsed = Number(value);
 
-  return Number.isSafeInteger(parsed) && parsed > 0
-    ? parsed
-    : fallback;
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : fallback;
 }
 
 function getErrorMessage(error: unknown): string {
-  return error instanceof Error
-    ? error.message
-    : "Неизвестная ошибка";
+  return error instanceof Error ? error.message : "Неизвестная ошибка";
 }
 
 function isTimeoutError(error: unknown): boolean {
   return (
     error instanceof Error &&
-    (error.name === "TimeoutError" ||
-      error.name === "AbortError")
+    (error.name === "TimeoutError" || error.name === "AbortError")
   );
 }
 
@@ -200,17 +187,12 @@ async function selectOllamaModel(
   timeoutMs: number,
 ): Promise<string> {
   const primaryModel =
-    process.env.OLLAMA_PRIMARY_MODEL?.trim() ||
-    DEFAULT_PRIMARY_MODEL;
+    process.env.OLLAMA_PRIMARY_MODEL?.trim() || DEFAULT_PRIMARY_MODEL;
 
   const fallbackModel =
-    process.env.OLLAMA_FALLBACK_MODEL?.trim() ||
-    DEFAULT_FALLBACK_MODEL;
+    process.env.OLLAMA_FALLBACK_MODEL?.trim() || DEFAULT_FALLBACK_MODEL;
 
-  const installedModels = await getInstalledModelNames(
-    baseUrl,
-    timeoutMs,
-  );
+  const installedModels = await getInstalledModelNames(baseUrl, timeoutMs);
 
   // Основная модель всегда имеет приоритет.
   if (installedModels.has(primaryModel)) {
@@ -223,9 +205,7 @@ async function selectOllamaModel(
   }
 
   const installedList =
-    installedModels.size > 0
-      ? [...installedModels].join(", ")
-      : "нет";
+    installedModels.size > 0 ? [...installedModels].join(", ") : "нет";
 
   throw new OllamaClientError(
     [
@@ -287,27 +267,18 @@ export async function generateOllamaText({
 
   const requestTimeout =
     timeoutMs ??
-    getPositiveInteger(
-      process.env.OLLAMA_TIMEOUT_MS,
-      DEFAULT_TIMEOUT_MS,
-    );
+    getPositiveInteger(process.env.OLLAMA_TIMEOUT_MS, DEFAULT_TIMEOUT_MS);
 
   let endpoint: string;
 
   try {
     endpoint = new URL(`${baseUrl}/api/chat`).toString();
   } catch {
-    throw new OllamaClientError(
-      "Некорректный адрес Ollama",
-      "CONFIGURATION",
-    );
+    throw new OllamaClientError("Некорректный адрес Ollama", "CONFIGURATION");
   }
 
   // Определяем установленную модель перед генерацией.
-  const model = await selectOllamaModel(
-    baseUrl,
-    requestTimeout,
-  );
+  const model = await selectOllamaModel(baseUrl, requestTimeout);
 
   const systemInstructions = [
     system?.trim(),
@@ -319,10 +290,7 @@ export async function generateOllamaText({
         ].join(" ")
       : undefined,
   ]
-    .filter(
-      (instruction): instruction is string =>
-        Boolean(instruction),
-    )
+    .filter((instruction): instruction is string => Boolean(instruction))
     .join("\n\n");
 
   const messages: OllamaRequestMessage[] = [];
@@ -348,9 +316,7 @@ export async function generateOllamaText({
       temperature,
       num_predict: numPredict,
     },
-    ...(responseFormat !== "text"
-      ? { format: responseFormat }
-      : {}),
+    ...(responseFormat !== "text" ? { format: responseFormat } : {}),
   };
 
   let response: Response;
@@ -419,10 +385,7 @@ export async function generateOllamaText({
 
   const message = payload.message;
 
-  if (
-    !isRecord(message) ||
-    typeof message.content !== "string"
-  ) {
+  if (!isRecord(message) || typeof message.content !== "string") {
     throw new OllamaClientError(
       "В ответе Ollama отсутствует текст",
       "INVALID_RESPONSE",
