@@ -3,10 +3,7 @@ import { ZodError } from "zod";
 import { suggestItemPrice } from "@/features/suggest-item-price/index.server";
 import { OllamaClientError, type OllamaErrorCode } from "@/shared/api";
 
-const ollamaErrors: Record<
-  OllamaErrorCode,
-  { status: number; message: string }
-> = {
+const ollamaErrors: Record<OllamaErrorCode, { status: number; message: string }> = {
   INVALID_INPUT: {
     status: 400,
     message: "Некорректные параметры запроса",
@@ -38,6 +35,10 @@ const ollamaErrors: Record<
   EMPTY_RESPONSE: {
     status: 502,
     message: "Модель вернула пустой ответ",
+  },
+  MODEL_NOT_FOUND: {
+    status: 503,
+    message: "Не найдена подходящая модель Ollama. Проверьте список установленных моделей.",
   },
 };
 
@@ -76,6 +77,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     if (error instanceof OllamaClientError) {
+      if (error.code === "MODEL_NOT_FOUND") {
+        return NextResponse.json(
+          {
+            success: false,
+            error: error.message,
+          },
+          { status: 503 },
+        );
+      }
+
       const mapped = ollamaErrors[error.code];
 
       return NextResponse.json(

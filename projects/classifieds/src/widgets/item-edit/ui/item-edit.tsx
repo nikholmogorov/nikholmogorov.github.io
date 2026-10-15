@@ -224,7 +224,6 @@ export function ItemEdit({ id }: ItemEditProps) {
       formData={formData}
       getFieldError={getFieldError}
       updateFormData={updateFormData}
-      setFormData={setFormData}
       onSubmit={handleSubmit}
       isFormValid={isFormValid}
       isSaving={isSaving}

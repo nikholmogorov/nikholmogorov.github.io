@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { Dispatch, FormEventHandler, SetStateAction } from "react";
+import type { FormEventHandler } from "react";
 
 import { MAX_DESCRIPTION_LENGTH, type Item } from "@/entities/item";
 import { GenerateItemDescription } from "@/features/generate-item-description";
@@ -21,7 +21,6 @@ interface ItemEditFormProps {
   formData: Item;
   getFieldError: (path: string) => string | undefined;
   updateFormData: UpdateFormData;
-  setFormData: Dispatch<SetStateAction<Item | null>>;
   onSubmit: FormEventHandler<HTMLFormElement>;
   isFormValid: boolean;
   isSaving: boolean;
@@ -32,7 +31,6 @@ export function ItemEditForm({
   formData,
   getFieldError,
   updateFormData,
-  setFormData,
   onSubmit,
   isFormValid,
   isSaving,
@@ -41,7 +39,9 @@ export function ItemEditForm({
 
   return (
     <form onSubmit={onSubmit}>
-      <h1 className="w-fit pt-8 pb-4 text-3xl font-semibold">Редактирование объявления</h1>
+      <h1 className="w-fit pt-8 pb-4 text-3xl font-semibold">
+        Редактирование объявления
+      </h1>
 
       <SelectField
         title="Категория"
@@ -49,7 +49,11 @@ export function ItemEditForm({
         value={formData.category}
         error={getFieldError("category")}
         onValueChange={(value) => {
-          if (value !== "auto" && value !== "electronics" && value !== "real_estate") {
+          if (
+            value !== "auto" &&
+            value !== "electronics" &&
+            value !== "real_estate"
+          ) {
             return;
           }
 
@@ -84,10 +88,15 @@ export function ItemEditForm({
         error={getFieldError("title")}
         onChange={(event) => {
           const value = event.target.value;
-          updateFormData((prev) => (prev ? { ...prev, title: value } : prev));
+
+          updateFormData((prev) =>
+            prev ? { ...prev, title: value } : prev,
+          );
         }}
         onClear={() => {
-          updateFormData((prev) => (prev ? { ...prev, title: "" } : prev));
+          updateFormData((prev) =>
+            prev ? { ...prev, title: "" } : prev,
+          );
         }}
       />
 
@@ -105,10 +114,14 @@ export function ItemEditForm({
               const rawValue = event.target.value;
               const value = rawValue === "" ? null : Number(rawValue);
 
-              updateFormData((prev) => (prev ? { ...prev, price: value } : prev));
+              updateFormData((prev) =>
+                prev ? { ...prev, price: value } : prev,
+              );
             }}
             onClear={() => {
-              updateFormData((prev) => (prev ? { ...prev, price: null } : prev));
+              updateFormData((prev) =>
+                prev ? { ...prev, price: null } : prev,
+              );
             }}
           />
         </div>
@@ -117,7 +130,9 @@ export function ItemEditForm({
           <SuggestItemPrice
             item={formData}
             onApply={(price) => {
-              updateFormData((prev) => (prev ? { ...prev, price } : prev));
+              updateFormData((prev) =>
+                prev ? { ...prev, price } : prev,
+              );
             }}
           />
         </div>
@@ -144,11 +159,15 @@ export function ItemEditForm({
             placeholder="Описание объявления"
             value={formData.description ?? ""}
             aria-invalid={Boolean(descriptionError)}
-            aria-describedby={descriptionError ? "description-error" : undefined}
+            aria-describedby={
+              descriptionError ? "description-error" : undefined
+            }
             onChange={(event) => {
               const value = event.target.value;
 
-              setFormData((prev) => (prev ? { ...prev, description: value } : prev));
+              updateFormData((prev) =>
+                prev ? { ...prev, description: value } : prev,
+              );
             }}
           />
 
@@ -159,6 +178,7 @@ export function ItemEditForm({
             {(formData.description ?? "").length}/{MAX_DESCRIPTION_LENGTH}
           </InputGroupAddon>
         </InputGroup>
+
         <p
           id="description-error"
           className="mt-1 min-h-3 text-[12px] leading-3 text-destructive"
@@ -166,10 +186,13 @@ export function ItemEditForm({
         >
           {descriptionError ?? ""}
         </p>
+
         <GenerateItemDescription
           item={formData}
           onApply={(description) => {
-            updateFormData((prev) => (prev ? { ...prev, description } : prev));
+            updateFormData((prev) =>
+              prev ? { ...prev, description } : prev,
+            );
           }}
         />
       </div>
@@ -180,7 +203,7 @@ export function ItemEditForm({
           type="submit"
           disabled={!isFormValid || isSaving}
         >
-          {isSaving ? "Сохранение..." : "Сохранить"}
+          {isSaving ? "Сохранение" : "Сохранить"}
         </Button>
 
         <Button

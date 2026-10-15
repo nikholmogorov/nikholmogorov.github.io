@@ -20,7 +20,7 @@ export function ItemCard(props: ItemCardProps) {
       <div className="relative w-full">
         <Image
           unoptimized
-          src="https://placehold.co/200x150"
+          src="/images/placeholders/200x150.svg"
           alt="Фото"
           width={200}
           height={150}

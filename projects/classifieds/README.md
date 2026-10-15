@@ -25,7 +25,7 @@ npm install
 3. Настройка AI  
 Необходимо самостоятельно установить [Ollama](https://ollama.com/) в систему.  
 ```bash
-llama serve
+ollama serve
 ```
 ```bash
 ollama run qwen2.5:1.5b
