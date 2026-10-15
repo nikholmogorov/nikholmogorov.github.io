@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             offset={{ top: 80, right: 16 }}
             mobileOffset={{ top: 72, right: 16 }}
           />
-          <Message />
+          {process.env.VERCEL === "1" && <Message />}
         </ThemeProvider>
       </body>
     </html>
