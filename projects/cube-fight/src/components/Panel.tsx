@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
 
+import { changeBase } from "../utils";
+
 import type { PanelProps } from "../types";
 
 export default function Panel(props: PanelProps) {
@@ -11,7 +13,7 @@ export default function Panel(props: PanelProps) {
   const breakAudio = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = new Audio("/sounds/whistle.mp3");
+    const audio = new Audio(changeBase("/sounds/whistle.mp3"));
     audio.preload = "auto";
     audio.load();
     breakAudio.current = audio;

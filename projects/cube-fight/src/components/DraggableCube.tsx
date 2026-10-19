@@ -3,15 +3,9 @@ import { type ThreeEvent, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
-import {
-  CUBE_SIZE,
-  FIELD_LIMIT,
-  HALF_CUBE_SIZE,
-  OUTLINE_POINTS,
-  SKIN_TEXTURE_PATHS,
-} from "../constants";
+import { CUBE_SIZE, FIELD_LIMIT, HALF_CUBE_SIZE, OUTLINE_POINTS, SKIN_TEXTURE_PATHS } from "../constants";
 import type { CubeProps, PointerCaptureTarget, Position } from "../types/index";
-import { findSnapPosition, rotateTexture } from "../utils";
+import { findSnapPosition, rotateTexture, changeBase } from "../utils";
 
 // плоскость
 const plane = new THREE.Plane(
@@ -22,32 +16,19 @@ const plane = new THREE.Plane(
 );
 
 export default function DraggableCube(props: CubeProps) {
-  const {
-    id,
-    skin,
-    position,
-    otherPosition,
-    isAttached,
-    isSelected,
-    onSelect,
-    onPositionChange,
-  } = props;
+  const { id, skin, position, otherPosition, isAttached, isSelected, onSelect, onPositionChange } = props;
 
   const isDragging = useRef(false);
 
   const dragOffset = useMemo(() => new THREE.Vector2(), []);
   const intersectionPoint = useMemo(() => new THREE.Vector3(), []);
 
-  const [topTexture, frontTexture, backTexture, leftTexture, rightTexture] =
-    useTexture(SKIN_TEXTURE_PATHS[skin]);
+  const [topTexture, frontTexture, backTexture, leftTexture, rightTexture] = useTexture(
+    SKIN_TEXTURE_PATHS[skin].map(changeBase),
+  );
 
   // поворот текстур для второго куба
-  const [
-    secondTopTexture,
-    secondFrontTexture,
-    secondLeftTexture,
-    secondRightTexture,
-  ] = useMemo(
+  const [secondTopTexture, secondFrontTexture, secondLeftTexture, secondRightTexture] = useMemo(
     () => [
       rotateTexture(topTexture),
       rotateTexture(frontTexture),
@@ -70,7 +51,7 @@ export default function DraggableCube(props: CubeProps) {
   const snapSoundPlayed = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio("/sounds/fight.mp3");
+    const audio = new Audio(changeBase("/sounds/fight.mp3"));
     audio.preload = "auto";
     audio.load();
     snapAudio.current = audio;
@@ -125,12 +106,7 @@ export default function DraggableCube(props: CubeProps) {
       secondLeftTexture.dispose();
       secondRightTexture.dispose();
     };
-  }, [
-    secondTopTexture,
-    secondFrontTexture,
-    secondLeftTexture,
-    secondRightTexture,
-  ]);
+  }, [secondTopTexture, secondFrontTexture, secondLeftTexture, secondRightTexture]);
 
   function handlePointerDown(e: ThreeEvent<PointerEvent>) {
     snapSoundPlayed.current = false;
@@ -152,27 +128,15 @@ export default function DraggableCube(props: CubeProps) {
     const point = e.ray.intersectPlane(plane, intersectionPoint);
     if (!point) return;
     // вычисление x центра куба с учётом смещения
-    const x = THREE.MathUtils.clamp(
-      point.x - dragOffset.x,
-      -FIELD_LIMIT,
-      FIELD_LIMIT,
-    );
+    const x = THREE.MathUtils.clamp(point.x - dragOffset.x, -FIELD_LIMIT, FIELD_LIMIT);
     // вычисление y центра куба с учётом смещения
-    const y = THREE.MathUtils.clamp(
-      point.y - dragOffset.y,
-      -FIELD_LIMIT,
-      FIELD_LIMIT,
-    );
+    const y = THREE.MathUtils.clamp(point.y - dragOffset.y, -FIELD_LIMIT, FIELD_LIMIT);
     const requestedPosition: Position = [x, y, HALF_CUBE_SIZE];
     if (isAttached) {
       onPositionChange(id, requestedPosition);
       return;
     }
-    const snappedPosition = findSnapPosition(
-      position,
-      requestedPosition,
-      otherPosition,
-    );
+    const snappedPosition = findSnapPosition(position, requestedPosition, otherPosition);
     if (snappedPosition) {
       onPositionChange(id, snappedPosition, true);
       if (!snapSoundPlayed.current) {
@@ -230,7 +194,10 @@ export default function DraggableCube(props: CubeProps) {
           map={id === "first" ? topTexture : secondTopTexture}
         />
         {/* низ first и second */}
-        <meshBasicMaterial attach="material-5" color="#000000" />
+        <meshBasicMaterial
+          attach="material-5"
+          color="#000000"
+        />
       </mesh>
       {isSelected && (
         <Line

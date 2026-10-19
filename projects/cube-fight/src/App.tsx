@@ -11,14 +11,14 @@ import Spinner from "./components/Spinner";
 
 import { CUBES_INITIAL_POSITION, FIELD_SIZE, RING_TEXTURE_PATHS, SKIN_TEXTURE_PATHS } from "./constants";
 import type { CubeId, CubeSkin, CubesDisposition, CubesSkins, Position } from "./types";
-import { generateDisconnectedPositions, getNextCubesDisposition } from "./utils";
+import { generateDisconnectedPositions, getNextCubesDisposition, changeBase } from "./utils";
 
 Object.values(SKIN_TEXTURE_PATHS).forEach((paths) => {
-  useTexture.preload(paths);
+  useTexture.preload(paths.map(changeBase));
 });
 
 Object.values(RING_TEXTURE_PATHS).forEach((paths) => {
-  useTexture.preload(paths);
+  useTexture.preload(paths.map(changeBase));
 });
 
 export default function App() {

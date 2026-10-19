@@ -12,10 +12,7 @@ import {
 
 import type { CubeId, CubesDisposition, Position } from "../types";
 
-export function rotateTexture(
-  texture: THREE.Texture,
-  rotation: number = Math.PI,
-) {
+export function rotateTexture(texture: THREE.Texture, rotation: number = Math.PI) {
   const clone = texture.clone();
   clone.center.set(0.5, 0.5);
   clone.rotation = rotation;
@@ -59,16 +56,8 @@ export function getNextCubesDisposition(
       ...prev,
       positions: {
         // к предыдущей координате x или y прибавляем изменение перемещения по оси x или y
-        first: [
-          prev.positions.first[0] + dx,
-          prev.positions.first[1] + dy,
-          HALF_CUBE_SIZE,
-        ],
-        second: [
-          prev.positions.second[0] + dx,
-          prev.positions.second[1] + dy,
-          HALF_CUBE_SIZE,
-        ],
+        first: [prev.positions.first[0] + dx, prev.positions.first[1] + dy, HALF_CUBE_SIZE],
+        second: [prev.positions.second[0] + dx, prev.positions.second[1] + dy, HALF_CUBE_SIZE],
       },
     };
   }
@@ -82,11 +71,7 @@ export function getNextCubesDisposition(
   };
 }
 
-export function findSnapPosition(
-  pos: Position,
-  reqPos: Position,
-  oth: Position,
-): Position | null {
+export function findSnapPosition(pos: Position, reqPos: Position, oth: Position): Position | null {
   // изменение перемещения по оси x и y
   const dx = reqPos[0] - pos[0];
   const dy = reqPos[1] - pos[1];
@@ -176,4 +161,8 @@ export function generateDisconnectedPositions(): Record<CubeId, Position> {
   }
   // фоллбэк
   return CUBES_INITIAL_POSITION;
+}
+
+export function changeBase(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 }
