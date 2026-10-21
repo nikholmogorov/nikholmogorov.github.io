@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import AnimatedFog from "./components/AnimatedFog";
 import HeadCameraController from "./components/CameraController";
-import Haell from "./components/Haell";
+// import Haell from "./components/Haell";
+import DepthScene from "./components/DepthScene";
 import HeadTracking from "./components/HeadTracking";
 
 import {
@@ -27,8 +28,7 @@ import { changeBase } from "./utils";
 export default function App() {
   const [isHeartMode, setIsHeartMode] = useState(false);
   const [isInteractionLocked, setIsInteractionLocked] = useState(false);
-  const [hasCameraPermissionDecision, setHasCameraPermissionDecision] =
-    useState(false);
+  const [hasCameraPermissionDecision, setHasCameraPermissionDecision] = useState(false);
 
   const initialTitleRef = useRef<string | null>(null);
   const headPositionRef = useRef<HeadPosition>({
@@ -90,16 +90,23 @@ export default function App() {
         dpr={[1, 1.5]}
         gl={{ antialias: true }}
       >
-        <fog attach="fog" args={[accentColor, FOG_START_NEAR, FOG_START_FAR]} />
+        <fog
+          attach="fog"
+          args={[accentColor, FOG_START_NEAR, FOG_START_FAR]}
+        />
         <AnimatedFog isStarted={hasCameraPermissionDecision} />
         <ambientLight intensity={0.5} />
-        <directionalLight position={[4, 7, 5]} intensity={2} />
-        <Haell
+        <directionalLight
+          position={[4, 7, 5]}
+          intensity={2}
+        />
+        {/* <Haell
           accentColor={accentColor}
           isHeartMode={isHeartMode}
           canToggleTheme={!isInteractionLocked}
           onToggleTheme={handleToggleTheme}
-        />
+        /> */}
+        <DepthScene />
         <HeadCameraController headPositionRef={headPositionRef} />
       </Canvas>
       <HeadTracking

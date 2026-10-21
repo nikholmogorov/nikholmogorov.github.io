@@ -143,7 +143,9 @@ export function useHeadTracking(props: HeadTrackingProps) {
           return "Камера занята";
         }
       }
-      return error instanceof Error ? error.message : "Не удалось запустить распознавание";
+      return error instanceof Error
+        ? error.message
+        : "Не удалось запустить распознавание";
     };
     const processFrame = () => {
       if (cancelled || !isRunningRef.current) return;
@@ -164,7 +166,14 @@ export function useHeadTracking(props: HeadTrackingProps) {
         const leftCheek = landmarks?.[234];
         const rightCheek = landmarks?.[454];
         let faceDetected = false;
-        if (leftEye && rightEye && leftCheek && rightCheek && video.videoWidth > 0 && video.videoHeight > 0) {
+        if (
+          leftEye &&
+          rightEye &&
+          leftCheek &&
+          rightCheek &&
+          video.videoWidth > 0 &&
+          video.videoHeight > 0
+        ) {
           const faceCenterX = (leftEye.x + rightEye.x) / 2;
           const faceCenterY = (leftEye.y + rightEye.y) / 2;
           const faceWidth = Math.hypot(
@@ -174,20 +183,34 @@ export function useHeadTracking(props: HeadTrackingProps) {
           if (faceWidth > 0) {
             faceDetected = true;
             const previousLossAt = faceLostAtRef.current;
-            const previousLossDuration = previousLossAt === null ? 0 : now - previousLossAt;
+            const previousLossDuration =
+              previousLossAt === null ? 0 : now - previousLossAt;
             const hasBaseline =
-              baselineXRef.current !== null && baselineYRef.current !== null && baselineFaceWidthRef.current !== null;
-            if (hasBaseline && previousLossDuration >= FACE_LOSS_TIMEOUT_MS && !recenteredAfterFaceLossRef.current) {
+              baselineXRef.current !== null &&
+              baselineYRef.current !== null &&
+              baselineFaceWidthRef.current !== null;
+            if (
+              hasBaseline &&
+              previousLossDuration >= FACE_LOSS_TIMEOUT_MS &&
+              !recenteredAfterFaceLossRef.current
+            ) {
               returnToCenter();
             }
-            if (previousLossDuration >= FACE_DETECTION_GRACE_MS && baselineXRef.current === null) {
+            if (
+              previousLossDuration >= FACE_DETECTION_GRACE_MS &&
+              baselineXRef.current === null
+            ) {
               resetCalibration();
             }
             faceLostAtRef.current = null;
             const baselineX = baselineXRef.current;
             const baselineY = baselineYRef.current;
             const baselineWidth = baselineFaceWidthRef.current;
-            if (baselineX !== null && baselineY !== null && baselineWidth !== null) {
+            if (
+              baselineX !== null &&
+              baselineY !== null &&
+              baselineWidth !== null
+            ) {
               recenteredAfterFaceLossRef.current = false;
               resetCalibration();
               const x = (baselineX - faceCenterX) * 2;
@@ -215,11 +238,15 @@ export function useHeadTracking(props: HeadTrackingProps) {
               calibrationSumWidthRef.current += faceWidth;
               calibrationSampleCountRef.current += 1;
               const calibrationDuration = now - calibrationStartedAtRef.current;
-              if (calibrationDuration >= RECALIBRATION_DELAY_MS && calibrationSampleCountRef.current > 0) {
+              if (
+                calibrationDuration >= RECALIBRATION_DELAY_MS &&
+                calibrationSampleCountRef.current > 0
+              ) {
                 const sampleCount = calibrationSampleCountRef.current;
                 baselineXRef.current = calibrationSumXRef.current / sampleCount;
                 baselineYRef.current = calibrationSumYRef.current / sampleCount;
-                baselineFaceWidthRef.current = calibrationSumWidthRef.current / sampleCount;
+                baselineFaceWidthRef.current =
+                  calibrationSumWidthRef.current / sampleCount;
                 resetCalibration();
                 recenteredAfterFaceLossRef.current = false;
                 sendCenterPosition();
@@ -228,12 +255,17 @@ export function useHeadTracking(props: HeadTrackingProps) {
                   setStatus("Центр зафиксирован");
                   lastUiUpdateRef.current = now;
                 }
-              } else if (debugRef.current && now - lastUiUpdateRef.current >= 80) {
+              } else if (
+                debugRef.current &&
+                now - lastUiUpdateRef.current >= 80
+              ) {
                 setPositionX(0);
                 setPositionY(0);
                 setPositionZ(0);
                 setIsFaceDetected(true);
-                setStatus(`Калибровка положения: ${RECALIBRATION_DELAY_MS / 1000} сек.`);
+                setStatus(
+                  `Калибровка положения: ${RECALIBRATION_DELAY_MS / 1000} сек.`,
+                );
                 lastUiUpdateRef.current = now;
               }
             }
@@ -251,12 +283,19 @@ export function useHeadTracking(props: HeadTrackingProps) {
           ) {
             resetCalibration();
           }
-          if (faceLostDuration >= FACE_LOSS_TIMEOUT_MS && !recenteredAfterFaceLossRef.current) {
+          if (
+            faceLostDuration >= FACE_LOSS_TIMEOUT_MS &&
+            !recenteredAfterFaceLossRef.current
+          ) {
             returnToCenter();
           }
           if (debugRef.current && now - lastUiUpdateRef.current >= 300) {
             setIsFaceDetected(false);
-            setStatus(recenteredAfterFaceLossRef.current ? "Лицо отсутствует — центрирование" : "Лицо не обнаружено");
+            setStatus(
+              recenteredAfterFaceLossRef.current
+                ? "Лицо отсутствует — центрирование"
+                : "Лицо не обнаружено",
+            );
             lastUiUpdateRef.current = now;
           }
         }

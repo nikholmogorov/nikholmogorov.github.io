@@ -2,10 +2,14 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { Fog } from "three";
 
-import { FOG_END_FAR, FOG_END_NEAR, FOG_TRANSITION_SECONDS, FOG_WAIT_SECONDS } from "../constants";
-import { getBreathingFogValues } from "../utils";
-
+import {
+  FOG_END_FAR,
+  FOG_END_NEAR,
+  FOG_TRANSITION_SECONDS,
+  FOG_WAIT_SECONDS,
+} from "../constants";
 import type { AnimatedFogProps } from "../types";
+import { getBreathingFogValues } from "../utils";
 
 export default function AnimatedFog(props: AnimatedFogProps) {
   const { isStarted } = props;
@@ -32,10 +36,15 @@ export default function AnimatedFog(props: AnimatedFogProps) {
       fog.far = values.far;
       return;
     }
-    const transitionProgress = Math.min((elapsed - FOG_WAIT_SECONDS) / FOG_TRANSITION_SECONDS, 1);
-    const eased = transitionProgress * transitionProgress * (3 - 2 * transitionProgress);
+    const transitionProgress = Math.min(
+      (elapsed - FOG_WAIT_SECONDS) / FOG_TRANSITION_SECONDS,
+      1,
+    );
+    const eased =
+      transitionProgress * transitionProgress * (3 - 2 * transitionProgress);
     const transitionStart = getBreathingFogValues(FOG_WAIT_SECONDS);
-    fog.near = transitionStart.near + (FOG_END_NEAR - transitionStart.near) * eased;
+    fog.near =
+      transitionStart.near + (FOG_END_NEAR - transitionStart.near) * eased;
     fog.far = transitionStart.far + (FOG_END_FAR - transitionStart.far) * eased;
   });
   return null;

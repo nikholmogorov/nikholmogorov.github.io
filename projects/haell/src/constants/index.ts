@@ -23,9 +23,11 @@ const INITIAL_CAMERA_Z = 7;
 const CAMERA_FOV = 70;
 const SCREEN_PLANE_Z = 0;
 
-const HEAD_SENSITIVITY_X = 1.5;
-const HEAD_SENSITIVITY_Y = 1.5;
-const HEAD_SENSITIVITY_Z = 1.5;
+// для 3D лучше подходит чувствительность 1.5
+// для 2.5D parallax with depth map лучше подходит чувствительность 5
+const HEAD_SENSITIVITY_X = 5;
+const HEAD_SENSITIVITY_Y = 5;
+const HEAD_SENSITIVITY_Z = 5;
 
 const CAMERA_SMOOTHING = 6;
 
@@ -63,8 +65,20 @@ const FOG_FAR_AMPLITUDE = 6;
 const FOG_END_NEAR = 0;
 const FOG_END_FAR = 0.1;
 
-const WASM_URL =
-  "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.1/wasm";
+// константы для 2.5D parallax with depth map
+const COLOR_IMAGE = "/image.jpg";
+const DEPTH_IMAGE = "/image-depth.png";
+
+const SEGMENTS_X = 320;
+
+const DEPTH_STRENGTH = 4;
+
+const INVERT_DEPTH = false;
+
+const VIEW_SCALE = 1.15;
+// конец блока констант
+
+const WASM_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.1/wasm";
 
 const MODEL_URL =
   "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
@@ -76,7 +90,10 @@ export {
   CAMERA_FOV,
   CAMERA_SMOOTHING,
   CENTER_Z,
+  COLOR_IMAGE,
   DEBUG,
+  DEPTH_IMAGE,
+  DEPTH_STRENGTH,
   FACE_DETECTION_GRACE_MS,
   FACE_LOSS_TIMEOUT_MS,
   FOG_BREATH_PERIOD,
@@ -106,14 +123,17 @@ export {
   IMAGE_Y,
   IMAGE_Z_OFFSET,
   INITIAL_CAMERA_Z,
+  INVERT_DEPTH,
   MAX_CAMERA_Z,
   MIN_CAMERA_Z,
   MODEL_URL,
   RECALIBRATION_DELAY_MS,
   SCREEN_PLANE_Z,
+  SEGMENTS_X,
   SKULL_FAVICON,
   SKULL_IMAGE,
   SKULL_PAGE_TITLE,
+  VIEW_SCALE,
   WALL_THICKNESS,
   WASM_URL,
 };

@@ -45,6 +45,7 @@ interface HeadCameraControllerProps {
 }
 
 export type {
+  AnimatedFogProps,
   FogValues,
   HaellProps,
   HeadCameraControllerProps,
@@ -52,5 +53,4 @@ export type {
   HeadPositionRef,
   HeadTrackingProps,
   TexturePlaneProps,
-  AnimatedFogProps,
 };
