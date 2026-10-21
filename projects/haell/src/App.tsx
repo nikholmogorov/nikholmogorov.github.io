@@ -72,6 +72,7 @@ export default function App() {
     headPositionRef.current = position;
   }, []);
 
+  // @ts-ignore — функция используется только в режиме 3D-коридора
   const handleToggleTheme = useCallback(() => {
     if (isInteractionLocked) return;
     setIsHeartMode((current) => !current);
