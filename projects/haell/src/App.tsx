@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import AnimatedFog from "./components/AnimatedFog";
 import HeadCameraController from "./components/CameraController";
 import Haell from "./components/Haell";
@@ -26,6 +27,8 @@ import { changeBase } from "./utils";
 export default function App() {
   const [isHeartMode, setIsHeartMode] = useState(false);
   const [isInteractionLocked, setIsInteractionLocked] = useState(false);
+  const [hasCameraPermissionDecision, setHasCameraPermissionDecision] =
+    useState(false);
 
   const initialTitleRef = useRef<string | null>(null);
   const headPositionRef = useRef<HeadPosition>({
@@ -36,7 +39,12 @@ export default function App() {
 
   const accentColor = isHeartMode ? ALTERNATE_ACCENT_COLOR : ACCENT_COLOR;
 
+  const handleCameraPermissionSettled = useCallback(() => {
+    setHasCameraPermissionDecision(true);
+  }, []);
+
   useEffect(() => {
+    if (!hasCameraPermissionDecision) return;
     const lockDelayMs = (FOG_WAIT_SECONDS + FOG_TRANSITION_SECONDS) * 1000;
     const timeoutId = window.setTimeout(() => {
       setIsInteractionLocked(true);
@@ -44,7 +52,7 @@ export default function App() {
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, []);
+  }, [hasCameraPermissionDecision]);
 
   useEffect(() => {
     if (initialTitleRef.current === null) {
@@ -60,7 +68,6 @@ export default function App() {
     favicon.href = changeBase(isHeartMode ? HEART_FAVICON : SKULL_FAVICON);
     document.title = isHeartMode ? HEART_PAGE_TITLE : SKULL_PAGE_TITLE;
   }, [isHeartMode]);
-
   const handleHeadPositionChange = useCallback((position: HeadPosition) => {
     headPositionRef.current = position;
   }, []);
@@ -84,7 +91,7 @@ export default function App() {
         gl={{ antialias: true }}
       >
         <fog attach="fog" args={[accentColor, FOG_START_NEAR, FOG_START_FAR]} />
-        <AnimatedFog />
+        <AnimatedFog isStarted={hasCameraPermissionDecision} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[4, 7, 5]} intensity={2} />
         <Haell
@@ -95,7 +102,11 @@ export default function App() {
         />
         <HeadCameraController headPositionRef={headPositionRef} />
       </Canvas>
-      <HeadTracking debug={DEBUG} onPositionChange={handleHeadPositionChange} />
+      <HeadTracking
+        debug={DEBUG}
+        onPositionChange={handleHeadPositionChange}
+        onCameraPermissionSettled={handleCameraPermissionSettled}
+      />
     </main>
   );
 }

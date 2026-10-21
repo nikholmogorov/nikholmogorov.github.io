@@ -7,6 +7,7 @@ type HeadPosition = {
 type HeadTrackingProps = {
   debug?: boolean;
   onPositionChange?: (position: HeadPosition) => void;
+  onCameraPermissionSettled?: () => void;
 };
 
 type HeadPositionRef = {
@@ -35,6 +36,10 @@ type FogValues = {
   far: number;
 };
 
+type AnimatedFogProps = {
+  isStarted: boolean;
+};
+
 interface HeadCameraControllerProps {
   headPositionRef: HeadPositionRef;
 }
@@ -47,4 +52,5 @@ export type {
   HeadPositionRef,
   HeadTrackingProps,
   TexturePlaneProps,
+  AnimatedFogProps,
 };
