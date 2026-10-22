@@ -1,0 +1,43 @@
+import {
+  CssBaseline,
+  createTheme,
+  ThemeProvider,
+  useMediaQuery,
+} from "@mui/material";
+import { useMemo, useState } from "react";
+import { type ModeType, ThemeContext } from "./ThemeContext";
+
+interface AppThemeProviderProps {
+  children: React.ReactNode;
+}
+
+export function AppThemeProvider({ children }: AppThemeProviderProps) {
+  const [mode, setMode] = useState<ModeType>(`system`);
+  const prefersDarkMode = useMediaQuery(`(prefers-color-scheme: dark)`);
+
+  const effectiveMode =
+    mode === `system` ? (prefersDarkMode ? `dark` : `light`) : mode;
+  const contextValue = useMemo(() => ({ mode, setMode }), [mode]);
+
+  const theme = createTheme({
+    palette: {
+      mode: effectiveMode,
+      primary: {
+        main: effectiveMode === `dark` ? `#90caf9` : `#1976d2`,
+      },
+      background: {
+        default: effectiveMode === `dark` ? `#121212` : `#f5f5f5`,
+        paper: effectiveMode === `dark` ? `#1e1e1e` : `#ffffff`,
+      },
+    },
+  });
+
+  return (
+    <ThemeContext.Provider value={contextValue}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </ThemeContext.Provider>
+  );
+}
