@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/projects/currency-converter/sw.js', { scope: '/projects/currency-converter/' })})}
