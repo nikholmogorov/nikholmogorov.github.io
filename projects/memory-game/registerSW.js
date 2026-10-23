@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/projects/memory-game/sw.js', { scope: '/projects/memory-game/' })})}
