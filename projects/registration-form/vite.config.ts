@@ -1,8 +1,61 @@
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+import { VitePWA } from "vite-plugin-pwa";
 
-// https://vite.dev/config/
-export default defineConfig(({ command }) => ({
-  base: command === "serve" ? "/" : "/projects/registration-form/",
-  plugins: [react()],
-}));
+export default defineConfig(({ command, isPreview }) => {
+  const base = command === "build" || isPreview ? "/projects/registration-form/" : "/";
+
+  return {
+    base,
+
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+
+    plugins: [
+      react(),
+
+      VitePWA({
+        registerType: "autoUpdate",
+
+        includeAssets: ["favicon.ico"],
+
+        manifest: {
+          id: base,
+          name: "Registration Form",
+          short_name: "Registration Form",
+          description: "Registration Form",
+
+          theme_color: "#000000",
+          background_color: "#ffffff",
+          display: "standalone",
+
+          start_url: base,
+          scope: base,
+
+          icons: [
+            {
+              src: "pwa-192x192.png",
+              sizes: "192x192",
+              type: "image/png",
+            },
+            {
+              src: "pwa-512x512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+            {
+              src: "maskable-icon-512x512.png",
+              sizes: "512x512",
+              type: "image/png",
+              purpose: "maskable",
+            },
+          ],
+        },
+      }),
+    ],
+  };
+});
