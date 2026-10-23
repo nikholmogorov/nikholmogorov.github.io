@@ -18,9 +18,9 @@ export default function Card(props: CardProps) {
 
   const cardBack = theme === 'dark' ? cardBackDark : cardBackLight;
 
-  function handleKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
-    if (e.key === `Enter` || e.key === ` `) onClick();
-  }
+function handleKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if(e.key === `Enter` || e.key === ` `) onClick();
+}
 
   return (
     <div
