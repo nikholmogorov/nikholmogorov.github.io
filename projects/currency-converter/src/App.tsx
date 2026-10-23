@@ -36,7 +36,7 @@ export default function App() {
     const errorMessage = error instanceof Error ? error.message : null;
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Routes>
                 <Route path="/" element={<Calc currency={currency} setCurrency={setCurrency} rates={rates} isLoading={isLoading} error={errorMessage} />}></Route>
                 <Route path="/rates" element={<Rates currency={currency} setCurrency={setCurrency} rates={rates} isLoading={isLoading} error={errorMessage} />}></Route>
