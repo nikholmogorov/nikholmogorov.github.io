@@ -3,7 +3,7 @@ import Stopwatch from "@/pages/Stopwatch/Stopwatch"
 
 function App() {
     return (
-        <BrowserRouter basename="/projects/seku/">
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Stopwatch />} />
             </Routes>
