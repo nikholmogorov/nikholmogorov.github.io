@@ -3,8 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import AnimatedFog from "./components/AnimatedFog";
 import HeadCameraController from "./components/CameraController";
-// import Haell from "./components/Haell";
-import DepthScene from "./components/DepthScene";
+import Haell from "./components/Haell";
+// import DepthScene from "./components/DepthScene";
 import HeadTracking from "./components/HeadTracking";
 
 import {
@@ -101,13 +101,13 @@ export default function App() {
           position={[4, 7, 5]}
           intensity={2}
         />
-        {/* <Haell
+        <Haell
           accentColor={accentColor}
           isHeartMode={isHeartMode}
           canToggleTheme={!isInteractionLocked}
           onToggleTheme={handleToggleTheme}
-        /> */}
-        <DepthScene />
+        />
+        {/* <<DepthScene />*/}
         <HeadCameraController headPositionRef={headPositionRef} />
       </Canvas>
       <HeadTracking

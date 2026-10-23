@@ -25,9 +25,9 @@ const SCREEN_PLANE_Z = 0;
 
 // для 3D лучше подходит чувствительность 1.5
 // для 2.5D parallax with depth map лучше подходит чувствительность 5
-const HEAD_SENSITIVITY_X = 5;
-const HEAD_SENSITIVITY_Y = 5;
-const HEAD_SENSITIVITY_Z = 5;
+const HEAD_SENSITIVITY_X = 1.5;
+const HEAD_SENSITIVITY_Y = 1.5;
+const HEAD_SENSITIVITY_Z = 1.5;
 
 const CAMERA_SMOOTHING = 6;
 

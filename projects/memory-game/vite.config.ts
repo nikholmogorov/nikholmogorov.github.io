@@ -26,9 +26,9 @@ export default defineConfig(({ command, isPreview }) => {
 
         manifest: {
           id: base,
-          name: "memory-game",
-          short_name: "memory-game",
-          description: "memory-game",
+          name: "Memory Game",
+          short_name: "Memory Game",
+          description: "Memory Game",
 
           theme_color: "#000000",
           background_color: "#ffffff",
