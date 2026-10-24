@@ -36,7 +36,9 @@ export default defineConfig(({ command, isPreview }) => {
         includeAssets: ["favicon.ico"],
 
         workbox: {
-          globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,avif,gif}"],
+          globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,avif,gif,glb,gltf,bin,hdr,ktx2}"],
+
+          maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         },
 
         manifest: {
