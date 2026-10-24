@@ -1,11 +1,13 @@
+// @ts-nocheck
+
 import { Canvas } from "@react-three/fiber";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import AnimatedFog from "./components/AnimatedFog";
-import HeadCameraController from "./components/CameraController";
+// import HeadCameraController from "./components/CameraController";
 import Haell from "./components/Haell";
 // import DepthScene from "./components/DepthScene";
-import HeadTracking from "./components/HeadTracking";
+// import HeadTracking from "./components/HeadTracking";
 
 import {
   ACCENT_COLOR,
@@ -68,6 +70,7 @@ export default function App() {
     favicon.href = changeBase(isHeartMode ? HEART_FAVICON : SKULL_FAVICON);
     document.title = isHeartMode ? HEART_PAGE_TITLE : SKULL_PAGE_TITLE;
   }, [isHeartMode]);
+
   const handleHeadPositionChange = useCallback((position: HeadPosition) => {
     headPositionRef.current = position;
   }, []);
@@ -95,7 +98,8 @@ export default function App() {
           attach="fog"
           args={[accentColor, FOG_START_NEAR, FOG_START_FAR]}
         />
-        <AnimatedFog isStarted={hasCameraPermissionDecision} />
+        {/* <AnimatedFog isStarted={hasCameraPermissionDecision} /> */}
+        <AnimatedFog isStarted={true} />
         <ambientLight intensity={0.5} />
         <directionalLight
           position={[4, 7, 5]}
@@ -107,14 +111,14 @@ export default function App() {
           canToggleTheme={!isInteractionLocked}
           onToggleTheme={handleToggleTheme}
         />
-        {/* <<DepthScene />*/}
-        <HeadCameraController headPositionRef={headPositionRef} />
+        {/* <<DepthScene /> */}
+        {/* <HeadCameraController headPositionRef={headPositionRef} /> */}
       </Canvas>
-      <HeadTracking
+      {/*   <HeadTracking
         debug={DEBUG}
         onPositionChange={handleHeadPositionChange}
         onCameraPermissionSettled={handleCameraPermissionSettled}
-      />
+      /> */}
     </main>
   );
 }
