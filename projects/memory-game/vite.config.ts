@@ -24,6 +24,10 @@ export default defineConfig(({ command, isPreview }) => {
 
         includeAssets: ["favicon.ico"],
 
+        workbox: {
+          globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,avif,gif}"],
+        },
+
         manifest: {
           id: base,
           name: "Memory Game",
