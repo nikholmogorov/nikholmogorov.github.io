@@ -78,10 +78,9 @@ const INVERT_DEPTH = false;
 const VIEW_SCALE = 1.15;
 // конец блока констант
 
-const WASM_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.1/wasm";
+const WASM_URL = `${import.meta.env.BASE_URL}mediapipe/wasm`;
 
-const MODEL_URL =
-  "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
+const MODEL_URL = `${import.meta.env.BASE_URL}mediapipe/models/face_landmarker.task`;
 
 export {
   ACCENT_COLOR,
