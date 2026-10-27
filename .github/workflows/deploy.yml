@@ -11,6 +11,7 @@ permissions:
 
 env:
   NODE_VERSION: 20
+  VITE_CAT_API_KEY: ${{ secrets.VITE_CAT_API_KEY }}
 
   # Projects excluded from GitHub Pages deployment.
   # Add one project path per line.
