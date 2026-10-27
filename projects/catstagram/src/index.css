@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+::selection {
+  background-color: var(--app-element);
+  color: var(--app-background);
+}
+
+:root {
+  color-scheme: light;
+
+  --app-background: #ffffff;
+  --app-element: #000000;
+  --box-shadow: 0px 0px 0px 2px var(--app-element) inset;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --app-background: #000000;
+  --app-element: #ffffff;
+}
+
+:root[data-theme="pink"] {
+  color-scheme: light;
+
+  --app-background: pink;
+  --app-element: #000000;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.25;
+  cursor:
+    url(/cursor.png) 14 14,
+    auto;
+}
+
+.active-element {
+  color: var(--app-element);
+  background-color: var(--app-background);
+  border: 1px solid var(--app-element);
+
+  &:disabled {
+    opacity: 0.25;
+
+    &:hover,
+    &:active {
+      color: var(--app-element);
+      background-color: var(--app-background);
+      box-shadow: unset;
+      cursor:
+        url(/cursor.png) 14 14,
+        auto;
+    }
+  }
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+    cursor:
+      url(/cursor_interactive.png) 14 14,
+      auto;
+  }
+
+  &:active {
+    color: var(--app-background);
+    background-color: var(--app-element);
+  }
+}
+
+.bcr {
+  background-color: red;
+}
+
+@theme inline {
+  --color-background: var(--app-background);
+  --color-border: var(--app-element);
+  --color-accent: var(--app-element);
+}
