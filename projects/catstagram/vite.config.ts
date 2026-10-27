@@ -24,7 +24,7 @@ export default defineConfig(({ command, isPreview }) => {
       VitePWA({
         registerType: "autoUpdate",
 
-        includeAssets: ["favicon.svg", "apple-touch-icon-180x180.png"],
+        includeAssets: ["favicon.svg", "light.svg", "dark.svg", "apple-touch-icon-180x180.png"],
 
         manifest: {
           name: "Catstagram",
