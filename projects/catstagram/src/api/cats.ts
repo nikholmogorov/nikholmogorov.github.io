@@ -18,6 +18,6 @@ export async function fetchData(page: number, signal?: AbortSignal): Promise<Car
       "x-api-key": apiKey,
     },
   });
-  if (!response.ok) throw new Error(`Failed to fetch cats: ${response.status}`);
+  if (!response.ok) throw new Error(`Failed to fetch data: ${response.status}`);
   return response.json();
 }
