@@ -77,10 +77,7 @@ export function Modal(props: ModalProps) {
           ×
         </button>
       </div>
-      <h2
-        className="text-xl font-semibold"
-        id="modal-title"
-      >
+      <h2 className="text-xl font-semibold" id="modal-title">
         {title}
       </h2>
       <p>{body}</p>
