@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --color-element: #000000;
+  --color-background: #ffffff;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-element: #ffffff;
+    --color-background: #000000;
+    color-scheme: dark;
+  }
+}
+
+::selection {
+  background-color: var(--color-element);
+  color: var(--color-background);
+}
+
+.scrollbar-moz-fallback {
+  scrollbar-color: var(--color-element) var(--color-background);
+  scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-background);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-element);
+}
+
+*:focus-visible {
+  outline: 1px solid var(--color-element);
+  outline-offset: 1px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-background);
+  color: var(--color-element);
+  cursor:
+    url("../cursor.png") 14 14,
+    auto;
+}
+
+button {
+  padding: 0.625rem;
+  border: 1px solid var(--color-element);
+  background-color: var(--color-background);
+  color: var(--color-element);
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px var(--color-element);
+    cursor:
+      url("../cursor_interactive.png") 14 14,
+      auto;
+  }
+
+  &:active {
+    border-color: var(--color-background);
+    background-color: var(--color-element);
+    color: var(--color-background);
+  }
+}
